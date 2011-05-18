@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.prime.com.tr/ui">
+    <h:head>
+    </h:head>
+    <h:body>
+        <h:outputStylesheet library="css" name="estilos.css" />        
+        <p:panel><ui:include src="cabecera.xhtml" /></p:panel>
+        <p:panel><ui:insert name="contenido" /></p:panel>
+        <p:panel><ui:include src="piecera.xhtml" /></p:panel>
+    </h:body>
+</html>
