@@ -1,0 +1,120 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.prime.com.tr/ui" template="plantilla.xhtml">
+    <ui:define name="contenido">
+        <h:form prependId="false">
+            <p:panel header="Nuevo requerimiento">
+                <p:panel header="Datos generales">
+                    <h:panelGrid columns="9">
+                        <h:outputLabel value="Solicitante: "></h:outputLabel>
+                        <h:inputText value="P011682 - Karen Salome Aldazabal Contreras" size="60" disabled="true" />
+                        <h:graphicImage id="imgSolicitante" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgSolicitante" value="Registro y nombre del usuario solicitante" />
+                        <p:spacer width="10" />
+                        <h:outputLabel value="Fecha de registro: "></h:outputLabel>
+                        <h:inputText value="09/05/2011" size="20" disabled="true" />
+                        <h:graphicImage id="imgFecha" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgFecha" value="Fecha" />
+                        <h:outputLabel value="Responsable: "></h:outputLabel>
+                        <h:inputText value="P015287 - Carlos Alberto Brenis Salamanca" size="60" disabled="true" />
+                        <h:graphicImage id="imgResponsable" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgResponsable" value="Responsable" />
+                        <p:spacer width="10" />
+                        <h:outputLabel value="Area: "></h:outputLabel>
+                        <h:inputText value="Medios" size="40" disabled="true" />
+                        <h:graphicImage id="imgArea" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgArea" value="Area" />
+                        <h:outputLabel value="Titulo:  "></h:outputLabel>
+                        <h:inputTextarea cols="59" value="" />
+                        <h:graphicImage id="imgTitulo" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgTitulo" value="Titulo" />
+                        <p:spacer width="10" />
+                        <h:outputLabel value="Urgencia: "></h:outputLabel>
+                        <h:selectOneMenu value="Media">
+                            <f:selectItem itemLabel="Alta" />
+                            <f:selectItem itemLabel="Media" itemValue="Media" />
+                            <f:selectItem itemLabel="Baja" />
+                        </h:selectOneMenu>
+                        <h:graphicImage id="imgUrgencia" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgUrgencia" value="Urgencia" />
+                    </h:panelGrid>
+                </p:panel>
+                <p:panel header="Items de compra">
+                    <p:dataTable>
+                        <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Item" /></f:facet>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header"><h:outputText value="Detalle" /></f:facet>
+                        </p:column>
+                        <p:column style="width: 200px">
+                            <f:facet name="header"><h:outputText value="Observaciones" /></f:facet>
+                        </p:column>
+                        <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Acciones" /></f:facet>
+                        </p:column>
+                    </p:dataTable>
+                    <p:commandButton value="Agregar item" type="button" onclick="popupAgregarItem.show();"></p:commandButton>
+                </p:panel>
+                <p:commandButton value="Grabar"></p:commandButton>
+                <p:commandButton value="Cancelar"></p:commandButton>
+            </p:panel>
+        </h:form>
+        <p:dialog widgetVar="popupAgregarItem" header="Nuevo item" width="400">
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="Tipo de item de compra *:" />
+                    <h:selectOneMenu>
+                        <f:selectItem itemLabel="" />
+                        <f:selectItem itemLabel="Bien" />
+                        <f:selectItem itemLabel="Servicio" />
+                    </h:selectOneMenu>
+                    <h:graphicImage id="a" library="img" name="pregunta.jpg" /><p:tooltip for="a" value="toolip" />
+                    <h:outputLabel value="Descripción *:" />
+                    <h:inputTextarea />
+                    <h:outputLabel value="Naturaleza contable *:" />
+                    <h:selectOneMenu>
+                        <f:selectItem itemLabel="" />
+                        <f:selectItem itemLabel="Gasto" />
+                        <f:selectItem itemLabel="Inversion" />
+                    </h:selectOneMenu>
+                    <h:outputLabel value="Cuenta contable GPS *:" />
+                    <h:inputText />
+                    <h:outputLabel value="Centro de costo *:" />
+                    <h:inputText />
+                    <h:outputLabel value="Código de orden interna:" />
+                    <h:inputText />
+                    <h:outputLabel value="Código de activo fijo *:" />
+                    <h:inputText />
+                    <h:outputLabel value="Cantidad:" />
+                    <h:inputText />
+                    <h:outputLabel value="Marca:" />
+                    <h:inputText />
+                    <h:outputLabel value="Modelo:" />
+                    <h:inputText />
+                    <h:outputLabel value="Fecha de entrega requerida:" />
+                    <h:inputText />
+                    <h:outputLabel value="Proveedor 1:" />
+                    <h:inputText />
+                    <h:outputLabel value="Proveedor 2:" />
+                    <h:inputText />
+                    <h:outputLabel value="Moneda *:" />
+                    <h:inputText />
+                    <h:outputLabel value="Presupuesto *:" />
+                    <h:inputText />
+                    <h:outputLabel value="Comentarios:" />
+                    <h:inputText />
+                    <h:outputLabel value="Lugar de entrega:" />
+                    <h:inputText />
+                    <h:outputLabel value="Persona de contacto:" />
+                    <h:inputText />
+                    <h:outputLabel value="Compra directa:" />
+                    <h:inputText />
+                    <p:commandButton value="Agregar" />
+                </h:panelGrid>
+            </h:form>
+        </p:dialog>
+    </ui:define>
+</ui:composition>

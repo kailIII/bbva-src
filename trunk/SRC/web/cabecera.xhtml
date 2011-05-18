@@ -1,0 +1,27 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.prime.com.tr/ui">
+    <h:form>
+        <h:graphicImage library="img" name="logo.jpg" /><br />
+        <p:menuButton value="Solicitante">
+            <p:menuitem value="Crear requerimiento" url="/crearRequerimiento.jsf" />
+            <p:menuitem value="Consultar requerimientos" url="/consultarRequerimientos.jsf" />
+            <p:menuitem value="Completar requerimiento" url="/completarRequerimiento.jsf" />
+        </p:menuButton>        
+        <p:menuButton value="Gestor">
+            <p:menuitem value="Bandeja de pendientes" url="/bandejaPendientes.jsf" />
+            <p:menuitem value="Bandeja personal" url="/bandejaPersonal.jsf" />
+        </p:menuButton>
+        <p:menuButton value="Supervisor">
+            <p:menuitem value="Cuadro de mando" url="/cuadroMando.jsf" />
+            <p:menuitem value="Gestión de solicitudes" url="/gestionSolicitudes.jsf" />
+            <p:menuitem value="Reporte detalle" url="/reporteDetalle.jsf" />
+        </p:menuButton>
+        <p:menuButton value="Administrador">
+            <p:menuitem value="Registrar Cuentas" url="/registrarCuentas.jsf" />
+            <p:menuitem value="Registrar GLGs" />
+        </p:menuButton>   
+    </h:form>
+</ui:composition>
