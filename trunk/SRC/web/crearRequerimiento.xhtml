@@ -62,58 +62,129 @@
                 <p:commandButton value="Cancelar"></p:commandButton>
             </p:panel>
         </h:form>
-        <p:dialog widgetVar="popupAgregarItem" header="Nuevo item" width="400">
+        <p:dialog widgetVar="popupAgregarItem" header="Nuevo item" width="500">
             <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputLabel value="Tipo de item de compra *:" />
-                    <h:selectOneMenu>
-                        <f:selectItem itemLabel="" />
-                        <f:selectItem itemLabel="Bien" />
-                        <f:selectItem itemLabel="Servicio" />
-                    </h:selectOneMenu>
-                    <h:graphicImage id="a" library="img" name="pregunta.jpg" /><p:tooltip for="a" value="toolip" />
-                    <h:outputLabel value="Descripción *:" />
-                    <h:inputTextarea />
-                    <h:outputLabel value="Naturaleza contable *:" />
-                    <h:selectOneMenu>
-                        <f:selectItem itemLabel="" />
-                        <f:selectItem itemLabel="Gasto" />
-                        <f:selectItem itemLabel="Inversion" />
-                    </h:selectOneMenu>
-                    <h:outputLabel value="Cuenta contable GPS *:" />
+                <p:panel header="Datos Generales">
+                    <h:panelGrid id="pnlTipoCantidad" columns="9">
+                        <h:outputLabel value="(*) Tipo de item:" />
+                        <h:selectOneMenu id="cmbTipoItem" value="#{crearRequerimiento.tipoItem}">
+                            <f:selectItem itemLabel="Seleccione.." itemValue="" />
+                            <f:selectItem itemLabel="Bien" itemValue="Bien" />
+                            <f:selectItem itemLabel="Servicio" itemValue="Servicio" />
+                            <p:ajax event="change" process="cmbTipoItem" listener="#{crearRequerimiento.habilitarCaracteristicas(e)}" update="pnlCaracteristicas" />
+                        </h:selectOneMenu>
+                        <h:graphicImage id="imgTipoItem" library="img" name="pregunta.jpg" /><p:tooltip for="imgTipoItem" value="TipoItem" />
+                        <p:spacer width="10" />
+                        <h:outputLabel value="(*) Cantidad:" />
+                        <h:inputText id="txtCantidad" size="10" maxlength="6" />
+                        <h:graphicImage id="imgCantidad" library="img" name="pregunta.jpg" /><p:tooltip for="imgCantidad" value="Cantidad" />
+                    </h:panelGrid>
+                    <h:panelGrid id="pnlDescripcion" columns="4">
+                        <h:outputLabel value="(*) DescripciÃ³n:" />
+                        <h:inputTextarea id="txtDescripcion" cols="53" rows="2" />
+                        <h:graphicImage id="imgDescripcion" library="img" name="pregunta.jpg" /><p:tooltip for="imgDescripcion" value="Descripcion" />
+                    </h:panelGrid>
+                    <h:panelGrid id="pnlCaracteristicas" columns="8">
+                        <h:outputLabel value="Marca:" rendered="#{crearRequerimiento.mostrarCaracteristicas}" />
+                        <h:inputText id="txtMarca" size="23" rendered="#{crearRequerimiento.mostrarCaracteristicas}" />
+                        <h:graphicImage id="imgMarca" library="img" name="pregunta.jpg" rendered="#{crearRequerimiento.mostrarCaracteristicas}" /><p:tooltip for="imgMarca" value="Marca" />
+                        <p:spacer width="10" />
+                        <h:outputLabel value="Modelo:" rendered="#{crearRequerimiento.mostrarCaracteristicas}" />
+                        <h:inputText id="txtModelo" rendered="#{crearRequerimiento.mostrarCaracteristicas}" />
+                        <h:graphicImage id="imgModelo" library="img" name="pregunta.jpg" rendered="#{crearRequerimiento.mostrarCaracteristicas}" /><p:tooltip for="imgModelo" value="Modelo" />
+                    </h:panelGrid>
+                </p:panel>
+                <p:panel header="Datos contables">
+                    <h:panelGrid columns="5">
+                        <h:outputLabel value="(*) Naturaleza contable:" />
+                        <h:selectOneMenu id="cmbNaturaleza" value="#{crearRequerimiento.naturaleza}">
+                            <f:selectItem itemLabel="Seleccione.." itemValue="" />
+                            <f:selectItem itemLabel="Gasto" itemValue="Gasto" />
+                            <f:selectItem itemLabel="Inversion" itemValue="Inversion" />
+                            <p:ajax event="change" process="cmbNaturaleza" listener="#{crearRequerimiento.habilitarActivo(e)}" update="pnlActivo" />
+                        </h:selectOneMenu>
+                        <h:graphicImage id="imgNaturaleza" library="img" name="pregunta.jpg" /><p:tooltip for="imgNaturaleza" value="Naturaleza" />
+                    </h:panelGrid>
+                    <h:panelGrid id="pnlActivo" columns="8">
+                        <h:outputLabel value="(*) CÃ³digo de activo fijo:" rendered="#{crearRequerimiento.mostrarActivo}" />
+                        <h:inputText id="txtActivo" size="15" maxlength="12" rendered="#{crearRequerimiento.mostrarActivo}" />
+                        <h:graphicImage id="imgActivo" library="img" name="pregunta.jpg" rendered="#{crearRequerimiento.mostrarActivo}" /><p:tooltip for="imgActivo" value="Activo" rendered="#{crearRequerimiento.mostrarActivo}" />
+                    </h:panelGrid>
+                    <h:panelGrid columns="5">                    
+                        <h:outputLabel value="(*) Cuenta contable GPS:" />
+                        <h:inputText id="txtCuenta" size="12" maxlength="10" />
+                        <h:graphicImage id="imgCuenta" library="img" name="pregunta.jpg" /><p:tooltip for="imgCuenta" value="Cuenta" />
+                        <h:outputText value="Recuperaciones" />
+                        
+                        <p:spacer />
+                        <h:outputLabel value="CategorÃ­a:" />
+                        <p:spacer />
+                        <p:spacer />
+                        <h:outputText value="InformÃ¡tica" />
+                        
+                        <p:spacer />
+                        <h:outputLabel value="Familia:" />
+                        <p:spacer />
+                        <p:spacer />
+                        <h:outputText value="Licencias de software" />
+                        
+                        <h:outputLabel value="(*) Centro de costo:" />
+                        <h:inputText id="txtCeco" size="8" maxlength="4" />
+                        <h:graphicImage id="imgCeco" library="img" name="pregunta.jpg" /><p:tooltip for="imgCeco" value="Centro de costo" />
+                        <h:outputText value="GestiÃ³n de la Demanda" />
+                        
+                    </h:panelGrid>
+                    
+                    <h:outputLabel value="CÃ³digo de orden interna:" />
                     <h:inputText />
-                    <h:outputLabel value="Centro de costo *:" />
-                    <h:inputText />
-                    <h:outputLabel value="Código de orden interna:" />
-                    <h:inputText />
-                    <h:outputLabel value="Código de activo fijo *:" />
-                    <h:inputText />
-                    <h:outputLabel value="Cantidad:" />
-                    <h:inputText />
-                    <h:outputLabel value="Marca:" />
-                    <h:inputText />
-                    <h:outputLabel value="Modelo:" />
-                    <h:inputText />
-                    <h:outputLabel value="Fecha de entrega requerida:" />
-                    <h:inputText />
-                    <h:outputLabel value="Proveedor 1:" />
-                    <h:inputText />
-                    <h:outputLabel value="Proveedor 2:" />
-                    <h:inputText />
-                    <h:outputLabel value="Moneda *:" />
-                    <h:inputText />
-                    <h:outputLabel value="Presupuesto *:" />
-                    <h:inputText />
-                    <h:outputLabel value="Comentarios:" />
-                    <h:inputText />
-                    <h:outputLabel value="Lugar de entrega:" />
-                    <h:inputText />
-                    <h:outputLabel value="Persona de contacto:" />
-                    <h:inputText />
+                    
                     <h:outputLabel value="Compra directa:" />
                     <h:inputText />
-                    <p:commandButton value="Agregar" />
-                </h:panelGrid>
+                </p:panel>
+                <p:panel header="Datos para adquisiciÃ³n">
+                    <h:panelGrid columns="9">
+                        <h:outputLabel value="(*) Presupuesto:" />
+                        <h:selectOneMenu>
+                            <f:selectItem itemLabel="Soles" itemValue="PEN" />
+                            <f:selectItem itemLabel="DÃ³lares" itemValue="USD" />
+                        </h:selectOneMenu>
+                        <h:inputText size="18" maxlength="15" />
+                        <h:graphicImage id="imgPresupuesto" library="img" name="pregunta.jpg" /><p:tooltip for="imgPresupuesto" value="Presupuesto" />
+                    </h:panelGrid>                    
+                    <h:panelGrid columns="9">
+                        <h:outputLabel value="Proveedor 1:" />
+                        <h:inputText size="17" />
+                        <h:graphicImage id="imgProveedor1" library="img" name="pregunta.jpg" /><p:tooltip for="imgProveedor1" value="Proveedor 1" />
+                        <p:spacer />
+                        <h:outputLabel value="Proveedor 2:" />
+                        <h:inputText size="17" />
+                        <h:graphicImage id="imgProveedor2" library="img" name="pregunta.jpg" /><p:tooltip for="imgProveedor2" value="Proveedor 2" />
+                    </h:panelGrid>
+                </p:panel>
+                <p:panel header="Datos de entrega">
+                    <h:panelGrid columns="9">
+                        <h:outputLabel value="(*) Fecha requerida:" />
+                        <p:calendar size="11" pattern="dd/MM/yyyy" />
+                        <h:graphicImage id="imgFecha" library="img" name="pregunta.jpg" /><p:tooltip for="imgFecha" value="Fecha" />
+                        <p:spacer width="2" />
+                        <h:outputLabel value="(*) Lugar:" />
+                        <h:inputText size="19" />
+                        <h:graphicImage id="imgLugar" library="img" name="pregunta.jpg" /><p:tooltip for="imgLugar" value="Lugar" />
+                    </h:panelGrid>
+                    <h:panelGrid columns="9">
+                        <h:outputLabel value="(*) Contacto:" />
+                        <h:inputText size="15" />      
+                        <h:graphicImage id="imgContacto" library="img" name="pregunta.jpg" /><p:tooltip for="imgContacto" value="Contacto" />
+                        <p:spacer width="2" />
+                        <h:outputLabel value="Comentarios:" />
+                        <h:inputTextarea cols="19" />
+                        <h:graphicImage id="imgComentarios" library="img" name="pregunta.jpg" /><p:tooltip for="imgComentarios" value="Comentarios" />
+                    </h:panelGrid>
+                </p:panel>
+                <p:commandButton value="Agregar" />
+                <p:spacer width="10" />
+                <h:outputText value="Los campos con (*) son obligatorios." />
+
             </h:form>
         </p:dialog>
     </ui:define>
