@@ -1,0 +1,150 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.prime.com.tr/ui" template="plantilla.xhtml">
+    <ui:define name="contenido">
+        <h:form prependId="false">
+            <p:panel header="Nuevo Comprobante">
+                <p:panel header="Datos generales">
+                    <h:panelGrid columns="9">
+                                             
+                        <h:outputLabel value="RUC del Proveedor: "></h:outputLabel>
+                        <h:inputText value="234567898976" size="60" disabled="true" />
+                        <h:graphicImage id="imgRuc" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgRuc" value="Nro de RUC" />
+                        
+                        <p:spacer width="10" />
+                        
+                        <h:outputLabel value="Nombre del Proveedor: "></h:outputLabel>
+                        <h:inputText value="Stefanini Perú SAC" size="60" disabled="true" />
+                        <h:graphicImage id="imgNomPro" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgNomPro" value=""/>
+                                   
+                        <h:outputLabel value="Número de Factura: "></h:outputLabel>
+                        <h:inputText value="234567898976" size="60" disabled="true" />
+                        <h:graphicImage id="imgNumFactura" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgNumFactura" value="Nro de RUC" />
+                        
+                        <p:spacer width="10" />
+                        
+                        <h:outputLabel value="Forma de pago: "></h:outputLabel>
+                        <h:selectOneMenu value="--Seleccione--">
+                            <f:selectItem itemLabel="--Seleccione--" />
+                            <f:selectItem itemLabel="Contado" itemValue="Contado" />
+                            <f:selectItem itemLabel="Crédito" />
+                        </h:selectOneMenu>
+                        <h:graphicImage id="imgFormaPago" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgFormaPago" value="Forma de pago" />
+             
+                        <h:outputLabel value="Moneda: "></h:outputLabel>
+                        <h:selectOneMenu value="--Seleccione--">
+                            <f:selectItem itemLabel="--Seleccione--" />
+                            <f:selectItem itemLabel="Soles" itemValue="Soles" />
+                            <f:selectItem itemLabel="Dólares" />
+                        </h:selectOneMenu>
+                        <h:graphicImage id="imgMoneda" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgMoneda" value="Moneda" />
+                        
+                        
+                             <p:spacer width="10" />
+                        
+                        
+                        <h:outputLabel value="Monto Total de Factura: "></h:outputLabel>
+                        <h:inputText value="" size="60" disabled="true" />
+                        <h:graphicImage id="imgMontoFactura" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgMontoFactura" value="MontoFactura" />
+                        
+                        <h:outputLabel value="Clave del documento: "></h:outputLabel>
+                        <h:selectOneMenu value="--Seleccione--">
+                            <f:selectItem itemLabel="--Seleccione--" />
+                            <f:selectItem itemLabel="Factura con afectación a la provisión del año anterior" />
+                            <f:selectItem itemLabel="Factura con afectación al año de ejercicio" />
+                            <f:selectItem itemLabel="Carga manual por provisión" />
+                            <f:selectItem itemLabel="Carga manual por extorno" />
+                        </h:selectOneMenu>
+                        <h:graphicImage id="imgClaveDoc" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgClaveDoc" value="Clave del documento" />
+                        
+                        
+                        <p:spacer width="10" />
+                               <h:outputLabel value="Observaciones: "></h:outputLabel>
+                         <h:inputTextarea />
+                    </h:panelGrid>
+                </p:panel>
+                <p:panel header="Detalle del Comprobante de Pago">
+                    <p:dataTable>
+                        <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Item" /></f:facet>
+                        </p:column>
+                        <p:column>
+                        <f:facet name="header"><h:outputText value="Edición" /></f:facet>
+                        </p:column>
+                        <p:column>
+                        <f:facet name="header"><h:outputText value="Cantidad" /></f:facet>
+                        </p:column>
+                        <p:column style="width: 200px">
+                            <f:facet name="header"><h:outputText value="Detalle" /></f:facet>
+                        </p:column>
+                        <p:column style="width: 200px">
+                                 <f:facet name="header"><h:outputText value="Precio Unitario" /></f:facet>
+                        </p:column>
+                        <p:column style="width: 200px">
+                                 <f:facet name="header"><h:outputText value="IGV" /></f:facet>
+                        </p:column>
+                        <p:column style="width: 200px">
+                            <f:facet name="header"><h:outputText value="Importe" /></f:facet>
+                        </p:column>
+                      </p:dataTable>
+                    <p:commandButton value="Agregar item" type="button" onclick="popupAgregarItem.show();"></p:commandButton>
+                </p:panel>
+                <p:commandButton value="Grabar"></p:commandButton>
+                <p:commandButton value="Cancelar"></p:commandButton>
+            </p:panel>
+        </h:form>
+        <p:dialog widgetVar="popupAgregarItem" header="Nuevo item" width="400">
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="Cuenta Altamira *:" />
+                    <h:inputText />
+                    <h:outputLabel value="Cuenta Contable GPS *:" />
+                    <h:inputText />
+                    <h:outputLabel value="Centro de costo *:" />
+                    <h:inputText />
+                    <h:outputLabel value="Código de orden interna:" />
+                    <h:inputText />
+                    <h:outputLabel value="Código de activo fijo *:" />
+                    <h:inputText />
+                    <h:outputLabel value="Fecha del documento *:" />
+                    <h:inputText />
+                    <h:outputLabel value="GLG *:" />
+                    <h:inputText />             
+                   
+                     <h:outputLabel value="Cantidad*:" />
+                    <h:inputText />
+                      <h:outputLabel value="Precio unitario*:" />
+                    <h:inputText />
+                    <h:outputLabel value="Concepto*:" />
+                    <h:inputText />
+                 
+                   
+                      <h:outputLabel value="Incluye IGV*: "></h:outputLabel>
+                        <h:selectOneMenu value="--Seleccione--">
+                            <f:selectItem itemLabel="--Seleccione--" />
+                            <f:selectItem itemLabel="No Incluye" />
+                            <f:selectItem itemLabel="Si incluye" />
+                        </h:selectOneMenu>
+                        <h:graphicImage id="imgIGV" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgIGV" value="Incluye IGV" />
+                          <h:outputLabel value="IGV:" />
+                    <h:inputText />
+                       <h:outputLabel value="Importe:" />
+                    <h:inputText />
+                        
+                    <p:commandButton value="Agregar" />
+                </h:panelGrid>
+            </h:form>
+        </p:dialog>
+    </ui:define>
+</ui:composition>
+
