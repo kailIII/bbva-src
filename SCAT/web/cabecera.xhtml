@@ -1,0 +1,46 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.prime.com.tr/ui">
+    <h:form>
+        <h:graphicImage library="img" name="logo.jpg" /><br />
+        <p:menuButton value="Gestor">
+        <p:menuitem value="Consultar Inspecciones" url="/ConsultarInspecciones.jsf" />
+
+        <p:menuitem value="Consultar Stock" url="/ConsultarStock.jsf" />
+        
+   
+             </p:menuButton>   
+        
+        
+            <p:menuButton value="Usuario">
+        <p:menuitem value="Consultar Solicitud de Pedidos" url="/ConsultarSolicitudPedidos.jsf" />
+       <p:menuitem value="Registrar Pedido" url="/RegistrarPedido.jsf" />
+
+             </p:menuButton>   
+        
+        
+       <p:menuButton value="Administrador">
+       <p:menuitem value="Registrar Comprobante" url="/registrarComprobante.jsf" />
+       <p:menuitem value="Consultar Comprobante" url="/ConsultarComprobante.jsf" />
+       <p:menuitem value="Consultar Presupuesto" url="/ConsultarPresupuesto.jsf" />     
+       <p:menuitem value="Cargar Presupuesto" url="/CargarPresupuestos.jsf" />
+       <p:menuitem value="Generar Plantilla" url="/GenerarPlantilla.jsf" />
+       <p:menuitem value="Generar Reporte" url="/GenerarReporte.jsf" />
+       <p:menuitem value="Administrar Usuarios" url="/AdministrarUsuarios.jsf" />
+       <p:menuitem value="Administrar Proveedores" url="/Administrarproveedores.jsf" />
+       <p:menuitem value="Administrar Maestros" url="/AdministrarMaestros.jsf" />
+ 
+       
+       
+       
+       </p:menuButton>   
+      
+        
+        
+        
+        
+        
+    </h:form>
+</ui:composition>

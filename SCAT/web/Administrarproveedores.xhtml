@@ -1,0 +1,185 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.prime.com.tr/ui" template="plantilla.xhtml">
+    <ui:define name="contenido">
+        <h:form prependId="false">
+            <p:panel header="Administrar Proveedores">
+                          <p:commandButton value="Nuevo Proveedor" type="button" onclick="popupAgregarItem1.show();"></p:commandButton>
+                <p:panel header="Criterios de Búsqueda">
+                    <h:panelGrid columns="9">
+                                             
+                   
+                         <h:outputLabel value="Nombre del proveedor:"></h:outputLabel>
+                        <h:inputText value="" size="30" disabled="false" />
+                        <h:graphicImage id="imgarc3" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgarc3" value="Añoa" />
+                         
+                         <h:outputLabel value="RUC"></h:outputLabel>
+                        <h:inputText value="" size="30" disabled="false" />
+                        <h:graphicImage id="imgUnidad" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgUnidad" value="Unidad" />
+                        
+                        <p:spacer width="40" />    
+                        
+                      
+                      
+                         
+                        <h:outputLabel value="Estado: "></h:outputLabel>
+                      <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
+                            <f:selectItem itemLabel="Activo"  />
+                            <f:selectItem itemLabel="Inactivo" />
+                          
+                        </h:selectOneMenu>
+                      
+                              <p:commandButton value="Buscar"></p:commandButton>
+                    </h:panelGrid>
+                       
+                </p:panel>
+                <p:panel header="Resultados">
+                       <h:panelGrid columns="1"> 
+                            <p:dataTable value="#{registro.comprobante}" var="comp" page="10">
+                        <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Item" /></f:facet>
+                             <h:outputLabel value="1 "></h:outputLabel>
+                        </p:column>
+                                
+                                 <p:column style="width: 50px">
+                           
+                        <f:facet name="header"><h:outputText value="Editar" /></f:facet>
+                              <p:commandButton value="Editar" type="button" onclick="popupEditarItem2.show();"></p:commandButton>
+                      
+                                 </p:column>
+                                 <p:column style="width: 100px">
+                             
+                                 <f:facet name="header"><h:outputText value="RUC" /></f:facet>
+                             <h:outputLabel value="20295833734"></h:outputLabel>
+                           </p:column>
+                             <p:column style="width: 100px">
+                            <f:facet name="header"><h:outputText value="Nombre" /></f:facet>
+                               <h:outputLabel value="GYM SAC"></h:outputLabel>
+                             </p:column>
+                             
+                          
+                             
+                        <p:column style="width: 100px">
+                            <f:facet name="header"><h:outputText value="Estado" /></f:facet>
+                            <h:outputLabel value="Activo"></h:outputLabel>
+                        </p:column>
+                                   
+                         <p:column style="width: 100px">
+                            <f:facet name="header"><h:outputText value="Fecha de Registro" /></f:facet>
+                             <h:outputLabel value="13/06/2011"></h:outputLabel>
+                        </p:column>
+                        <p:column style="width: 100px">
+                            <f:facet name="header"><h:outputText value="Usuario" /></f:facet>
+                             <h:outputLabel value="GPEREZD"></h:outputLabel>
+                        </p:column>
+                             
+                              <p:commandButton value="Actualizar"></p:commandButton>
+                      </p:dataTable>
+                            </h:panelGrid>
+                </p:panel>
+               
+               
+               
+            </p:panel>
+        </h:form>
+        <p:dialog widgetVar="popupAgregarItem1" header="Agregar usuario" width="800">
+            <h:form>
+                 
+                     
+                 <p:panel header="Datos del Proveedor">
+                    
+                    <h:panelGrid columns="9">
+                       
+                           
+                        <h:outputLabel value="RUC*"></h:outputLabel>
+                        <h:inputText value="20295833743" size="30" disabled="false" />
+                        <h:graphicImage id="imgrus" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgrus" value="RUC" />
+                        
+                              <p:spacer width="5" />    
+                         <h:outputLabel value="Nombre del Proveedor"></h:outputLabel>
+                        <h:inputText value="201133" size="40" disabled="true" />
+                        <h:graphicImage id="imgnom" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgnom" value="Nombre" />
+                         
+                          <h:outputLabel value="Dirección"></h:outputLabel>
+                        <h:inputText value="Urb. El alamo MZ N1 LT 14" size="30" disabled="false" />
+                        <h:graphicImage id="imgdir" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgdir" value="RUC" />
+                        
+                              <p:spacer width="5" />    
+                         <h:outputLabel value="Teléfono del Proveedor"></h:outputLabel>
+                        <h:inputText value="5366663" size="40" disabled="true" />
+                        <h:graphicImage id="imgtlf" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgtlf" value="Nombre" />       
+                       
+                       
+                           <p:commandButton value="Agregar" />
+                    
+                    </h:panelGrid>
+                </p:panel>
+         
+</h:form>
+              </p:dialog>
+        
+        
+        
+         <p:dialog widgetVar="popupEditarItem2" header="Editar usuario" width="800">
+            <h:form>
+                <p:panel header="Datos del usuario">
+                    
+                    <h:panelGrid columns="9">
+                       
+                           
+                        <h:outputLabel value="RUC*"></h:outputLabel>
+                        <h:inputText value="20112029583374333" size="30" disabled="false" />
+                        <h:graphicImage id="imgregI" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgregI" value="Registro" />
+                        
+                        <p:spacer width="10" />  
+                        
+                         <h:outputLabel value="Nombre del Proveedor"></h:outputLabel>
+                        <h:inputText value="GYM SAC" size="30" disabled="true" />
+                        <h:graphicImage id="imgnomI" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgnomI" value="Nombre" />
+                         
+                                 <h:outputLabel value="Dirección"></h:outputLabel>
+                        <h:inputText value="Urb. El alamo MZ N1 LT 14" size="30" disabled="false" />
+                        <h:graphicImage id="imgdir" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgdir" value="RUC" />
+                        
+                             <p:spacer width="10" />    
+                         <h:outputLabel value="Teléfono del Proveedor"></h:outputLabel>
+                        <h:inputText value="5366663" size="40" disabled="true" />
+                        <h:graphicImage id="imgtlf" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgtlf" value="Nombre" />   
+                           
+                           <h:outputLabel value="Estado*: "></h:outputLabel>
+                      <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
+                            <f:selectItem itemLabel="Activo"  />
+                            <f:selectItem itemLabel="Inactivo" />
+                        </h:selectOneMenu>
+                            <h:graphicImage id="imgestaD" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgestaD" value="Estado" />
+                            
+                           <p:commandButton value="Guardar" />
+                    
+                    </h:panelGrid>
+                </p:panel>
+         
+</h:form>
+              </p:dialog>
+      </ui:define>
+     
+        
+        
+        
+</ui:composition>
+
+
