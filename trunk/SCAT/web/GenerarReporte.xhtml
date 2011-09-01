@@ -1,0 +1,331 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.prime.com.tr/ui" template="plantilla.xhtml">
+    <ui:define name="contenido">
+        <h:form prependId="false">
+            <p:panel header="Generar Reportes">
+                <p:panel header="Características de la Generación">
+                    <h:panelGrid columns="9">
+                                             
+                    
+                            <h:outputLabel value="Año*: "></h:outputLabel>
+                        <h:selectOneMenu value="--Seleccione--">
+                            <f:selectItem itemLabel="--Seleccione--" />
+                            <f:selectItem itemLabel="2011" itemValue="2011" />
+                            <f:selectItem itemLabel="2012" />
+                            <f:selectItem itemLabel="2013" />
+                        </h:selectOneMenu>
+                        <h:graphicImage id="imgano" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgano" value="año" />
+                      
+                       
+                           <p:spacer width="10" />
+                           
+                         <h:outputLabel value="Mes*: "></h:outputLabel>
+                        <h:selectOneMenu value="--Seleccione--">
+                            <f:selectItem itemLabel="--Seleccione--" />
+                            <f:selectItem itemLabel="Enero" itemValue="Enero" />
+                            <f:selectItem itemLabel="Fecbrero" />
+                            <f:selectItem itemLabel="Marzo" />
+                            <f:selectItem itemLabel="Abril" />
+                            <f:selectItem itemLabel="Mayo" />
+                            <f:selectItem itemLabel="Junio" />
+                            <f:selectItem itemLabel="Julio" />
+                            <f:selectItem itemLabel="Agosto" />
+                            <f:selectItem itemLabel="Septiembre" />
+                            <f:selectItem itemLabel="Octubre" />
+                            <f:selectItem itemLabel="Noviembre" />
+                            <f:selectItem itemLabel="Diciembre" />
+                        </h:selectOneMenu>
+                        <h:graphicImage id="imgMes" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgMes" value="Mes" />
+                        
+                         
+                        
+                         <h:outputLabel value="Unidad:"></h:outputLabel>
+                        <h:inputText value="Compras" size="30" disabled="false" />
+                        <h:graphicImage id="imgUnidad" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgUnidad" value="Unidad" />
+                         <p:spacer width="10" />
+                        <h:outputLabel value="Agrupación de cuentas:"></h:outputLabel>
+                        <h:inputText value="13" size="30" disabled="false" />
+                        <h:graphicImage id="imgagr" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgagr" value="Agrupación de cuentas" />
+                          
+                       
+                         
+                       
+                        
+                         <h:outputLabel value="Cuenta GPS"></h:outputLabel>
+                        <h:inputText value="234567898976" size="30" disabled="false" />
+                        <h:graphicImage id="imggps" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imggps" value="Cuenta GPS" />
+                         <p:spacer width="10" />
+                        <h:outputLabel value="Cuenta Altamira:"></h:outputLabel>
+                        <h:inputText value="367898976" size="30" disabled="false" />
+                        <h:graphicImage id="imgalt" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgalt" value="Cuenta Altamira" />
+                        
+                        
+                        
+                         <h:outputLabel value="Rubro "></h:outputLabel>
+                        <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Seleccione--" />
+                            <f:selectItem itemLabel="Enlace Correos S.A" itemValue="--Seleccione--" />
+                            <f:selectItem itemLabel="IServicios Logísticos" />   
+                           </h:selectOneMenu>
+                            <h:graphicImage id="imgrubro" library="img" name="pregunta.jpg" />                       
+                           <p:tooltip for="imgrubro" value="Rubro" />
+                             <p:spacer width="10" />
+                                                      
+                            <h:outputLabel value="SubRubro "></h:outputLabel>
+                        <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Seleccione--" />
+                            <f:selectItem itemLabel="Estados de Cuenta" itemValue="--Seleccione--" />
+                            <f:selectItem itemLabel="Distribución local " />   
+                           </h:selectOneMenu>
+                            <h:graphicImage id="imgsubrubro" library="img" name="pregunta.jpg" />                       
+                           <p:tooltip for="imgsubrubro" value="subRubro" />
+                           
+                        
+                         
+                             <h:outputLabel value="Concepto "></h:outputLabel>
+                        <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Seleccione--" />
+                            <f:selectItem itemLabel="Personas Naturales" itemValue="--Seleccione--" />
+                            <f:selectItem itemLabel="Notas" />   
+                           </h:selectOneMenu>
+                            <h:graphicImage id="imgconcepto" library="img" name="pregunta.jpg" />                       
+                           <p:tooltip for="imgconcepto" value="Concepto" />
+                            <p:spacer width="10" />
+                         
+                          <h:outputLabel value="Fecha de Registro (I):"></h:outputLabel>
+                        <h:inputText value="15/06/2011" size="30" disabled="false" />
+                        <h:graphicImage id="imgfechi" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgfechi" value="Fecha de Registro Inicial" />
+                          
+                        <h:outputLabel value="Fecha de Registro (F):"></h:outputLabel>
+                        <h:inputText value="15/06/2011" size="30" disabled="false" />
+                        <h:graphicImage id="imgfechf" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgfechf" value="Fecha de Fecha Final" />
+                         
+                                           
+                         
+                       
+                           
+                                                    <p:spacer width="10" />
+                       
+                             <h:outputLabel value="Formato de Presentación "></h:outputLabel>
+                        <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Seleccione--" />
+                            <f:selectItem itemLabel="Miles de soles" itemValue="--Seleccione--" />
+                            <f:selectItem itemLabel="Nuevos soles" />   
+                           </h:selectOneMenu>
+                            <h:graphicImage id="imgest" library="img" name="pregunta.jpg" />                       
+                           <p:tooltip for="imgest" value="Estado" />
+                               <p:spacer width="10" />
+                               
+                                                                                 
+                          <p:commandButton value="Generar"></p:commandButton>
+                    </h:panelGrid>
+                </p:panel>
+                <p:panel header="Histórico de Generaciones">
+                       <h:panelGrid columns="9"> 
+                            <p:dataTable value="#{registro.comprobante}" var="comp" page="10">
+                        <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Item" /></f:facet>
+                             <h:outputLabel value="0000000001 "></h:outputLabel>
+                        </p:column>
+                                 <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Nombre " /></f:facet>
+                               <h:outputLabel value="Desviación_unidad_15062011 "></h:outputLabel>   </p:column>
+                                      
+                                
+                                 <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Año" /></f:facet>
+                             <h:outputLabel value="2011 "></h:outputLabel>
+                           
+                        </p:column>  
+                                      <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Mes" /></f:facet>
+                             <h:outputLabel value="mayo "></h:outputLabel>
+                           
+                        </p:column>  
+                        <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Tipo de reporte" /></f:facet>
+                            <h:outputLabel value="Desviación por Unidad"></h:outputLabel>
+                        </p:column>
+                                   
+                      
+                                  
+                          <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Fecha de Generación" /></f:facet>
+                             <h:outputLabel value="10/12/2011 "></h:outputLabel>
+                        </p:column>
+                                    
+                                
+                                 <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Usuario de Generación" /></f:facet>
+                             <h:outputLabel value="GZACIGAB "></h:outputLabel>
+                        </p:column>
+                                
+                      </p:dataTable>
+                            </h:panelGrid>
+                </p:panel>
+               
+               
+               
+            </p:panel>
+        </h:form>
+        <p:dialog widgetVar="popupAgregarItem1" header="Ver Presupuesto" width="1000">
+            <h:form>
+                 <p:panel header="Datos del Presupuesto">
+                    
+                    <h:panelGrid columns="9">
+                       <h:outputLabel value="Año:"></h:outputLabel>
+                        <h:inputText value="2011" size="30" disabled="false" />
+                        <h:graphicImage id="imgarc4" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgarc4" value="Año" />
+                         
+                         <h:outputLabel value="Cuenta Altamira"></h:outputLabel>
+                        <h:inputText value="Compras" size="30" disabled="false" />
+                        <h:graphicImage id="imgUni" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgUni" value="Cuenta Altamira" />     
+                           <p:spacer width="100" />
+                  <p:dataTable value="#{registro.comprobante}" var="comp" page="10">
+                        <p:column style="width: 60px">
+                            <f:facet name="header"><h:outputText value="Rubro" /></f:facet>
+                             <h:outputLabel value="Enlace Correos S.A. "></h:outputLabel>
+                        </p:column>
+                        <p:column style="width: 60px">
+                            <f:facet name="header"><h:outputText value="SubRubro" /></f:facet>
+                             <h:outputLabel value="Estados de Cuenta "></h:outputLabel>
+                        </p:column>
+                        <p:column style="width: 60px">
+                            <f:facet name="header"><h:outputText value="Concepto" /></f:facet>
+                             <h:outputLabel value="Personas Naturales"></h:outputLabel>
+                        </p:column>
+                        <p:column style="width:3px">
+                            <f:facet name="header"><h:outputText value="Cant" /></f:facet>
+                             <h:outputLabel value="326"></h:outputLabel>
+                        </p:column>
+                        <p:column style="width:6px">
+                            <f:facet name="header"><h:outputText value="Tar" /></f:facet>
+                             <h:outputLabel value="15.00"></h:outputLabel>
+                        </p:column>
+                        <p:column style="width:6px">
+                            <f:facet name="header"><h:outputText value="Imp" /></f:facet>
+                             <h:outputLabel value="750.00"></h:outputLabel>
+                        </p:column>
+                         <p:column style="width:3px">
+                            <f:facet name="header"><h:outputText value="Cant" /></f:facet>
+                             <h:outputLabel value="326"></h:outputLabel>
+                        </p:column>
+                        <p:column style="width:6px">
+                            <f:facet name="header"><h:outputText value="Tar" /></f:facet>
+                             <h:outputLabel value="15.00"></h:outputLabel>
+                        </p:column>
+                        <p:column style="width:6px">
+                            <f:facet name="header"><h:outputText value="Imp" /></f:facet>
+                             <h:outputLabel value="750.00"></h:outputLabel>
+                        </p:column>
+                         <p:column style="width:3px">
+                            <f:facet name="header"><h:outputText value="Cant" /></f:facet>
+                             <h:outputLabel value="326"></h:outputLabel>
+                        </p:column>
+                        <p:column style="width:6px">
+                            <f:facet name="header"><h:outputText value="Tar" /></f:facet>
+                             <h:outputLabel value="15.00"></h:outputLabel>
+                        </p:column>
+                        <p:column style="width:6px">
+                            <f:facet name="header"><h:outputText value="Imp" /></f:facet>
+                             <h:outputLabel value="750.00"></h:outputLabel>
+                        </p:column>
+                         <p:column style="width:3px">
+                            <f:facet name="header"><h:outputText value="Cant" /></f:facet>
+                             <h:outputLabel value="326"></h:outputLabel>
+                        </p:column>
+                        <p:column style="width:6px">
+                            <f:facet name="header"><h:outputText value="Tar" /></f:facet>
+                             <h:outputLabel value="15.00"></h:outputLabel>
+                        </p:column>
+                        <p:column style="width:6px">
+                            <f:facet name="header"><h:outputText value="Imp" /></f:facet>
+                             <h:outputLabel value="750.00"></h:outputLabel>
+                        </p:column>
+                         <p:column style="width:3px">
+                            <f:facet name="header"><h:outputText value="Cant" /></f:facet>
+                             <h:outputLabel value="326"></h:outputLabel>
+                        </p:column>
+                        <p:column style="width:6px">
+                            <f:facet name="header"><h:outputText value="Tar" /></f:facet>
+                             <h:outputLabel value="15.00"></h:outputLabel>
+                        </p:column>
+                        <p:column style="width:6px">
+                            <f:facet name="header"><h:outputText value="Imp" /></f:facet>
+                             <h:outputLabel value="750.00"></h:outputLabel>
+                        </p:column>
+                             
+                        
+                         
+                    <p:commandButton value="Imprimir" />
+             </p:dataTable>
+                            </h:panelGrid>
+                </p:panel>
+            </h:form>
+        </p:dialog>
+        
+        
+        
+        
+        
+        
+        <p:dialog widgetVar="popupAgregarItem2" header="Ver Presupuesto" width="400">
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="Cuenta Altamira *:" />
+                    <h:inputText />
+                    <h:outputLabel value="Cuenta Contable GPS *:" />
+                    <h:inputText />
+                    <h:outputLabel value="Centro de costo *:" />
+                    <h:inputText />
+                    <h:outputLabel value="Código de orden interna:" />
+                    <h:inputText />
+                    <h:outputLabel value="Código de activo fijo *:" />
+                    <h:inputText />
+                    <h:outputLabel value="Fecha del documento *:" />
+                    <h:inputText />
+                    <h:outputLabel value="GLG *:" />
+                    <h:inputText />             
+                   
+                     <h:outputLabel value="Cantidad*:" />
+                    <h:inputText />
+                      <h:outputLabel value="Precio unitario*:" />
+                    <h:inputText />
+                    <h:outputLabel value="Concepto*:" />
+                    <h:inputText />
+                 
+                   
+                      <h:outputLabel value="Incluye IGV*: "></h:outputLabel>
+                        <h:selectOneMenu value="--Seleccione--">
+                            <f:selectItem itemLabel="--Seleccione--" />
+                            <f:selectItem itemLabel="No Incluye" />
+                            <f:selectItem itemLabel="Si incluye" />
+                        </h:selectOneMenu>
+                        <h:graphicImage id="imgIGV" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgIGV" value="Incluye IGV" />
+                          <h:outputLabel value="IGV:" />
+                    <h:inputText />
+                       <h:outputLabel value="Importe:" />
+                    <h:inputText />
+                        
+                    <p:commandButton value="Agregar" />
+                </h:panelGrid>
+            </h:form>
+        </p:dialog>
+    </ui:define>
+</ui:composition>
+
+

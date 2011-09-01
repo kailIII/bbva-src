@@ -1,0 +1,156 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.prime.com.tr/ui" template="plantilla.xhtml">
+    <ui:define name="contenido">
+        <h:form prependId="false">
+            <p:panel header="Consultar Solicitudes">
+                <p:panel header="Criterios de Búsqueda">
+                    <h:panelGrid columns="9">
+                                           
+                        
+                   <h:outputLabel value="Documentos: "></h:outputLabel>
+                        <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Todos--" />
+                            <f:selectItem itemLabel="Guía"/>
+                           
+                         </h:selectOneMenu>
+                         <h:graphicImage id="imganoo" library="img" name="pregunta.jpg" />                       
+                         <p:tooltip for="imganoo" value="Tanosss" />
+                
+                       
+                       <h:outputLabel value="Tipo de movimiento*: "></h:outputLabel>
+                        <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Todos--" />
+                            <f:selectItem itemLabel="Ingreso"/>
+                            <f:selectItem itemLabel="Salida"/>
+                           
+                         </h:selectOneMenu>
+                         <h:graphicImage id="imgtip" library="img" name="pregunta.jpg" />                       
+                         <p:tooltip for="imgtip" value="Tanosss" />                    
+                                                                  
+                 
+                                 <p:spacer width="10" />  
+                               
+                    <h:outputLabel value="Nro documento: "></h:outputLabel>
+                    <h:inputText value="SH0001" size="30" disabled="false" />
+                    <h:graphicImage id="imgfechfE" library="img" name="pregunta.jpg" />
+                    <p:tooltip for="imgfechfE" value="Fecha de Carga Final" />
+                        
+                    <h:outputLabel value="Propietario: "></h:outputLabel>
+                    <h:inputText value="" size="30" disabled="false" />
+                    <h:graphicImage id="imgfechfEcr" library="img" name="pregunta.jpg" />
+                    <p:tooltip for="imgfechfEcr" value="Fecha de Carga Final" /> 
+                        
+                          <p:spacer width="10" />  
+                      
+                        
+                 
+                        
+                        <p:commandButton value="Buscar"></p:commandButton>
+                    </h:panelGrid>
+                </p:panel>
+                   
+                <p:panel header="Detalle de las solicitudes">
+                       <h:panelGrid columns="9"> 
+                            <p:dataTable value="#{registro.stock_b}" var="stock" paginator="true" rows="5" paginatorAlwaysVisible="true" emptyMessage="No existen resultados con los criterios ingresados">
+                        
+                        <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Item" /></f:facet>
+                             <h:outputLabel value="#{stock.item}"></h:outputLabel>
+                        </p:column>
+                                
+                         <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Código" /></f:facet>
+                              <p:commandButton value="#{stock.cod}" type="button" onclick="popupAgregarItem1.show();"></p:commandButton>
+                        </p:column>
+                                                                                           
+                        <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Producto" /></f:facet>
+                            <h:outputLabel value="TV"></h:outputLabel>
+                        </p:column>
+                    
+                                                                
+                        <p:column style="width: 100px">
+                            <f:facet name="header"><h:outputText value="Cantidad" /></f:facet>
+                            <h:outputLabel value="50"></h:outputLabel>
+                        </p:column>
+                                
+                                                                         
+                        <p:column style="width: 100px">
+                            <f:facet name="header"><h:outputText value="Tipo de movimiento" /></f:facet>
+                            <h:outputLabel value="Entrada"></h:outputLabel>
+                        </p:column>
+                                                        
+                         <p:column style="width: 100px">
+                             <f:facet name="header"><h:outputText value="Fecha de movimiento" /></f:facet>
+                             <h:outputLabel value="15/08/2011"></h:outputLabel>
+                        </p:column>
+                                
+                                   <p:column style="width: 100px">
+                             <f:facet name="header"><h:outputText value="Detalle " /></f:facet>
+                             <h:outputLabel value="(indica entrada por devolucion etc)"></h:outputLabel>
+                        </p:column>
+                                
+                                                            
+                                <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Estado de la entrega" /></f:facet>
+                            <h:outputLabel value="Correcto"></h:outputLabel>
+                        </p:column>
+                         
+                                <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Origen" /></f:facet>
+                            <h:outputLabel value="Saga Falabella"></h:outputLabel>
+                        </p:column>
+                                
+                                 <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Destino" /></f:facet>
+                            <h:outputLabel value="SHARFF"></h:outputLabel>
+                        </p:column>
+                      </p:dataTable>
+                            </h:panelGrid>
+                    
+                    
+                      
+                </p:panel>
+               
+                <p:commandButton value="Exportar"></p:commandButton>
+               
+            </p:panel>
+        </h:form>
+        <p:dialog widgetVar="popupAgregarItem1" header="Kardex" width="800">
+            <h:form>
+                
+                                                                    
+                       <h:outputLabel value="Producto: "></h:outputLabel>
+                        <h:inputText value="TV" size="30" disabled="true" />
+                        <h:graphicImage id="imgNumFactura1" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgNumFactura1" value="Nro de Fcatura" />
+                        
+                 
+               
+                                                 
+  
+                         <p:commandButton value="Exportar" />
+                           
+                
+            </h:form>
+        </p:dialog>
+        
+        
+        
+        
+        
+        
+      
+        
+        
+        
+        
+        
+        
+    </ui:define>
+</ui:composition>
+
+
