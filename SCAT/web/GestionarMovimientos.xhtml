@@ -1,0 +1,107 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.prime.com.tr/ui" template="plantilla.xhtml">
+    <ui:define name="contenido">
+        <h:form prependId="false">
+            <p:panel header="Gestionar Movimientos">
+                 
+                
+                                 
+                <h:panelGrid columns="9">
+                       <h:outputLabel value="Tipo de Movimiento "></h:outputLabel>
+                        <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Seleccione--" />
+                            <f:selectItem itemLabel="Entrada"/>
+                            <f:selectItem itemLabel="Salida"/>
+                             <f:selectItem itemLabel="Estado de entrega"/>
+                               <f:selectItem itemLabel="AdministraR Maestros"/>
+                         </h:selectOneMenu>
+                         <h:graphicImage id="imganoo" library="img" name="pregunta.jpg" />                       
+                         <p:tooltip for="imganoo" value="Tanosss" />
+                 
+                         
+                          <h:outputLabel value="Tipo de Ejecución* "></h:outputLabel>
+                        <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Seleccione--" />
+                            <f:selectItem itemLabel="Generación"/>
+                            <f:selectItem itemLabel="Carga"/>
+                         </h:selectOneMenu>
+                         <h:graphicImage id="imgano3o" library="img" name="pregunta.jpg" />                       
+                         <p:tooltip for="imgano3o" value="Tanosss" />
+                         
+                         
+                          <p:spacer width="10" />  
+                         
+                          
+                         
+                                
+                
+                
+                
+                <h:outputLabel value="Archivo:"></h:outputLabel>
+                        <h:inputText value="\\\Servidor\BBVA\Gastos\Pres09890890_2011.xls" size="50" disabled="false" />                   
+                                          
+                        <h:graphicImage id="imgArchivo1" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgArchivo1" value="Nombre de Archivo1" />
+                              <p:spacer width="10" />    
+                              <p:commandButton value="Examinar"></p:commandButton>
+                              <p:commandButton value="Ejecutar"></p:commandButton>
+                              </h:panelGrid>
+                <p:panel header="Datos generales">
+                    
+                    
+                    <h:panelGrid columns="1">
+                                                          
+                       <h:panelGrid columns="1"> 
+                            <p:dataTable value="#{registro.stock_b}" var="stock" page="10">
+                      
+                        <p:column style="width: 80px">
+                            <f:facet name="header"><h:outputText value="Item" /></f:facet>
+                             <h:outputLabel value="#{stock.item}"></h:outputLabel>
+                        </p:column>
+                              <p:column style="width: 100px">
+                            <f:facet name="header"><h:outputText value="Nombre Archivo" /></f:facet>
+                             <h:outputLabel value="Pres09890890_2011.xls"></h:outputLabel>
+                        </p:column>
+                                
+                                <p:column style="width: 80px">
+                            <f:facet name="header"><h:outputText value="Cantidad de registros" /></f:facet>
+                             <h:outputLabel value="124"></h:outputLabel>
+                           </p:column>
+                              
+                        <p:column style="width: 80px">
+                            <f:facet name="header"><h:outputText value="Estado" /></f:facet>
+                             <h:outputLabel value="Correcto "></h:outputLabel>
+                        </p:column>
+                                
+                        <p:column style="width: 100px">
+                            <f:facet name="header"><h:outputText value="Fecha de ejecución" /></f:facet>
+                             <h:outputLabel value="15/08/2011"></h:outputLabel>
+                        </p:column>
+                                
+                           <p:column style="width: 300px">
+                            <f:facet name="header"><h:outputText value="Usuario de ejecución" /></f:facet>
+                             <h:outputLabel value="P01526-Juan Carlos Holguin"></h:outputLabel>
+                        </p:column>    
+                                
+                                
+                      </p:dataTable>
+                            </h:panelGrid>
+                        
+                           </h:panelGrid>
+                    
+                </p:panel>
+                     
+                                
+                <p:commandButton value="Cancelar"></p:commandButton>
+                <p:commandButton value="Actualizar"></p:commandButton>
+               
+            </p:panel>
+        </h:form>
+       
+    </ui:define>
+</ui:composition>
+
+
