@@ -5,18 +5,19 @@
       xmlns:p="http://primefaces.prime.com.tr/ui">
     <h:form>
         <h:graphicImage library="img" name="logo.jpg" /><br />
+        
         <p:menuButton value="Gestor">
         <p:menuitem value="Consultar Inspecciones" url="/ConsultarInspecciones.jsf" />
-
         <p:menuitem value="Consultar Stock" url="/ConsultarStock.jsf" />
-        
-   
-             </p:menuButton>   
-        
-        
-            <p:menuButton value="Usuario">
+        <p:menuitem value="Consultar Movimientos" url="/ConsultarMovimientos.jsf" /> 
+        <p:menuitem value="Consultar Solicitudes" url="/ConsultarSolicitudes.jsf" />
+        <p:menuitem value="Registrar Pedido" url="/RegistrarPedido.jsf" /> 
+              
+        </p:menuButton>   
+               
+        <p:menuButton value="Usuario">
         <p:menuitem value="Consultar Solicitud de Pedidos" url="/ConsultarSolicitudPedidos.jsf" />
-       <p:menuitem value="Registrar Pedido" url="/RegistrarPedido.jsf" />
+        <p:menuitem value="Registrar Pedido" url="/RegistrarPedido.jsf" />
 
              </p:menuButton>   
         

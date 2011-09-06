@@ -169,5 +169,21 @@ public class Registro {
              c30.setCod("PQ258");
               c30.setCom("0");
             this.stock_b.add(c30);
+            
+               Stock_b c31= new Stock_b();  
+            c31.setBandeja("Horno"); 
+            c31.setItem("005");
+             c31.setCantidad("50");
+             c31.setCod("PQ260");
+              c31.setCom("0");
+            this.stock_b.add(c31);
+            
+             Stock_b c32= new Stock_b();  
+            c32.setBandeja("Bicicleta"); 
+            c32.setItem("006");
+             c32.setCantidad("50");
+             c32.setCod("PQ265");
+              c32.setCom("0");
+            this.stock_b.add(c32);
     }
 }
