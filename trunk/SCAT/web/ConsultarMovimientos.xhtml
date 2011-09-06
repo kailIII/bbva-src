@@ -5,7 +5,7 @@
                 xmlns:p="http://primefaces.prime.com.tr/ui" template="plantilla.xhtml">
     <ui:define name="contenido">
         <h:form prependId="false">
-            <p:panel header="Consultar Solicitudes">
+            <p:panel header="Consultar Movimientos de productos">
                 <p:panel header="Criterios de Búsqueda">
                     <h:panelGrid columns="9">
                                            
@@ -14,6 +14,7 @@
                         <h:selectOneMenu>
                             <f:selectItem itemLabel="--Todos--" />
                             <f:selectItem itemLabel="Guía"/>
+                              <f:selectItem itemLabel="Solicitud Pedido"/>
                            
                          </h:selectOneMenu>
                          <h:graphicImage id="imganoo" library="img" name="pregunta.jpg" />                       
@@ -45,13 +46,24 @@
                         
                           <p:spacer width="10" />  
                       
+                         <h:outputLabel value="Fecha de inicio: "></h:outputLabel>
+                    <h:inputText value="14/08/2011" size="30" disabled="false" />
+                    <h:graphicImage id="imgfechfEw" library="img" name="pregunta.jpg" />
+                    <p:tooltip for="imgfechfEw" value="Fecha de Carga Final" />
                         
+                    <h:outputLabel value="Fecha de Fin: "></h:outputLabel>
+                    <h:inputText value="20/08/2011" size="30" disabled="false" />
+                    <h:graphicImage id="imgfechfEcry" library="img" name="pregunta.jpg" />
+                    <p:tooltip for="imgfechfEcry" value="Fecha de Carga Final" /> 
                  
                         
                         <p:commandButton value="Buscar"></p:commandButton>
                     </h:panelGrid>
                 </p:panel>
-                   
+            
+                   <p:commandButton value="Cargar Movimientos" type="button" onclick="CargarMovimientos.show();"></p:commandButton>
+                     <p:commandButton value="Generar Movimientos" type="button" onclick="GenerarMovimientos.show();"></p:commandButton>
+                          
                 <p:panel header="Detalle de las solicitudes">
                        <h:panelGrid columns="9"> 
                             <p:dataTable value="#{registro.stock_b}" var="stock" paginator="true" rows="5" paginatorAlwaysVisible="true" emptyMessage="No existen resultados con los criterios ingresados">
@@ -63,22 +75,22 @@
                                 
                          <p:column style="width: 50px">
                             <f:facet name="header"><h:outputText value="Código" /></f:facet>
-                              <p:commandButton value="#{stock.cod}" type="button" onclick="popupAgregarItem1.show();"></p:commandButton>
-                        </p:column>
+                           <h:outputLabel value="#{stock.cod}"></h:outputLabel>
+                         </p:column>
                                                                                            
                         <p:column style="width: 50px">
                             <f:facet name="header"><h:outputText value="Producto" /></f:facet>
-                            <h:outputLabel value="TV"></h:outputLabel>
+                            <h:outputLabel value="#{stock.bandeja}"></h:outputLabel>
                         </p:column>
                     
                                                                 
-                        <p:column style="width: 100px">
+                        <p:column style="width: 50px">
                             <f:facet name="header"><h:outputText value="Cantidad" /></f:facet>
                             <h:outputLabel value="50"></h:outputLabel>
                         </p:column>
                                 
                                                                          
-                        <p:column style="width: 100px">
+                        <p:column style="width: 50px">
                             <f:facet name="header"><h:outputText value="Tipo de movimiento" /></f:facet>
                             <h:outputLabel value="Entrada"></h:outputLabel>
                         </p:column>
@@ -88,7 +100,7 @@
                              <h:outputLabel value="15/08/2011"></h:outputLabel>
                         </p:column>
                                 
-                                   <p:column style="width: 100px">
+                                   <p:column style="width: 250px">
                              <f:facet name="header"><h:outputText value="Detalle " /></f:facet>
                              <h:outputLabel value="(indica entrada por devolucion etc)"></h:outputLabel>
                         </p:column>
@@ -99,7 +111,7 @@
                             <h:outputLabel value="Correcto"></h:outputLabel>
                         </p:column>
                          
-                                <p:column style="width: 50px">
+                                <p:column style="width: 100px">
                             <f:facet name="header"><h:outputText value="Origen" /></f:facet>
                             <h:outputLabel value="Saga Falabella"></h:outputLabel>
                         </p:column>
@@ -116,22 +128,92 @@
                 </p:panel>
                
                 <p:commandButton value="Exportar"></p:commandButton>
-               
+                <p:commandButton value="Actualizar"></p:commandButton>
+          
+                  
             </p:panel>
         </h:form>
-        <p:dialog widgetVar="popupAgregarItem1" header="Kardex" width="800">
+        
+               <p:dialog widgetVar="CargarMovimientos" header="Cargar Movimientos" width="800">
             <h:form>
                 
-                                                                    
-                       <h:outputLabel value="Producto: "></h:outputLabel>
-                        <h:inputText value="TV" size="30" disabled="true" />
-                        <h:graphicImage id="imgNumFactura1" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgNumFactura1" value="Nro de Fcatura" />
-                        
+                <h:panelGrid columns="9">
+                  <h:outputLabel value="Archivo: "></h:outputLabel>
+                       <h:inputText value="Sharff" size="30" disabled="true" />                      
+                         <h:graphicImage id="imganoo" library="img" name="pregunta.jpg" />                       
+                         <p:tooltip for="imganoo" value="Tanosss" />
+                
+                       
+                        <p:commandButton value="Examinar"></p:commandButton>
+                          <p:commandButton value="Cargar"></p:commandButton>
                  
-               
+                                 <p:spacer width="10" />  
+                               
+                                                         
+                                     
+                  </h:panelGrid> 
                                                  
-  
+                  <p:panel header="Pedido">
+                   
+                        
+                          <p:dataTable value="#{registro.stock_b}" var="stock" paginator="true" rows="5" paginatorAlwaysVisible="true" emptyMessage="No existen resultados con los criterios ingresados">
+                        
+                        
+                        <p:column style="width: 50px">                
+                        <f:facet name="header"><h:outputText value="Item" /></f:facet>
+                        <h:outputLabel value="#{stock.item}"></h:outputLabel>
+                        </p:column>
+                        
+                        
+                       
+                             <p:column style="width: 50px">
+                      
+                             <f:facet name="header"><h:outputText value="Código" /></f:facet>
+                        
+                         
+                           <h:outputLabel value="#{stock.cod} "></h:outputLabel>
+                         </p:column>
+                 
+                               <p:spacer width="5" /> 
+                               
+                         <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Producto" /></f:facet>
+                              <h:outputLabel value="#{stock.bandeja} "></h:outputLabel>
+                         </p:column>
+                           
+                         
+                          <p:column style="width: 50px">
+                                 <f:facet name="header"><h:outputText value="Descripción" /></f:facet>
+                             <h:outputLabel value="Pantalla plana"></h:outputLabel>
+                     
+                         </p:column>
+                               
+                                 <p:column style="width: 50px">
+                                 <f:facet name="header"><h:outputText value="Tipo de Pedido" /></f:facet>
+                             <h:outputLabel value="Regular"></h:outputLabel>
+                     
+                         </p:column>
+                     
+                                                  
+
+                                            
+                           <p:column style="width: 50px">
+                         
+                            <f:facet name="header"><h:outputText value="Cantidad solicitada" /></f:facet>
+                                 <h:outputLabel value="20"></h:outputLabel>
+                           </p:column>
+                         
+                    
+                        
+                               <p:column style="width: 200px">
+                                 <f:facet name="header"><h:outputText value="Estado" /></f:facet>
+                             
+               <h:outputLabel value="Conforme"></h:outputLabel>ton>
+                        </p:column>
+                   
+                      </p:dataTable>
+                    
+                </p:panel>
                          <p:commandButton value="Exportar" />
                            
                 
@@ -140,6 +222,96 @@
         
         
         
+        
+        
+        
+        
+                     
+               <p:dialog widgetVar="GenerarMovimientos" header="Generar Movimientos" width="800">
+            <h:form>
+                
+                <h:panelGrid columns="9">
+                  <h:outputLabel value="Archivo: "></h:outputLabel>
+                       <h:inputText value="Sharff" size="30" disabled="true" />                      
+                         <h:graphicImage id="imganoo" library="img" name="pregunta.jpg" />                       
+                         <p:tooltip for="imganoo" value="Tanosss" />
+                
+                       
+                        <p:commandButton value="Examinar"></p:commandButton>
+                          <p:commandButton value="Cargar"></p:commandButton>
+                 
+                                 <p:spacer width="10" />  
+                               
+                                                         
+                                     
+                  </h:panelGrid> 
+                                                 
+                  <p:panel header="Pedido">
+                   
+                        
+                          <p:dataTable value="#{registro.stock_b}" var="stock" paginator="true" rows="5" paginatorAlwaysVisible="true" emptyMessage="No existen resultados con los criterios ingresados">
+                        
+                        
+                        <p:column style="width: 50px">                
+                        <f:facet name="header"><h:outputText value="Item" /></f:facet>
+                        <h:outputLabel value="#{stock.item}"></h:outputLabel>
+                        </p:column>
+                        
+                        
+                       
+                             <p:column style="width: 50px">
+                      
+                             <f:facet name="header"><h:outputText value="Código" /></f:facet>
+                        
+                         
+                           <h:outputLabel value="#{stock.cod} "></h:outputLabel>
+                         </p:column>
+                 
+                               <p:spacer width="5" /> 
+                               
+                         <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Producto" /></f:facet>
+                              <h:outputLabel value="#{stock.bandeja} "></h:outputLabel>
+                         </p:column>
+                           
+                         
+                          <p:column style="width: 50px">
+                                 <f:facet name="header"><h:outputText value="Descripción" /></f:facet>
+                             <h:outputLabel value="Pantalla plana"></h:outputLabel>
+                     
+                         </p:column>
+                               
+                                 <p:column style="width: 50px">
+                                 <f:facet name="header"><h:outputText value="Tipo de Pedido" /></f:facet>
+                             <h:outputLabel value="Regular"></h:outputLabel>
+                     
+                         </p:column>
+                     
+                                                  
+
+                                            
+                           <p:column style="width: 50px">
+                         
+                            <f:facet name="header"><h:outputText value="Cantidad solicitada" /></f:facet>
+                                 <h:outputLabel value="20"></h:outputLabel>
+                           </p:column>
+                         
+                    
+                        
+                               <p:column style="width: 200px">
+                                 <f:facet name="header"><h:outputText value="Estado" /></f:facet>
+                             
+               <h:outputLabel value="Conforme"></h:outputLabel>ton>
+                        </p:column>
+                   
+                      </p:dataTable>
+                    
+                </p:panel>
+                         <p:commandButton value="Exportar" />
+                           
+                
+            </h:form>
+        </p:dialog>
         
         
         
