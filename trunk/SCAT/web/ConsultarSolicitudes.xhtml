@@ -102,6 +102,11 @@
                             <h:outputLabel value="12/08/2011"></h:outputLabel>
                         </p:column>
                                 
+                                 <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Solicitante" /></f:facet>
+                            <h:outputLabel value="Luis Barraza"></h:outputLabel>
+                        </p:column>
+                                
                                 <p:column style="width: 50px">
                             <f:facet name="header"><h:outputText value="Estado de la entrega" /></f:facet>
                             <h:outputLabel value="17/08/2011 "></h:outputLabel>
@@ -111,18 +116,32 @@
                             <f:facet name="header"><h:outputText value="Indicador" /></f:facet>
                             <h:outputLabel value="Verde "></h:outputLabel>
                         </p:column>
+                                <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Destino" /></f:facet>
+                         <p:commandButton value="Ver" type="button" onclick="popupDestino.show();"></p:commandButton>
+                      
+                        </p:column> 
+                                
+                                
                       </p:dataTable>
                             </h:panelGrid>
+                      </p:panel>
                     
+                           <p:panel header="Detalle de los No conformes">
                     
                       <h:panelGrid columns="9"> 
-                            <p:dataTable value="#{registro.stock_b}" var="stock" paginator="true" rows="5" paginatorAlwaysVisible="true" emptyMessage="No existen resultados con los criterios ingresados">
+                            <p:dataTable value="#{registro.stock_b}" var="stock" paginator="true" rows="4" paginatorAlwaysVisible="true" emptyMessage="No existen resultados con los criterios ingresados">
                         
                         <p:column style="width: 50px">
                             <f:facet name="header"><h:outputText value="Item" /></f:facet>
                              <h:outputLabel value="#{stock.item}"></h:outputLabel>
                         </p:column>
+                              
                                 
+                                 <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Código Producto" /></f:facet>
+                            <h:outputLabel value="#{stock.cod} "></h:outputLabel>
+                        </p:column>
                          <p:column style="width: 50px">
                             <f:facet name="header"><h:outputText value="Producto" /></f:facet>
                             <h:outputLabel value="#{stock.bandeja} "></h:outputLabel>
@@ -145,17 +164,31 @@
                             <h:outputLabel value="3"></h:outputLabel>
                         </p:column>
                                                         
+                                
+                                 <p:column style="width: 200px">
+                         <f:facet name="header"><h:outputText value="Observaciones:" /></f:facet>
+                         <h:inputTextarea/>                                           
+                         </p:column>
+                                
+                                
+                                    <p:column style="width: 50px">
+                         <f:facet name="header"><h:outputText value="Tipo de no conformidad" /></f:facet>
+                           <h:outputLabel value="Faltante"></h:outputLabel>                                        
+                         </p:column>
                        
                                 <p:column style="width: 50px">
                             <f:facet name="header"><h:outputText value="Seguimiento" /></f:facet>
-                              <p:commandButton value="#{stock.cod}" type="button" onclick="popupAgregarItem1.show();"></p:commandButton>
+                              <p:commandButton value="#{stock.cod}" type="button" onclick="popupSeguimientoInspeccion.show();"></p:commandButton>
                         </p:column>
                                        
                          
                       </p:dataTable>
                             </h:panelGrid>
+                            
+               
+                    </p:panel>
                     
-                </p:panel>
+              
                
                 <p:commandButton value="Exportar"></p:commandButton>
                
@@ -256,7 +289,7 @@
                                <p:column style="width: 200px">
                                  <f:facet name="header"><h:outputText value="Estado" /></f:facet>
                              
-               <h:outputLabel value="Conforme"></h:outputLabel>ton>
+               <h:outputLabel value="Conforme"></h:outputLabel>
                         </p:column>
                    
                       </p:dataTable>
@@ -269,6 +302,205 @@
         </p:dialog>
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+         <p:dialog widgetVar="popupDestino" header="Detalle del destino" width="1200">
+            <h:form>
+                
+                <h:panelGrid columns="9">
+                                 
+                                                                  
+                  <h:outputLabel value="Nro solicitud: "></h:outputLabel>
+                    <h:inputText value="SH0001" size="30" disabled="true" />
+                    <h:graphicImage id="imgfechfE" library="img" name="pregunta.jpg" />
+                    <p:tooltip for="imgfechfE" value="Fecha de Carga Final" />
+                        
+                    <h:outputLabel value="Propietario: "></h:outputLabel>
+                    <h:inputText value="12563-José Carlos" size="30" disabled="true" />
+                    <h:graphicImage id="imgfechfEcr" library="img" name="pregunta.jpg" />
+                    <p:tooltip for="imgfechfEcr" value="Fecha de Carga Final" /> 
+                                 <p:spacer width="10" />  
+                               
+                       <h:outputLabel value="Nro Orden interna: "></h:outputLabel>
+                       <h:inputText value="C1C2C3C4C5C6C7" size="30" disabled="true" />                      
+                         <h:graphicImage id="imganoo" library="img" name="pregunta.jpg" />                       
+                         <p:tooltip for="imganoo" value="Tanosss" />
+                
+                       
+                       <h:outputLabel value="Cuenta GPS: "></h:outputLabel>
+                       <h:inputText value="123456789" size="30" disabled="true" />                        
+                         <h:graphicImage id="imgtip" library="img" name="pregunta.jpg" />                       
+                         <p:tooltip for="imgtip" value="Tanosss" /> 
+                        
+                          <p:spacer width="10" />  
+                      
+                        
+                    <h:outputLabel value="Solicitante:"></h:outputLabel>
+                    <h:inputText value="Luis Barraza" size="30" disabled="true" />
+                    <h:graphicImage id="imgalt" library="img" name="pregunta.jpg" />
+                    <p:tooltip for="imgalt" value="Cuenta Altamira" />
+                        
+                                                                    
+                                     
+                  </h:panelGrid> 
+                                                 
+                  <p:panel header="Pedido">
+                   
+                        
+                          <p:dataTable value="#{registro.stock_b}" var="stock" paginator="true" rows="5" paginatorAlwaysVisible="true" emptyMessage="No existen resultados con los criterios ingresados">
+                        
+                        
+                        <p:column style="width: 50px">                
+                        <f:facet name="header"><h:outputText value="Item" /></f:facet>
+                        <h:outputLabel value="#{stock.item}"></h:outputLabel>
+                        </p:column>
+                        
+                        
+                       
+                             <p:column style="width: 50px">
+                      
+                             <f:facet name="header"><h:outputText value="Nombre de la persona" /></f:facet>
+                        
+                         
+                           <h:outputLabel value="Cynthia Vargas Diaz"></h:outputLabel>
+                         </p:column>
+                 
+                               <p:spacer width="5" /> 
+                               
+                         <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Documento" /></f:facet>
+                              <h:outputLabel value="45286896"></h:outputLabel>
+                         </p:column>
+                               
+                                <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Código de producto" /></f:facet>
+                              <h:outputLabel value="45286896"></h:outputLabel>
+                         </p:column>
+                               
+                                <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Cantidad" /></f:facet>
+                              <h:outputLabel value="45286896"></h:outputLabel>
+                         </p:column>
+                           
+                         
+                          <p:column style="width: 50px">
+                                 <f:facet name="header"><h:outputText value="Oficina" /></f:facet>
+                             <h:outputLabel value="Lince"></h:outputLabel>                     
+                         </p:column>
+                               
+                               
+                               
+                          <p:column style="width: 100px">
+                                 <f:facet name="header"><h:outputText value="Dirección" /></f:facet>
+                             <h:outputLabel value="Urb. El Alamo 3150"></h:outputLabel>                     
+                         </p:column>
+                               
+                               <p:column style="width: 50px">
+                                 <f:facet name="header"><h:outputText value="Distrito " /></f:facet>
+                             <h:outputLabel value="Callao"></h:outputLabel>                     
+                         </p:column>
+                                 <p:column style="width: 50px">
+                                 <f:facet name="header"><h:outputText value="Verificar" /></f:facet>
+                             <h:outputLabel value="Copia de DNI:Sí"></h:outputLabel>
+                          
+                               <h:outputLabel value="Firma del cliente:Sí"></h:outputLabel>
+                        
+                                 <h:outputLabel value="Cta. mancomunada:Sí"></h:outputLabel>
+                              
+                         </p:column>
+                     
+                               <p:column style="width: 50px">
+                                 <f:facet name="header"><h:outputText value="Estado" /></f:facet>
+                             
+               <h:outputLabel value="Recibido"></h:outputLabel>
+                        </p:column>
+                   
+                      </p:dataTable>
+                    
+                </p:panel>
+                         <p:commandButton value="Exportar" />
+                           
+                
+            </h:form>
+        </p:dialog>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+         <p:dialog widgetVar="popupSeguimientoInspeccion" header="Seguimiento" width="800">
+           <h:form>
+               
+               
+                <p:panel header="Detalle de la inspección">
+                    <p:dataTable value="#{registro.seg_editar}" var="seg_" page="10">
+                        
+                        <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Item" /></f:facet>
+                             <h:outputLabel value="#{seg_.segitem} "></h:outputLabel>
+                        </p:column>
+                      
+                        
+                                                   
+                          <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Estado" /></f:facet>
+                          <h:outputLabel value="#{seg_.seg}"></h:outputLabel>
+                        </p:column>
+                       
+                           <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Tipo de No conformidad" /></f:facet>
+                           <h:outputLabel value="Faltante"></h:outputLabel>
+                        </p:column> 
+                
+                              <p:column style="width: 50px">
+                         <f:facet name="header"><h:outputText value="Observaciones:" /></f:facet>
+                         <h:inputTextarea/>                                           
+                         </p:column>
+                  
+                                                              
+                                 
+                        <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Regularización" /></f:facet>
+                                 <h:outputLabel value="#{seg_.segreg}"></h:outputLabel>
+                        
+                        </p:column>
+                                 
+                        
+                         <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Fecha de registro" /></f:facet>
+                          <h:outputLabel value="15/08/2011"></h:outputLabel>
+                        </p:column>
+                        
+                        
+                         <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Usuario de registro" /></f:facet>
+                          <h:outputLabel value="15/08/2011"></h:outputLabel>
+                        </p:column>
+                                 
+                
+                   
+                      </p:dataTable>
+                  
+               
+                    </p:panel>
+            </h:form>
+        </p:dialog>
         
         
         

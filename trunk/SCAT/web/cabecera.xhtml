@@ -6,23 +6,27 @@
     <h:form>
         <h:graphicImage library="img" name="logo.jpg" /><br />
         
-        <p:menuButton value="Gestor">
+        <p:menuButton value="Gestor de SG">
         <p:menuitem value="Consultar Inspecciones" url="/ConsultarInspecciones.jsf" />
         <p:menuitem value="Consultar Stock" url="/ConsultarStock.jsf" />
-        <p:menuitem value="Consultar Movimientos" url="/ConsultarMovimientos.jsf" /> 
-        <p:menuitem value="Consultar Solicitudes" url="/ConsultarSolicitudes.jsf" />
-        <p:menuitem value="Registrar Pedido" url="/RegistrarPedido.jsf" /> 
+        <p:menuitem value="Consultar Movimientos" url="/ConsultarMovimientos.jsf" />        
         <p:menuitem value="Gestionar Movimientos" url="/GestionarMovimientos.jsf" />    
-        <p:menuitem value="Consultar Diferencias" url="/ConsultarDiferencias.jsf" />  
-        
-              
+      
+                     
         </p:menuButton>   
                
         <p:menuButton value="Usuario">
-        <p:menuitem value="Consultar Solicitud de Pedidos" url="/ConsultarSolicitudPedidos.jsf" />
-        <p:menuitem value="Registrar Pedido" url="/RegistrarPedido.jsf" />
-
-             </p:menuButton>   
+        <p:menuitem value="Consultar Solicitudes" url="/ConsultarSolicitudes.jsf" />
+        <p:menuitem value="Registrar Solicitud" url="/RegistrarSolicitud.jsf" /> 
+        </p:menuButton> 
+        
+        <p:menuButton value="Transportista">
+        <p:menuitem value="Registrar Estado de Entrega" url="/RegistrarEntrega.jsf" /> 
+       </p:menuButton>   
+        
+         <p:menuButton value="Gestor de Compras">
+          <p:menuitem value="Consultar Diferencias" url="/ConsultarDiferencias.jsf" />  
+       </p:menuButton> 
         
         
        <p:menuButton value="Administrador">
@@ -36,8 +40,6 @@
        <p:menuitem value="Administrar Proveedores" url="/Administrarproveedores.jsf" />
        <p:menuitem value="Administrar Maestros" url="/AdministrarMaestros.jsf" />
  
-       
-       
        
        </p:menuButton>   
       
