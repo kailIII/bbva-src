@@ -1,0 +1,288 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.prime.com.tr/ui" template="plantilla.xhtml">
+    <ui:define name="contenido">
+        <h:form prependId="false">
+            <p:panel header="Administrar Campañas y Premios">
+                            <p:panel header="Criterios de Búsqueda">
+                    <h:panelGrid columns="9">
+                                             
+                   
+                          <h:outputLabel value="Tipo*: "></h:outputLabel>
+                      <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
+                            <f:selectItem itemLabel="Campaña"  />
+                            <f:selectItem itemLabel="premio" />
+                          
+                        </h:selectOneMenu>
+                          <h:graphicImage id="imgregI3422" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgregI3422" value="Registro" />
+                        
+                             <p:spacer width="10" />  
+                             
+                        <h:outputLabel value="Código"></h:outputLabel>
+                        <h:inputText value="20295833743" size="30" disabled="TRUE" />
+                        <h:graphicImage id="imgrus" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgrus" value="RUC" />
+                        
+                             
+                         <h:outputLabel value="descripción"></h:outputLabel>
+                        <h:inputText value="201133" size="40" disabled="true" />
+                        <h:graphicImage id="imgnom" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgnom" value="Nombre" />
+                        
+                              <p:spacer width="10" />  
+                              
+                                 
+                        <h:outputLabel value="Propietario*: "></h:outputLabel>
+                      <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
+                            <f:selectItem itemLabel="Jorge Carranza"  />
+                            <f:selectItem itemLabel="David Torres" />
+                          
+                        </h:selectOneMenu>
+                          <h:graphicImage id="imgregI32" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgregI32" value="Registro" />
+                        
+                        
+                                
+                         <h:outputLabel value="Cuenta GPS"></h:outputLabel>
+                        <h:inputText value="" size="40" disabled="FALSE" />
+                        <h:graphicImage id="imgtlf3" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgtlf3" value="Nombre" />    
+                        
+                        
+                         <p:spacer width="10" />
+                            <h:outputLabel value="Nro. Orden Interna"></h:outputLabel>
+                        <h:inputText value="" size="40" disabled="true" />
+                        <h:graphicImage id="imgtlf" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgtlf" value="Nombre" />    
+                       
+                      
+                              <p:commandButton value="Buscar"></p:commandButton>
+                    </h:panelGrid>
+                       
+                </p:panel>
+                 <p:commandButton value="Agregar" type="button" onclick="popupAgregarItem1.show();"></p:commandButton>
+             
+                <p:panel header="Resultados">
+                       <h:panelGrid columns="1"> 
+                            
+                                       <p:dataTable value="#{registro.stock_b}" var="stock" paginator="true" rows="3" paginatorAlwaysVisible="true" emptyMessage="No existen solicitudes pendientes de asignación">
+                
+                        <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Item" /></f:facet>
+                             <h:outputLabel value="#{stock.item}"></h:outputLabel>
+                        </p:column>
+                                
+                                 <p:column style="width: 50px">
+                           
+                        <f:facet name="header"><h:outputText value="Editar" /></f:facet>
+                              <p:commandButton value="Editar" type="button" onclick="popupEditarItem2.show();"></p:commandButton>
+                      
+                                 </p:column>
+                                 <p:column style="width: 100px">
+                             
+                                 <f:facet name="header"><h:outputText value="codigo" /></f:facet>
+                             <h:outputLabel value="20295833734"></h:outputLabel>
+                           </p:column>
+                             <p:column style="width: 100px">
+                            <f:facet name="header"><h:outputText value="descripción" /></f:facet>
+                               <h:outputLabel value="dÍA DE LA MADRE"></h:outputLabel>
+                             </p:column>
+                             
+                          <p:column style="width: 100px">
+                            <f:facet name="header"><h:outputText value="Tipo" /></f:facet>
+                            <h:outputLabel value="campaña"></h:outputLabel>
+                        </p:column>
+                                            <p:column style="width: 100px">
+                            <f:facet name="header"><h:outputText value="Nro orden interna" /></f:facet>
+                            <h:outputLabel value="123jjiji"></h:outputLabel>
+                        </p:column>
+                                            <p:column style="width: 100px">
+                            <f:facet name="header"><h:outputText value="cuenta gps" /></f:facet>
+                            <h:outputLabel value="123456789-informatica"></h:outputLabel>
+                        </p:column>
+                                            <p:column style="width: 100px">
+                            <f:facet name="header"><h:outputText value="Propietario" /></f:facet>
+                            <h:outputLabel value="123456-Jorge Torres"></h:outputLabel>
+                        </p:column>
+                             
+                        <p:column style="width: 100px">
+                            <f:facet name="header"><h:outputText value="Estado" /></f:facet>
+                            <h:outputLabel value="Activo"></h:outputLabel>
+                        </p:column>
+                                   
+                         <p:column style="width: 100px">
+                            <f:facet name="header"><h:outputText value="Fecha de Registro" /></f:facet>
+                             <h:outputLabel value="13/06/2011"></h:outputLabel>
+                        </p:column>
+                        <p:column style="width: 100px">
+                            <f:facet name="header"><h:outputText value="Usuario" /></f:facet>
+                             <h:outputLabel value="GPEREZD"></h:outputLabel>
+                        </p:column>
+                             
+                             
+                      </p:dataTable>
+                            </h:panelGrid>
+                </p:panel>
+               
+               
+               
+            </p:panel>
+        </h:form>
+        <p:dialog widgetVar="popupAgregarItem1" header="Agregar usuario" width="800">
+            <h:form>
+                 
+                     
+                 <p:panel header="Datos del Proveedor">
+                    
+                    <h:panelGrid columns="9">
+                       
+                               
+                        <h:outputLabel value="Tipo*: "></h:outputLabel>
+                      <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
+                            <f:selectItem itemLabel="Campaña"  />
+                            <f:selectItem itemLabel="premio" />
+                          
+                        </h:selectOneMenu>
+                          <h:graphicImage id="imgregI34" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgregI34" value="Registro" />
+                        
+                             <p:spacer width="10" />  
+                             
+                        <h:outputLabel value="Código"></h:outputLabel>
+                        <h:inputText value="20295833743" size="30" disabled="false" />
+                        <h:graphicImage id="imgrus" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgrus" value="RUC" />
+                        
+                             
+                         <h:outputLabel value="descripción"></h:outputLabel>
+                        <h:inputText value="201133" size="40" disabled="true" />
+                        <h:graphicImage id="imgnom" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgnom" value="Nombre" />
+                        
+                              <p:spacer width="10" />  
+                              
+                                 
+                        <h:outputLabel value="Propietario*: "></h:outputLabel>
+                      <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
+                            <f:selectItem itemLabel="Campaña"  />
+                            <f:selectItem itemLabel="premio" />
+                          
+                        </h:selectOneMenu>
+                          <h:graphicImage id="imgregI36" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgregI36" value="Registro" />
+                        
+                        
+                                
+                         <h:outputLabel value="Cuenta GPS"></h:outputLabel>
+                        <h:inputText value="5366663000" size="40" disabled="FALSE" />
+                        <h:graphicImage id="imgtlf6" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgtlf6" value="Nombre" />    
+                        
+                         <p:spacer width="10" />
+                            <h:outputLabel value="Nro. Orden Interna"></h:outputLabel>
+                        <h:inputText value="INT0001" size="40" disabled="true" />
+                        <h:graphicImage id="img0tlf" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="img0tlf" value="Nombre" />    
+                       
+                       
+                           <p:commandButton value="Agregar" />
+                    
+                    </h:panelGrid>
+                </p:panel>
+         
+</h:form>
+              </p:dialog>
+        
+        
+        
+         <p:dialog widgetVar="popupEditarItem2" header="Editar usuario" width="800">
+            <h:form>
+                <p:panel header="Datos del usuario">
+                    
+                    <h:panelGrid columns="9">
+                       
+                         <h:outputLabel value="Tipo*: "></h:outputLabel>
+                      <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
+                            <f:selectItem itemLabel="Campaña"  />
+                            <f:selectItem itemLabel="premio" />
+                          
+                        </h:selectOneMenu>
+                          <h:graphicImage id="imgregI73" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgregI73" value="Registro" />
+                        
+                             <p:spacer width="10" />  
+                             
+                        <h:outputLabel value="Código"></h:outputLabel>
+                        <h:inputText value="20295833743" size="30" disabled="false" />
+                        <h:graphicImage id="imgrus" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgrus" value="RUC" />
+                        
+                             
+                         <h:outputLabel value="descripción"></h:outputLabel>
+                        <h:inputText value="201133" size="40" disabled="true" />
+                        <h:graphicImage id="imgnom" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgnom" value="Nombre" />
+                        
+                              <p:spacer width="10" />  
+                              
+                                 
+                        <h:outputLabel value="Propietario*: "></h:outputLabel>
+                      <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
+                            <f:selectItem itemLabel="Campaña"  />
+                            <f:selectItem itemLabel="premio" />
+                          
+                        </h:selectOneMenu>
+                          <h:graphicImage id="imgregI93" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgregI93" value="Registro" />
+                        
+                        
+                                
+                         <h:outputLabel value="Cuenta GPS"></h:outputLabel>
+                        <h:inputText value="5366663000" size="40" disabled="FALSE" />
+                        <h:graphicImage id="imgtlf" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgtlf" value="Nombre" />    
+                         <p:spacer width="10" /> 
+                         <h:outputLabel value="Cuenta GPS"></h:outputLabel>
+                        <h:inputText value="INFORMATICA" size="40" disabled="true" />
+                        <h:graphicImage id="imgtlEf" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgtlEf" value="Nombre" />    
+                         <p:spacer width="10" />
+                            <h:outputLabel value="Nro. Orden Interna"></h:outputLabel>
+                        <h:inputText value="INT0001" size="40" disabled="true" />
+                        <h:graphicImage id="imgtlf7" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgtlf7" value="Nombre" />    
+                       
+                            
+                           <h:outputLabel value="Estado*: "></h:outputLabel>
+                      <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
+                            <f:selectItem itemLabel="Activo"  />
+                            <f:selectItem itemLabel="Inactivo" />
+                        </h:selectOneMenu>
+                            <h:graphicImage id="imgestaD" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgestaD" value="Estado" />
+                            
+                           <p:commandButton value="Guardar" />
+                    
+                    </h:panelGrid>
+                </p:panel>
+         
+</h:form>
+              </p:dialog>
+      </ui:define>
+     
+        
+        
+        
+</ui:composition>
+
+

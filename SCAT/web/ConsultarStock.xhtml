@@ -18,8 +18,7 @@
                          </h:selectOneMenu>
                          <h:graphicImage id="imganoo" library="img" name="pregunta.jpg" />                       
                          <p:tooltip for="imganoo" value="Tanosss" />
-                           <p:spacer width="10" />   
-                       
+                
                                           <h:outputLabel value="Tipo de Producto*: "></h:outputLabel>
                         <h:selectOneMenu>
                             <f:selectItem itemLabel="--Seleccione--" />
@@ -31,7 +30,8 @@
                          <p:tooltip for="imgtip" value="Tanosss" />                    
                                                                         
                         
-                    
+                               <p:spacer width="10" />   
+                       
                         
                         
                          
@@ -39,17 +39,37 @@
                     <h:inputText value="TV" size="30" disabled="false" />
                         <h:graphicImage id="imgfechfE" library="img" name="pregunta.jpg" />
                         <p:tooltip for="imgfechfE" value="Fecha de Carga Final" />
-                                 <p:spacer width="10" />  
+                                 
                                
                                <h:outputLabel value="Código de Producto: "></h:outputLabel>
                     <h:inputText value="OK123456" size="30" disabled="false" />
                         <h:graphicImage id="imgfechfEc" library="img" name="pregunta.jpg" />
                         <p:tooltip for="imgfechfEc" value="Fecha de Carga Final" />      
                                
-                      <h:outputLabel value="Propietario: "></h:outputLabel>
-                    <h:inputText value="Alfredo zarate" size="30" disabled="false" />
-                        <h:graphicImage id="imgfechfEcr" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgfechfEcr" value="Fecha de Carga Final" /> 
+                                   <p:spacer width="10" />   
+                       
+                    <h:outputLabel value="Propietario"></h:outputLabel>
+                         <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Todos--"  itemValue="--Seleccione--"/>
+                            <f:selectItem itemLabel="Luis Robles"  />
+                            <f:selectItem itemLabel="Raul Torres"  />
+                            <f:selectItem itemLabel="Marìa Robles" />    
+                            <f:selectItem itemLabel="Martin Dìaz" />                           
+                        </h:selectOneMenu>
+                           <h:graphicImage id="imgarc45" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgarc45" value="estadooo" />
+                        
+                         <h:outputLabel value="Equipo:"></h:outputLabel>
+                         <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Todos--"  itemValue="--Seleccione--"/>
+                            <f:selectItem itemLabel="Juan Carlos Gutierrez"  />
+                            <f:selectItem itemLabel="Marìa Teresa Vargas Dìaz"  />
+                                                   
+                        </h:selectOneMenu>
+                           <h:graphicImage id="imgarc15" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgarc15" value="estadooo" />
+                            
+                        
                         
                           <p:spacer width="10" />  
                         
@@ -61,11 +81,16 @@
                         
                       
                          
-                          <h:outputLabel value="Campaña/Premio:"></h:outputLabel>
-                        <h:inputText value="367898976" size="30" disabled="false" />
-                        <h:graphicImage id="imgalt" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgalt" value="Cuenta Altamira" />
-                        
+                           <h:outputLabel value="Campaña"></h:outputLabel>
+                         <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Todos--"  itemValue="--Seleccione--"/>
+                            <f:selectItem itemLabel="Cuenta ganadora"  />
+                            <f:selectItem itemLabel="Cuenta CTS"  />
+                                                      
+                        </h:selectOneMenu>
+                           <h:graphicImage id="imgarc4P5" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgarc4P5" value="estadooo" />
+                           
                         <p:commandButton value="Buscar"></p:commandButton>
                     </h:panelGrid>
                 </p:panel>

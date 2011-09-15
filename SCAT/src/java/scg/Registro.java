@@ -45,6 +45,7 @@ public class Registro {
         Comprobante c1 = new Comprobante();
         c1.setCuentagps("0");
         c1.setItem("00000001");
+        
         this.comprobante.add(c1);
         
        
@@ -137,6 +138,8 @@ public class Registro {
             Stock_b c27 = new Stock_b();  
             c27.setBandeja("TV");  
              c27.setItem("001");
+             c27.setRol("Administrador");
+             c27.setName("Cynthia Vargas Días");
              c27.setCantidad("50");
              c27.setCod("PQ256");
              c27.setCom("0");
@@ -146,6 +149,8 @@ public class Registro {
             Stock_b c28 = new Stock_b();  
             c28.setBandeja("Ipad");  
                c28.setItem("002");
+               c28.setRol("Gestor");
+               c28.setName("Carlos Guzman Torres");
              c28.setCantidad("50");
              c28.setCod("PQ257");
               c28.setCom("2");
@@ -155,6 +160,8 @@ public class Registro {
             Stock_b c29= new Stock_b();  
             c29.setBandeja("Licuadora"); 
                 c29.setItem("003");
+                     c29.setRol("Controlador");
+                     c29.setName("Rengifo Estrada Flores");
              c29.setCantidad("50");
              c29.setCod("PQ258");
               c29.setCom("0");
@@ -165,6 +172,9 @@ public class Registro {
             Stock_b c30= new Stock_b();  
             c30.setBandeja("canasta"); 
             c30.setItem("004");
+                 c30.setRol("Generador Menor");
+                 c30.setName("Gabril Zaciga Barreda");
+                    c30.setName1("Carlos Peñaranda");
              c30.setCantidad("50");
              c30.setCod("PQ258");
               c30.setCom("0");
@@ -173,6 +183,9 @@ public class Registro {
                Stock_b c31= new Stock_b();  
             c31.setBandeja("Horno"); 
             c31.setItem("005");
+            c31.setRol("Generador Mayor");
+          
+            c31.setName("Julio Zaciga Barreda");
              c31.setCantidad("50");
              c31.setCod("PQ260");
               c31.setCom("0");
@@ -181,6 +194,7 @@ public class Registro {
              Stock_b c32= new Stock_b();  
             c32.setBandeja("Bicicleta"); 
             c32.setItem("006");
+             
              c32.setCantidad("50");
              c32.setCod("PQ265");
               c32.setCom("0");

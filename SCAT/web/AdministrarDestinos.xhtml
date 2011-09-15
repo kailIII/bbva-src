@@ -5,24 +5,27 @@
                 xmlns:p="http://primefaces.prime.com.tr/ui" template="plantilla.xhtml">
     <ui:define name="contenido">
         <h:form prependId="false">
-            <p:panel header="Administrar Proveedores">
+            <p:panel header="Administrar Destinos">
                             <p:panel header="Criterios de Búsqueda">
                     <h:panelGrid columns="9">
                                              
                    
-                         <h:outputLabel value="Nombre del proveedor:"></h:outputLabel>
+                         <h:outputLabel value="Nombre de oficina:"></h:outputLabel>
                         <h:inputText value="" size="30" disabled="false" />
                         <h:graphicImage id="imgarc3" library="img" name="pregunta.jpg" />
                         <p:tooltip for="imgarc3" value="Añoa" />
                          
-                         <h:outputLabel value="RUC"></h:outputLabel>
+                         <h:outputLabel value="codigo"></h:outputLabel>
                         <h:inputText value="" size="30" disabled="false" />
                         <h:graphicImage id="imgUnidad" library="img" name="pregunta.jpg" />
                         <p:tooltip for="imgUnidad" value="Unidad" />
                         
                         <p:spacer width="10" />    
                         
-                      
+                        <h:outputLabel value="contacto"></h:outputLabel>
+                        <h:inputText value="" size="30" disabled="false" />
+                        <h:graphicImage id="imgUnidadcon" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgUnidadcon" value="Unidad" />
                       
                          
                         <h:outputLabel value="Estado: "></h:outputLabel>
@@ -32,12 +35,13 @@
                             <f:selectItem itemLabel="Inactivo" />
                           
                         </h:selectOneMenu>
-                      
+                      <h:graphicImage id="imgUnidad8" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgUnidad8" value="Unidad" />
                               <p:commandButton value="Buscar"></p:commandButton>
                     </h:panelGrid>
                        
                 </p:panel>
-                 <p:commandButton value="Nuevo Proveedor" type="button" onclick="popupAgregarItem1.show();"></p:commandButton>
+                 <p:commandButton value="Agregar " type="button" onclick="popupAgregarItem1.show();"></p:commandButton>
              
                 <p:panel header="Resultados">
                        <h:panelGrid columns="1"> 
@@ -57,22 +61,27 @@
                                  </p:column>
                                  <p:column style="width: 100px">
                              
-                                 <f:facet name="header"><h:outputText value="RUC" /></f:facet>
+                                 <f:facet name="header"><h:outputText value="codigo" /></f:facet>
                              <h:outputLabel value="20295833734"></h:outputLabel>
                            </p:column>
                              <p:column style="width: 100px">
-                            <f:facet name="header"><h:outputText value="Nombre" /></f:facet>
-                               <h:outputLabel value="SHARFF"></h:outputLabel>
+                            <f:facet name="header"><h:outputText value="oficina" /></f:facet>
+                               <h:outputLabel value="Lince"></h:outputLabel>
                              </p:column>
                              
                           <p:column style="width: 100px">
-                            <f:facet name="header"><h:outputText value="Tipo" /></f:facet>
-                            <h:outputLabel value="Almacen"></h:outputLabel>
+                            <f:facet name="header"><h:outputText value="Dirección" /></f:facet>
+                            <h:outputLabel value="AV. Republica de Panamá 2323"></h:outputLabel>
+                        </p:column>
+                                           
+                                           <p:column style="width: 100px">
+                            <f:facet name="header"><h:outputText value="teléfono" /></f:facet>
+                            <h:outputLabel value="444-44-44"></h:outputLabel>
                         </p:column>
                              
                         <p:column style="width: 100px">
-                            <f:facet name="header"><h:outputText value="Estado" /></f:facet>
-                            <h:outputLabel value="Activo"></h:outputLabel>
+                            <f:facet name="header"><h:outputText value="contacto" /></f:facet>
+                            <h:outputLabel value="Perso Robles"></h:outputLabel>
                         </p:column>
                                    
                          <p:column style="width: 100px">
@@ -102,38 +111,38 @@
                     <h:panelGrid columns="9">
                        
                                
-                        <h:outputLabel value="Tipo: "></h:outputLabel>
-                      <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
-                            <f:selectItem itemLabel="Almacen"  />
-                            <f:selectItem itemLabel="Transporte" />
-                          
-                        </h:selectOneMenu>
-                          <h:graphicImage id="imgregI3" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgregI3" value="Registro" />
+                     
                         
-                             <p:spacer width="10" />  
-                        <h:outputLabel value="RUC*"></h:outputLabel>
+                              
+                       
+                        
+                             
+                         <h:outputLabel value="Nombre del oFICINA"></h:outputLabel>
+                        <h:inputText value="Lince" size="40" disabled="false" />
+                        <h:graphicImage id="imgnom" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgnom" value="Nombre" />
+                              <p:spacer width="10" />  
+                               <h:outputLabel value="Código*"></h:outputLabel>
                         <h:inputText value="20295833743" size="30" disabled="false" />
                         <h:graphicImage id="imgrus" library="img" name="pregunta.jpg" />
                         <p:tooltip for="imgrus" value="RUC" />
                         
-                             
-                         <h:outputLabel value="Nombre del Proveedor"></h:outputLabel>
-                        <h:inputText value="201133" size="40" disabled="false" />
-                        <h:graphicImage id="imgnom" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgnom" value="Nombre" />
-                              <p:spacer width="10" />  
+                        
                           <h:outputLabel value="Dirección"></h:outputLabel>
                         <h:inputText value="Urb. El alamo MZ N1 LT 14" size="30" disabled="false" />
                         <h:graphicImage id="imgdir" library="img" name="pregunta.jpg" />
                         <p:tooltip for="imgdir" value="RUC" />
                         
-                                
-                         <h:outputLabel value="Teléfono del Proveedor"></h:outputLabel>
+                                  <p:spacer width="10" />  
+                         <h:outputLabel value="Teléfono "></h:outputLabel>
                         <h:inputText value="5366663" size="40" disabled="false" />
                         <h:graphicImage id="imgtlf" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgtlf" value="Nombre" />       
+                        <p:tooltip for="imgtlf" value="Nombre" />
+                        
+                             <h:outputLabel value="Contacto"></h:outputLabel>
+                        <h:inputText value="Perso Robles" size="40" disabled="false" />
+                        <h:graphicImage id="imgtlf9" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgtlf9" value="Nombre" />
                        
                        
                            <p:commandButton value="Agregar" />
@@ -152,41 +161,35 @@
                     
                     <h:panelGrid columns="9">
                        
-                           <h:outputLabel value="Tipo: "></h:outputLabel>
-                      <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
-                            <f:selectItem itemLabel="Almacen"  />
-                            <f:selectItem itemLabel="Transporte" />
-                          
-                        </h:selectOneMenu>
-                             <h:graphicImage id="imgregI2" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgregI2" value="Registro" />
+                        <h:outputLabel value="Nombre del oFICINA"></h:outputLabel>
+                        <h:inputText value="Lince" size="40" disabled="false" />
+                        <h:graphicImage id="imgnom" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgnom" value="Nombre" />
+                              <p:spacer width="10" />  
+                               <h:outputLabel value="Código*"></h:outputLabel>
+                        <h:inputText value="20295833743" size="30" disabled="false" />
+                        <h:graphicImage id="imgrus4" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgrus4" value="RUC" />
                         
                         
-                                <p:spacer width="10" />  
-                        <h:outputLabel value="RUC*"></h:outputLabel>
-                        <h:inputText value="20112029583374333" size="30" disabled="false" />
-                        <h:graphicImage id="imgregI" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgregI" value="Registro" />
-                        
-                     
-                        
-                         <h:outputLabel value="Nombre del Proveedor"></h:outputLabel>
-                        <h:inputText value="GYM SAC" size="30" disabled="true" />
-                        <h:graphicImage id="imgnomI" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgnomI" value="Nombre" />
-                            <p:spacer width="10" />  
-                                 <h:outputLabel value="Dirección"></h:outputLabel>
+                          <h:outputLabel value="Dirección"></h:outputLabel>
                         <h:inputText value="Urb. El alamo MZ N1 LT 14" size="30" disabled="false" />
                         <h:graphicImage id="imgdir" library="img" name="pregunta.jpg" />
                         <p:tooltip for="imgdir" value="RUC" />
                         
-                               
-                         <h:outputLabel value="Teléfono del Proveedor"></h:outputLabel>
-                        <h:inputText value="5366663" size="40" disabled="true" />
-                        <h:graphicImage id="imgtlf" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgtlf" value="Nombre" />   
-                            <p:spacer width="10" /> 
+                                  <p:spacer width="10" />  
+                         <h:outputLabel value="Teléfono "></h:outputLabel>
+                        <h:inputText value="5366663" size="40" disabled="false" />
+                        <h:graphicImage id="imgtlf77" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgtlf77" value="Nombre" />
+                        
+                             <h:outputLabel value="Contacto"></h:outputLabel>
+                        <h:inputText value="Perso Robles" size="40" disabled="false" />
+                        <h:graphicImage id="imgtlf99" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgtlf99" value="Nombre" />
+                       
+                       
+                        <p:spacer width="10" /> 
                            <h:outputLabel value="Estado*: "></h:outputLabel>
                       <h:selectOneMenu>
                             <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>

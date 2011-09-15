@@ -8,7 +8,12 @@
             <p:panel header="Consultar Movimientos de productos">
                 <p:panel header="Criterios de Búsqueda">
                     <h:panelGrid columns="9">
-                                           
+                      
+                         <h:outputLabel value="Nro documento: "></h:outputLabel>
+                    <h:inputText value="SH0001" size="30" disabled="false" />
+                    <h:graphicImage id="imgfechfE" library="img" name="pregunta.jpg" />
+                    <p:tooltip for="imgfechfE" value="Fecha de Carga Final" />
+                   
                         
                    <h:outputLabel value="Documentos: "></h:outputLabel>
                         <h:selectOneMenu>
@@ -20,29 +25,34 @@
                          <h:graphicImage id="imganoo" library="img" name="pregunta.jpg" />                       
                          <p:tooltip for="imganoo" value="Tanosss" />
                 
-                       
-                       <h:outputLabel value="Tipo de movimiento*: "></h:outputLabel>
-                        <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Todos--" />
-                            <f:selectItem itemLabel="Ingreso"/>
-                            <f:selectItem itemLabel="Salida"/>
-                           
-                         </h:selectOneMenu>
-                         <h:graphicImage id="imgtip" library="img" name="pregunta.jpg" />                       
-                         <p:tooltip for="imgtip" value="Tanosss" />                    
-                                                                  
+                                                     
                  
                                  <p:spacer width="10" />  
                                
-                    <h:outputLabel value="Nro documento: "></h:outputLabel>
-                    <h:inputText value="SH0001" size="30" disabled="false" />
-                    <h:graphicImage id="imgfechfE" library="img" name="pregunta.jpg" />
-                    <p:tooltip for="imgfechfE" value="Fecha de Carga Final" />
                         
-                    <h:outputLabel value="Propietario: "></h:outputLabel>
-                    <h:inputText value="" size="30" disabled="false" />
-                    <h:graphicImage id="imgfechfEcr" library="img" name="pregunta.jpg" />
-                    <p:tooltip for="imgfechfEcr" value="Fecha de Carga Final" /> 
+                         <h:outputLabel value="Propietario"></h:outputLabel>
+                         <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Todos--"  itemValue="--Seleccione--"/>
+                            <f:selectItem itemLabel="Luis Robles"  />
+                            <f:selectItem itemLabel="Raul Torres"  />
+                            <f:selectItem itemLabel="Marìa Robles" />    
+                            <f:selectItem itemLabel="Martin Dìaz" />                           
+                        </h:selectOneMenu>
+                           <h:graphicImage id="imgarc45" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgarc45" value="estadooo" />
+                     
+                        
+                         <h:outputLabel value="Equipo:"></h:outputLabel>
+                         <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Todos--"  itemValue="--Seleccione--"/>
+                            <f:selectItem itemLabel="Juan Carlos Gutierrez"  />
+                            <f:selectItem itemLabel="Marìa Teresa Vargas Dìaz"  />
+                                                   
+                        </h:selectOneMenu>
+                           <h:graphicImage id="imgarc155" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgarc155" value="estadooo" />
+                            
+                        
                         
                           <p:spacer width="10" />  
                       
@@ -55,15 +65,25 @@
                     <h:inputText value="20/08/2011" size="30" disabled="false" />
                     <h:graphicImage id="imgfechfEcry" library="img" name="pregunta.jpg" />
                     <p:tooltip for="imgfechfEcry" value="Fecha de Carga Final" /> 
-                 
-                        
+                       <p:spacer width="10" />  
+                          
+                       <h:outputLabel value="Tipo de movimiento*: "></h:outputLabel>
+                        <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Todos--" />
+                            <f:selectItem itemLabel="Ingreso"/>
+                            <f:selectItem itemLabel="Salida"/>
+                           
+                         </h:selectOneMenu>
+                         <h:graphicImage id="imgtip" library="img" name="pregunta.jpg" />                       
+                         <p:tooltip for="imgtip" value="Tanosss" />                    
+                                  
+                         
+                         
                         <p:commandButton value="Buscar"></p:commandButton>
                     </h:panelGrid>
                 </p:panel>
             
-                   <p:commandButton value="Cargar Movimientos" type="button" onclick="CargarMovimientos.show();"></p:commandButton>
-                     <p:commandButton value="Generar Movimientos" type="button" onclick="GenerarMovimientos.show();"></p:commandButton>
-                          
+                             
                 <p:panel header="Detalle de las solicitudes">
                        <h:panelGrid columns="9"> 
                             <p:dataTable value="#{registro.stock_b}" var="stock" paginator="true" rows="5" paginatorAlwaysVisible="true" emptyMessage="No existen resultados con los criterios ingresados">
@@ -128,8 +148,6 @@
                 </p:panel>
                
                 <p:commandButton value="Exportar"></p:commandButton>
-                <p:commandButton value="Actualizar"></p:commandButton>
-          
                   
             </p:panel>
         </h:form>

@@ -6,8 +6,7 @@
     <ui:define name="contenido">
         <h:form prependId="false">
             <p:panel header="Administrar Usuarios">
-                          <p:commandButton value="Nuevo Usuario" type="button" onclick="popupAgregarItem1.show();"></p:commandButton>
-                <p:panel header="Criterios de Búsqueda">
+                            <p:panel header="Criterios de Búsqueda">
                     <h:panelGrid columns="9">
                                              
                    
@@ -23,11 +22,19 @@
                         
                         <p:spacer width="40" />    
                         
-                        <h:outputLabel value="Rol:"></h:outputLabel>
-                        <h:inputText value="" size="30" disabled="false" />
-                        <h:graphicImage id="imgagr" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgagr" value="Agrupación de cuentas" />
-                          
+                        <h:outputLabel value="Rol: "></h:outputLabel>
+                      <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Todos--"  itemValue="--Seleccione--"/>
+                            <f:selectItem itemLabel="Gestor"  />
+                            <f:selectItem itemLabel="Administrador" />
+                              <f:selectItem itemLabel="Constrolador"  />
+                            <f:selectItem itemLabel="Almacenero" />
+                              <f:selectItem itemLabel="Actualizador"  />
+                            <f:selectItem itemLabel="Generador Mayor" />
+                            <f:selectItem itemLabel="Generador menor" />
+                        </h:selectOneMenu>
+                            <h:graphicImage id="imgrol2" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgrol2" value="Rol" />
                       
                          
                         <h:outputLabel value="Estado: "></h:outputLabel>
@@ -42,18 +49,22 @@
                     </h:panelGrid>
                        
                 </p:panel>
+                 <p:commandButton value="Nuevo Usuario" type="button" onclick="popupAgregarItem1.show();"></p:commandButton>
+             
                 <p:panel header="Resultados">
                        <h:panelGrid columns="1"> 
-                            <p:dataTable value="#{registro.comprobante}" var="comp" page="10">
+                            
+                                       <p:dataTable value="#{registro.stock_b}" var="stock" paginator="true" rows="5" paginatorAlwaysVisible="true" emptyMessage="No existen solicitudes pendientes de asignación">
+                
                         <p:column style="width: 50px">
                             <f:facet name="header"><h:outputText value="Item" /></f:facet>
-                             <h:outputLabel value="1 "></h:outputLabel>
+                             <h:outputLabel value="#{stock.item}"></h:outputLabel>
                         </p:column>
                                 
                                  <p:column style="width: 50px">
                            
-                        <f:facet name="header"><h:outputText value="Editar" /></f:facet>
-                              <p:commandButton value="Editar" type="button" onclick="popupEditarItem2.show();"></p:commandButton>
+                        <f:facet name="header"><h:outputText value="Ver" /></f:facet>
+                              <p:commandButton value="Ver" type="button" onclick="popupEditarItem2.show();"></p:commandButton>
                       
                                  </p:column>
                                  <p:column style="width: 100px">
@@ -61,28 +72,24 @@
                                  <f:facet name="header"><h:outputText value="Registro" /></f:facet>
                              <h:outputLabel value="1234567"></h:outputLabel>
                            </p:column>
-                             <p:column style="width: 100px">
+                             <p:column style="width: 200px">
                             <f:facet name="header"><h:outputText value="Nombre" /></f:facet>
-                               <h:outputLabel value="Cynthia Vargas Diaz"></h:outputLabel>
+                               <h:outputLabel value="#{stock.name}"></h:outputLabel>
                              </p:column>
                              
-                           <p:column style="width: 100px">
-                            <f:facet name="header"><h:outputText value="Rol" /></f:facet>
-                             <h:outputLabel value="Gestor "></h:outputLabel>
-                           </p:column>  
-                             
-                        <p:column style="width: 100px">
-                            <f:facet name="header"><h:outputText value="Estado" /></f:facet>
-                            <h:outputLabel value="Activo"></h:outputLabel>
-                        </p:column>
+                    
                                    
                          <p:column style="width: 100px">
-                            <f:facet name="header"><h:outputText value="Fecha de Carga" /></f:facet>
+                            <f:facet name="header"><h:outputText value="Fecha de registro" /></f:facet>
                              <h:outputLabel value="13/06/2011"></h:outputLabel>
                         </p:column>
                         <p:column style="width: 100px">
-                            <f:facet name="header"><h:outputText value="Usuario" /></f:facet>
+                            <f:facet name="header"><h:outputText value="Usuario de registro" /></f:facet>
                              <h:outputLabel value="GPEREZD"></h:outputLabel>
+                        </p:column>
+                                           <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Eliminar" /></f:facet>
+                              <p:commandButton value="Eliminar" type="button" ></p:commandButton>
                         </p:column>
                              
                               <p:commandButton value="Actualizar"></p:commandButton>
@@ -104,13 +111,13 @@
                        
                            
                         <h:outputLabel value="Registro*"></h:outputLabel>
-                        <h:inputText value="201133" size="30" disabled="false" />
+                        <h:inputText value="" size="30" disabled="false" />
                         <h:graphicImage id="imgreg" library="img" name="pregunta.jpg" />
                         <p:tooltip for="imgreg" value="Registro" />
                         
                               <p:spacer width="5" />    
                          <h:outputLabel value="Nombre"></h:outputLabel>
-                        <h:inputText value="201133" size="40" disabled="true" />
+                        <h:inputText value="" size="40" disabled="true" />
                         <h:graphicImage id="imgnom" library="img" name="pregunta.jpg" />
                         <p:tooltip for="imgnom" value="Nombre" />
                          
@@ -120,29 +127,95 @@
                             <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
                             <f:selectItem itemLabel="Gestor"  />
                             <f:selectItem itemLabel="Administrador" />
+                              <f:selectItem itemLabel="Constrolador"  />
+                            <f:selectItem itemLabel="Almacenero" />
+                              <f:selectItem itemLabel="Actualizador"  />
+                            <f:selectItem itemLabel="Generador Mayor" />
+                            <f:selectItem itemLabel="Generador Menor" />
                         </h:selectOneMenu>
                             <h:graphicImage id="imgrol" library="img" name="pregunta.jpg" />
                         <p:tooltip for="imgrol" value="Rol" />
+                        
+                        
+                         <h:outputLabel value="Generador Mayor*: "></h:outputLabel>
+                      <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
+                            <f:selectItem itemLabel="Fiorella Olivary"  />
+                            <f:selectItem itemLabel="Carlos Peñaranda" />
+                              <f:selectItem itemLabel="Manuel Giraldo"  />
+                            
+                        </h:selectOneMenu>
+                            <h:graphicImage id="imgrol3" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgrol3" value="Rol" />
+                        
+                        
+                        
                        
                            <p:commandButton value="Agregar" />
                     
                     </h:panelGrid>
                 </p:panel>
+                 <p:panel header="Detalle de los roles">
          
+                             <p:dataTable value="#{registro.stock_b}" var="stock" paginator="true" rows="5" paginatorAlwaysVisible="true" emptyMessage="No existen solicitudes pendientes de asignación">
+                
+                                 
+                        <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Item" /></f:facet>
+                             <h:outputLabel value="#{stock.item}"></h:outputLabel>
+                        </p:column>
+                        
+                        <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Rol" /></f:facet>
+                             <h:outputLabel value="#{stock.rol}"></h:outputLabel>
+                        </p:column>
+                        
+                            <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Estado" /></f:facet>
+                             <h:outputLabel value="Inactivo "></h:outputLabel>
+                        </p:column>
+                        
+                                 
+                            <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Generador Mayor" /></f:facet>
+                             <h:outputLabel value="#{stock.name1}"></h:outputLabel>
+                        </p:column>
+                                 
+                        <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Fecha de registro" /></f:facet>
+                             <h:outputLabel value="15/08/2010"></h:outputLabel>
+                        </p:column>
+                        
+                        <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Usuario de registro" /></f:facet>
+                             <h:outputLabel value="HSAIRAF "></h:outputLabel>
+                        </p:column>
+                        
+                             
+                       
+                  
+                               
+                      </p:dataTable>
+                                
+                    </p:panel>
+         
+                
+                
+                
 </h:form>
               </p:dialog>
         
         
         
-         <p:dialog widgetVar="popupEditarItem2" header="Editar usuario" width="800">
+         <p:dialog widgetVar="popupEditarItem2" header="Ver usuario" width="800">
             <h:form>
                 <p:panel header="Datos del usuario">
                     
                     <h:panelGrid columns="9">
                        
                            
-                        <h:outputLabel value="Registro*"></h:outputLabel>
-                        <h:inputText value="201133" size="30" disabled="false" />
+                        <h:outputLabel value="Registro"></h:outputLabel>
+                        <h:inputText value="201133" size="30" disabled="true" />
                         <h:graphicImage id="imgreg" library="img" name="pregunta.jpg" />
                         <p:tooltip for="imgreg" value="Registro" />
                         
@@ -154,16 +227,145 @@
                         <p:tooltip for="imgnom" value="Nombre" />
                          
                               
+                             
+                                           
+                    </h:panelGrid>
+                </p:panel>
+          <p:panel header="Detalle de los roles">
+         
+                             <p:dataTable value="#{registro.stock_b}" var="stock" paginator="true" rows="5" paginatorAlwaysVisible="true" emptyMessage="No existen solicitudes pendientes de asignación">
+                
+                                 
+                        <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Item" /></f:facet>
+                             <h:outputLabel value="#{stock.item}"></h:outputLabel>
+                        </p:column>
+                        
+                                   <p:column style="width: 50px">
+                           
+                        <f:facet name="header"><h:outputText value="Editar" /></f:facet>
+                              <p:commandButton value="Editar" type="button" onclick="popupEditar.show();"></p:commandButton>
+                      
+                                 </p:column>
+                        <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Rol" /></f:facet>
+                             <h:outputLabel value="#{stock.rol}"></h:outputLabel>
+                        </p:column>
+                        
+                            <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Estado" /></f:facet>
+                             <h:outputLabel value="Inactivo "></h:outputLabel>
+                        </p:column>
+                        
+                        <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Fecha de registro" /></f:facet>
+                             <h:outputLabel value="15/08/2010"></h:outputLabel>
+                        </p:column>
+                        
+                        <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Usuario de registro" /></f:facet>
+                             <h:outputLabel value="HSAIRAF "></h:outputLabel>
+                        </p:column>
+                        <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Fecha de act." /></f:facet>
+                             <h:outputLabel value="15/08/2010"></h:outputLabel>
+                        </p:column>
+                                  <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Usuario de act." /></f:facet>
+                             <h:outputLabel value="HSAIRAF "></h:outputLabel>
+                        </p:column>
+                        
+                       
+                                              
+                       
+                  
+                               
+                      </p:dataTable>
+                                
+                    </p:panel>
+         <p:panel header="Generadores menores (Equipo)">
+         
+                             <p:dataTable value="#{registro.stock_b}" var="stock" paginator="true" rows="3" paginatorAlwaysVisible="true" emptyMessage="No existen solicitudes pendientes de asignación">
+                
+                                 
+                        <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Item" /></f:facet>
+                             <h:outputLabel value="#{stock.item}"></h:outputLabel>
+                        </p:column>
+                        
+                                               
+                           
+                        
+                                 
+                            <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Generador menor" /></f:facet>
+                             <h:outputLabel value="#{stock.name}"></h:outputLabel>
+                        </p:column>
+                                 
+                                  <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Estado" /></f:facet>
+                             <h:outputLabel value="Activo "></h:outputLabel>
+                        </p:column>
+                                 
+                        <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Fecha de registro" /></f:facet>
+                             <h:outputLabel value="15/08/2010"></h:outputLabel>
+                        </p:column>
+                        
+                        <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Usuario de registro" /></f:facet>
+                             <h:outputLabel value="HSAIRAF "></h:outputLabel>
+                        </p:column>
+                        
+                             
+                       
+                  
+                               
+                      </p:dataTable>
+                                
+                    </p:panel>
+         
+</h:form>
+              </p:dialog>
+        
+        
+        
+        
+        <p:dialog widgetVar="popupEditar" header="Editar  usuario" width="800">
+            <h:form>
+                <p:panel header="Datos del usuario">
+                    
+                    <h:panelGrid columns="9">
+                       
+                           
+                        
+                              
                            <h:outputLabel value="Rol*: "></h:outputLabel>
                       <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
+                             <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
                             <f:selectItem itemLabel="Gestor"  />
                             <f:selectItem itemLabel="Administrador" />
+                              <f:selectItem itemLabel="Constrolador"  />
+                            <f:selectItem itemLabel="Almacenero" />
+                              <f:selectItem itemLabel="Actualizador"  />
+                            <f:selectItem itemLabel="Generador Mayor" />
+                            <f:selectItem itemLabel="Generador Menor" />
                              </h:selectOneMenu>
                             <h:graphicImage id="imgrol" library="img" name="pregunta.jpg" />
                         <p:tooltip for="imgrol" value="Rol" />
                             <p:spacer width="10" />  
+                             <h:outputLabel value="Generador Mayor*: "></h:outputLabel>
+                      <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
+                            <f:selectItem itemLabel="Fiorella Olivary"  />
+                            <f:selectItem itemLabel="Carlos Peñaranda" />
+                              <f:selectItem itemLabel="Manuel Giraldo"  />
                             
+                        </h:selectOneMenu>
+                            <h:graphicImage id="imgrol31" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgrol31" value="Rol" />
+                        
+                        
                            <h:outputLabel value="Estado*: "></h:outputLabel>
                       <h:selectOneMenu>
                             <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
@@ -177,9 +379,21 @@
                     
                     </h:panelGrid>
                 </p:panel>
+          
          
 </h:form>
               </p:dialog>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
       </ui:define>
      
         

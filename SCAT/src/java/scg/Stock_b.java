@@ -63,4 +63,34 @@ public class Stock_b {
         this.com = com;
         }
     
+        
+        private String rol;
+        public String getRol()
+        {
+        return rol;
+        }
+        public void setRol (String rol) 
+        {
+        this.rol = rol;
+        }
+        
+              private String name;
+        public String getName()
+        {
+        return name;
+        }
+        public void setName (String name) 
+        {
+        this.name = name;
+        }
+          private String name1;
+        public String getName1()
+        {
+        return name1;
+        }
+        public void setName1 (String name1) 
+        {
+        this.name1 = name1;
+        }
 }
+
