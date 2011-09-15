@@ -42,32 +42,7 @@
                         <h:inputText value="18/08/2011" size="30" disabled="false" />
                         <h:graphicImage id="imgagr2" library="img" name="pregunta.jpg" />
                         <p:tooltip for="imgagr2" value="Fecha Fin" />
-                                                                    
-                        
-                          
-                        <p:spacer width="10" />
-                        
-                        <h:outputLabel value="Propietario"></h:outputLabel>
-                         <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Todos--"  itemValue="--Seleccione--"/>
-                            <f:selectItem itemLabel="Luis Robles"  />
-                            <f:selectItem itemLabel="Raul Torres"  />
-                            <f:selectItem itemLabel="Marìa Robles" />    
-                            <f:selectItem itemLabel="Martin Dìaz" />                           
-                        </h:selectOneMenu>
-                           <h:graphicImage id="imgarc45" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgarc45" value="estadooo" />
-                        
-                        
-                        <h:outputLabel value="Equipo:"></h:outputLabel>
-                         <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Todos--"  itemValue="--Seleccione--"/>
-                            <f:selectItem itemLabel="Juan Carlos Gutierrez"  />
-                            <f:selectItem itemLabel="Marìa Teresa Vargas Dìaz"  />
-                                                   
-                        </h:selectOneMenu>
-                           <h:graphicImage id="imgarc154" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgarc154" value="estadooo" />
+                             
                         
                         
                         <p:spacer width="10" />
@@ -88,19 +63,14 @@
                         <h:outputLabel value="Tipo de no conformidad"></h:outputLabel>
           <h:selectOneMenu>
                             <f:selectItem itemLabel="--Todos--"  itemValue="--Seleccione--"/>
-                            <f:selectItem itemLabel="Mal estado"  />
+                            <f:selectItem itemLabel="MObservado"  />
                             <f:selectItem itemLabel="Faltante"  />
-                            <f:selectItem itemLabel="Otros" />    
+                           
                                                   
                         </h:selectOneMenu>
                            <h:graphicImage id="imgarc4q5" library="img" name="pregunta.jpg" />
                         <p:tooltip for="imgarc4q5" value="estadooo" />
                         <p:spacer width="10" />
-                        
-                                       <h:outputLabel value="Otro:"></h:outputLabel>
-                        <h:inputText value="Sobrante" size="30" disabled="false" />
-                        <h:graphicImage id="imgagr" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgagr" value="Fecha Fin" />
                         
                       
                         
@@ -116,12 +86,14 @@
                             
                    
                    
-                <p:panel header="Resultado">
+                <p:panel header="Inspecciones">
                     
                        <h:panelGrid columns="9"> 
                             
                        <p:dataTable value="#{registro.stock_b}" var="stock" paginator="true" rows="5" paginatorAlwaysVisible="true" emptyMessage="No existen solicitudes pendientes de asignación">
                      
+                           
+                          
                            
                             <p:column style="width: 50px">
                             <f:facet name="header"><h:outputText value="Item" /></f:facet>
@@ -180,7 +152,7 @@
                              
                              
                              
-                              <p:panel header="Resultado de Inspección">
+                              <p:panel header="Detalle de Inspección">
                      <h:outputLabel value="Mostrar:"></h:outputLabel>
                          <h:selectOneMenu>
                             <f:selectItem itemLabel="--Todos--"  />
@@ -292,44 +264,7 @@
                         <h:graphicImage id="imgNumFactura1" library="img" name="pregunta.jpg" />
                         <p:tooltip for="imgNumFactura1" value="Nro de Fcatura" />
                         
-                      <p:spacer width="10" />
-                      
-                       <h:outputLabel value="Propietario"></h:outputLabel>
-                         <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Todos--"  itemValue="--Seleccione--"/>
-                            <f:selectItem itemLabel="Luis Robles"  />
-                            <f:selectItem itemLabel="Raul Torres"  />
-                            <f:selectItem itemLabel="Marìa Robles" />    
-                            <f:selectItem itemLabel="Martin Dìaz" />                           
-                        </h:selectOneMenu>
-                           <h:graphicImage id="imgarc45" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgarc45" value="estadooo" />
-                        
-                        
-                        <h:outputLabel value="Equipo:"></h:outputLabel>
-                         <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Todos--"  itemValue="--Seleccione--"/>
-                            <f:selectItem itemLabel="Juan Carlos Gutierrez"  />
-                            <f:selectItem itemLabel="Marìa Teresa Vargas Dìaz"  />
-                                                   
-                        </h:selectOneMenu>
-                           <h:graphicImage id="imgarc15" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgarc15" value="estadooo" />
-                            
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
+                   
                         
                          <p:spacer width="10" />
                                    
@@ -589,7 +524,11 @@
                 <p:panel header="Resultado de la inspección">
                 
                             <p:dataTable value="#{registro.stock_b}" var="stock" paginator="true" rows="5" paginatorAlwaysVisible="true" emptyMessage="No existen resultados con los criterios ingresados">
-                        
+                         <p:column style="width: 50px">
+                            <f:facet name="header"> <h:selectBooleanCheckbox></h:selectBooleanCheckbox></f:facet>
+                            <h:selectBooleanCheckbox></h:selectBooleanCheckbox>
+                                  </p:column>
+                           
                         <p:column style="width: 50px">
                             <f:facet name="header"><h:outputText value="Item" /></f:facet>
                             <h:outputLabel value="#{stock.item}"></h:outputLabel>
@@ -624,17 +563,13 @@
                        </h:selectOneMenu>
                         </p:column>
                        
-                    <p:column style="width: 50px">
-                         <f:facet name="header"><h:outputText value="Observaciones:" /></f:facet>
-                         <h:inputTextarea/>                                           
-                         </p:column>
-                             
-                  
+                   
                                                     
                       </p:dataTable>
                    
                
                     </p:panel>
+                 <p:commandButton value="Añadir"></p:commandButton>
                
            <p:panel header="Detalle de la No conformidad">
                     
@@ -663,9 +598,8 @@
                               
                          <h:selectOneMenu>
                             <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"  />
-                            <f:selectItem itemLabel="Mal estado"  />
+                            <f:selectItem itemLabel="Observado"  />
                             <f:selectItem itemLabel="Faltante"  />
-                             <f:selectItem itemLabel="Sobrante"  />
                        </h:selectOneMenu>
                         </p:column>
                        
@@ -675,12 +609,7 @@
                          <h:inputTextarea/>                                           
                          </p:column>
                   
-                                <p:column style="width: 50px">
-                         <f:facet name="header"><h:outputText value="Acciones" /></f:facet>
-                         <p:commandButton value="Añadir"></p:commandButton>
-                                                        
-                         </p:column>
-                              
+                             
                               <p:column style="width: 50px">
                          <f:facet name="header"><h:outputText value="Subsanar" /></f:facet>
                          
@@ -768,6 +697,20 @@
                     <h:panelGrid columns="9">
                                                                                         
                                  
+                           
+                          <h:outputLabel value="Estado:"></h:outputLabel>
+                         <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
+                             <f:selectItem itemLabel="rEGULARIZADO"  />
+                            <f:selectItem itemLabel="Verificado virtual"  />
+                            <f:selectItem itemLabel="Verificado físico"  />
+                            <f:selectItem itemLabel="No conforme"  />
+                            <f:selectItem itemLabel="Cerrado"  />
+                                                                       
+                        </h:selectOneMenu>
+                           <h:graphicImage id="imgCAM" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgCAM" value="estadooo" />
+                        
                         <p:column style="width: 50px">
                             <f:facet name="header"><h:outputText value="Regularización" /></f:facet>
                               
@@ -778,18 +721,7 @@
                             <f:selectItem itemLabel="Pago de pieza" /> 
                        </h:selectOneMenu>
                         </p:column>
-                                             
-                          <h:outputLabel value="Estado:"></h:outputLabel>
-                         <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
-                            <f:selectItem itemLabel="Verificado virtual"  />
-                            <f:selectItem itemLabel="Verificado físico"  />
-                            <f:selectItem itemLabel="No conforme"  />
-                            <f:selectItem itemLabel="Cerrado"  />
-                                                                       
-                        </h:selectOneMenu>
-                           <h:graphicImage id="imgCAM" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgCAM" value="estadooo" />
+                                          
                         
                        <p:commandButton value="Guardar"></p:commandButton>
                     </h:panelGrid>
