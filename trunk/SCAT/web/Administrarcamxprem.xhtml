@@ -21,22 +21,8 @@
                         <p:tooltip for="imgregI3422" value="Registro" />
                         
                              <p:spacer width="10" />  
-                             
-                        <h:outputLabel value="Código"></h:outputLabel>
-                        <h:inputText value="20295833743" size="30" disabled="TRUE" />
-                        <h:graphicImage id="imgrus" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgrus" value="RUC" />
-                        
-                             
-                         <h:outputLabel value="descripción"></h:outputLabel>
-                        <h:inputText value="201133" size="40" disabled="true" />
-                        <h:graphicImage id="imgnom" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgnom" value="Nombre" />
-                        
-                              <p:spacer width="10" />  
-                              
-                                 
-                        <h:outputLabel value="Propietario*: "></h:outputLabel>
+                       
+                           <h:outputLabel value="Propietario*: "></h:outputLabel>
                       <h:selectOneMenu>
                             <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
                             <f:selectItem itemLabel="Jorge Carranza"  />
@@ -45,6 +31,20 @@
                         </h:selectOneMenu>
                           <h:graphicImage id="imgregI32" library="img" name="pregunta.jpg" />
                         <p:tooltip for="imgregI32" value="Registro" />
+                             
+                         <h:outputLabel value="descripción"></h:outputLabel>
+                        <h:inputText value="" size="40" disabled="false" />
+                        <h:graphicImage id="imgnom" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgnom" value="Nombre" />
+                        
+                              <p:spacer width="10" />  
+                              
+                                   
+                        <h:outputLabel value="Código"></h:outputLabel>
+                        <h:inputText value="" size="30" disabled="false" />
+                        <h:graphicImage id="imgrus" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgrus" value="RUC" />    
+                     
                         
                         
                                 
@@ -71,7 +71,11 @@
                        <h:panelGrid columns="1"> 
                             
                                        <p:dataTable value="#{registro.stock_b}" var="stock" paginator="true" rows="3" paginatorAlwaysVisible="true" emptyMessage="No existen solicitudes pendientes de asignación">
-                
+                     <p:column style="width: 50px">
+                            <f:facet name="header"> <h:selectBooleanCheckbox></h:selectBooleanCheckbox></f:facet>
+                            <h:selectBooleanCheckbox></h:selectBooleanCheckbox>
+                                  </p:column>
+                           
                         <p:column style="width: 50px">
                             <f:facet name="header"><h:outputText value="Item" /></f:facet>
                              <h:outputLabel value="#{stock.item}"></h:outputLabel>
@@ -90,7 +94,7 @@
                            </p:column>
                              <p:column style="width: 100px">
                             <f:facet name="header"><h:outputText value="descripción" /></f:facet>
-                               <h:outputLabel value="dÍA DE LA MADRE"></h:outputLabel>
+                               <h:outputLabel value="Día de la madre"></h:outputLabel>
                              </p:column>
                              
                           <p:column style="width: 100px">
@@ -102,7 +106,7 @@
                             <h:outputLabel value="123jjiji"></h:outputLabel>
                         </p:column>
                                             <p:column style="width: 100px">
-                            <f:facet name="header"><h:outputText value="cuenta gps" /></f:facet>
+                            <f:facet name="header"><h:outputText value="Cuenta GPS" /></f:facet>
                             <h:outputLabel value="123456789-informatica"></h:outputLabel>
                         </p:column>
                                             <p:column style="width: 100px">
@@ -130,14 +134,15 @@
                 </p:panel>
                
                
-               
+                 <p:commandButton value="Asignar" type="button" onclick="popupAsignarProductos.show();"></p:commandButton>
+             
             </p:panel>
         </h:form>
-        <p:dialog widgetVar="popupAgregarItem1" header="Agregar usuario" width="800">
+        <p:dialog widgetVar="popupAgregarItem1" header="Agregar" width="800">
             <h:form>
                  
                      
-                 <p:panel header="Datos del Proveedor">
+                 <p:panel header="Datos">
                     
                     <h:panelGrid columns="9">
                        
@@ -154,30 +159,30 @@
                         
                              <p:spacer width="10" />  
                              
-                        <h:outputLabel value="Código"></h:outputLabel>
-                        <h:inputText value="20295833743" size="30" disabled="false" />
-                        <h:graphicImage id="imgrus" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgrus" value="RUC" />
+                     <h:outputLabel value="Propietario*: "></h:outputLabel>
+                      <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
+                            <f:selectItem itemLabel="Luis Barraza"  />
+                            <f:selectItem itemLabel="Carlos herrera" />
+                          
+                        </h:selectOneMenu>
+                          <h:graphicImage id="imgregI36" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgregI36" value="Registro" />
                         
                              
                          <h:outputLabel value="descripción"></h:outputLabel>
-                        <h:inputText value="201133" size="40" disabled="true" />
+                        <h:inputText value="Cuenta ganadora" size="40" disabled="true" />
                         <h:graphicImage id="imgnom" library="img" name="pregunta.jpg" />
                         <p:tooltip for="imgnom" value="Nombre" />
                         
                               <p:spacer width="10" />  
                               
                                  
-                        <h:outputLabel value="Propietario*: "></h:outputLabel>
-                      <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
-                            <f:selectItem itemLabel="Campaña"  />
-                            <f:selectItem itemLabel="premio" />
-                          
-                        </h:selectOneMenu>
-                          <h:graphicImage id="imgregI36" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgregI36" value="Registro" />
-                        
+                      
+                             <h:outputLabel value="Código"></h:outputLabel>
+                        <h:inputText value="20295833743" size="30" disabled="true" />
+                        <h:graphicImage id="imgrus" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgrus" value="RUC" />
                         
                                 
                          <h:outputLabel value="Cuenta GPS"></h:outputLabel>
@@ -202,9 +207,126 @@
         
         
         
-         <p:dialog widgetVar="popupEditarItem2" header="Editar usuario" width="800">
+        
+        
+             <p:dialog widgetVar="popupAsignarProductos" header="Asignar Productos" width="800">
             <h:form>
-                <p:panel header="Datos del usuario">
+               
+                <p:panel header="Datos generales">
+                    <h:panelGrid columns="9">
+                                             
+                        
+                        
+                        
+                       <h:outputLabel value="Fecha de Ingreso (Inicio)"></h:outputLabel>
+                        <h:inputText value="Dante Carranza" size="30" disabled="false" />
+                        <h:graphicImage id="imgNumFactura1" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgNumFactura1" value="Nro de Fcatura" />
+                        
+                   
+                        
+                         <p:spacer width="10" />
+                         
+                         <h:outputLabel value="Fecha de Ingreso (Fin)"></h:outputLabel>
+                        <h:inputText value="Dante Carranza" size="30" disabled="false" />
+                        <h:graphicImage id="imgNumFactura3" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgNumFactura3" value="Nro de Fcatura" />
+                                   
+                                              
+                        
+                        
+                           <h:outputLabel value="Código: "></h:outputLabel>
+                        <h:inputText value="PROD001" size="30" disabled="false" />
+                        <h:graphicImage id="imgNomPro2" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgNomPro2" value=""/>
+                        
+                          <p:spacer width="10" />
+                           <h:outputLabel value="Productos "></h:outputLabel>
+                        <h:inputText value="TV" size="30" disabled="false" />
+                        <h:graphicImage id="imgNomPro3" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgNomPro3" value=""/>
+                        
+                        
+                           <h:outputLabel value="Descripción "></h:outputLabel>
+                        <h:inputText value="Pantalla Plana" size="30" disabled="false" />
+                        <h:graphicImage id="imgNomPro4" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgNomPro4" value=""/>
+                      
+                    </h:panelGrid>
+                </p:panel>
+                
+                
+                <p:panel header="Productos ingresados">
+                    <p:dataTable value="#{registro.stock_b}" var="stock" page="10">
+                         <p:column style="width: 50px">
+                            <f:facet name="header"> <h:selectBooleanCheckbox></h:selectBooleanCheckbox></f:facet>
+                            <h:selectBooleanCheckbox></h:selectBooleanCheckbox>
+                                  </p:column>
+                           
+                      
+                        <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Item" /></f:facet>
+                             <h:outputLabel value="#{stock.item}"></h:outputLabel>
+                        </p:column>
+                        
+                        <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Producto" /></f:facet>
+                             <h:outputLabel value="#{stock.cod}"></h:outputLabel>
+                        </p:column>
+                        
+                        <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Producto" /></f:facet>
+                             <h:outputLabel value="#{stock.bandeja}"></h:outputLabel>
+                        </p:column>
+                        
+                            <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Cantidad Ingresados" /></f:facet>
+                             <h:outputLabel value="100 "></h:outputLabel>
+                        </p:column>
+                        
+                        <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Cantidad solicitado" /></f:facet>
+                            <h:inputText value="50" size="30" disabled="true" />
+                        </p:column>
+                        
+                        
+                                              
+                      
+                  
+                               
+                      </p:dataTable>
+                      <p:commandButton value="Asignar Todos"></p:commandButton>
+                  
+               
+                    </p:panel>
+            </h:form>
+        </p:dialog>
+        
+        
+                
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+         <p:dialog widgetVar="popupEditarItem2" header="Editar Datos" width="800">
+            <h:form>
+                <p:panel header="Datos">
                     
                     <h:panelGrid columns="9">
                        
@@ -220,20 +342,8 @@
                         
                              <p:spacer width="10" />  
                              
-                        <h:outputLabel value="Código"></h:outputLabel>
-                        <h:inputText value="20295833743" size="30" disabled="false" />
-                        <h:graphicImage id="imgrus" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgrus" value="RUC" />
-                        
-                             
-                         <h:outputLabel value="descripción"></h:outputLabel>
-                        <h:inputText value="201133" size="40" disabled="true" />
-                        <h:graphicImage id="imgnom" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgnom" value="Nombre" />
-                        
-                              <p:spacer width="10" />  
-                              
-                                 
+                
+                                   
                         <h:outputLabel value="Propietario*: "></h:outputLabel>
                       <h:selectOneMenu>
                             <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
@@ -245,22 +355,46 @@
                         <p:tooltip for="imgregI93" value="Registro" />
                         
                         
+                             
+                         <h:outputLabel value="descripción"></h:outputLabel>
+                        <h:inputText value="201133" size="40" disabled="true" />
+                        <h:graphicImage id="imgnom" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgnom" value="Nombre" />
+                        
+                              <p:spacer width="10" />  
+                              
+                      
+                              
+                              
+                                      <h:outputLabel value="Código"></h:outputLabel>
+                        <h:inputText value="20295833743" size="30" disabled="false" />
+                        <h:graphicImage id="imgrus" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgrus" value="RUC" />
+                              
+                              
+                              
+                              
+                              
+                              
+                        
                                 
                          <h:outputLabel value="Cuenta GPS"></h:outputLabel>
                         <h:inputText value="5366663000" size="40" disabled="FALSE" />
                         <h:graphicImage id="imgtlf" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgtlf" value="Nombre" />    
+                        <p:tooltip for="imgtlf" value="Nombre" />   
+                        
+                        
                          <p:spacer width="10" /> 
                          <h:outputLabel value="Cuenta GPS"></h:outputLabel>
                         <h:inputText value="INFORMATICA" size="40" disabled="true" />
                         <h:graphicImage id="imgtlEf" library="img" name="pregunta.jpg" />
                         <p:tooltip for="imgtlEf" value="Nombre" />    
-                         <p:spacer width="10" />
+                      
                             <h:outputLabel value="Nro. Orden Interna"></h:outputLabel>
                         <h:inputText value="INT0001" size="40" disabled="true" />
                         <h:graphicImage id="imgtlf7" library="img" name="pregunta.jpg" />
                         <p:tooltip for="imgtlf7" value="Nombre" />    
-                       
+                        <p:spacer width="10" /> 
                             
                            <h:outputLabel value="Estado*: "></h:outputLabel>
                       <h:selectOneMenu>
