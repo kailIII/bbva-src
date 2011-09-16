@@ -53,8 +53,8 @@
                             <f:selectItem itemLabel="--Todos--"  itemValue="--Seleccione--"/>
                             <f:selectItem itemLabel="Pendiente"  />
                             <f:selectItem itemLabel="En proceso"  />
-                            <f:selectItem itemLabel="Conforme" />    
-                            <f:selectItem itemLabel="No Conforme" />                           
+                            <f:selectItem itemLabel="Cerrado" />    
+                                                      
                         </h:selectOneMenu>
                            <h:graphicImage id="imgarc5" library="img" name="pregunta.jpg" />
                         <p:tooltip for="imgarc5" value="estadooo" />
@@ -73,7 +73,14 @@
                         <p:spacer width="10" />
                         
                       
-                        
+                          <h:outputLabel value="Gestor"></h:outputLabel>
+                         <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Todos--"  itemValue="--Seleccione--"/>
+                            <f:selectItem itemLabel="Daniel Carranza"  />
+                                                 
+                        </h:selectOneMenu>
+                           <h:graphicImage id="imgarc451" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgarc451" value="estadooo" />
                               <p:commandButton value="Buscar"></p:commandButton>
                     </h:panelGrid>
                     
@@ -129,6 +136,11 @@
                            <p:column style="width: 50px">
                             <f:facet name="header"><h:outputText value="Tipo de inspección" /></f:facet>
                            <h:outputLabel value="Programada"></h:outputLabel>
+                        </p:column> 
+                           
+                            <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Gestor" /></f:facet>
+                           <h:outputLabel value="Damiel Carranza"></h:outputLabel>
                         </p:column> 
                                 
                                 <p:column style="width: 50px">
@@ -454,6 +466,18 @@
                                <h:outputLabel value="Faltante "></h:outputLabel>
                       
                         </p:column>
+                              
+                              
+                              <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Estado de No conformidad" /></f:facet>
+                               <h:outputLabel value="Faltante "></h:outputLabel>
+                      
+                        </p:column>
+                              
+                                 <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Regularizado" /></f:facet>
+                               <h:outputLabel value="Error de conteo "></h:outputLabel>
+                             </p:column>
                        
                 
                               <p:column style="width: 50px">
@@ -505,11 +529,7 @@
                         
                          <p:spacer width="10" />
                         
-                           <h:outputLabel value="Gestor Registrador: "></h:outputLabel>
-                        <h:inputText value="Dante Carranza" size="30" disabled="true" />
-                        <h:graphicImage id="imgNum1" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgNum1" value="Nro de Fcatura" />
-                        
+                         
                         
                         
                     </h:panelGrid>
@@ -695,17 +715,15 @@
                 
                   <p:panel header="Subsanar">
                     <h:panelGrid columns="9">
-                                                                                        
-                                 
+                                                                      
                            
-                          <h:outputLabel value="Estado:"></h:outputLabel>
+                          <h:outputLabel value="Estado de la Diferencia:"></h:outputLabel>
                          <h:selectOneMenu>
                             <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
-                             <f:selectItem itemLabel="rEGULARIZADO"  />
+                             <f:selectItem itemLabel="Regularizado"  />
                             <f:selectItem itemLabel="Verificado virtual"  />
                             <f:selectItem itemLabel="Verificado físico"  />
-                            <f:selectItem itemLabel="No conforme"  />
-                            <f:selectItem itemLabel="Cerrado"  />
+                            <f:selectItem itemLabel="Subsanado"  />
                                                                        
                         </h:selectOneMenu>
                            <h:graphicImage id="imgCAM" library="img" name="pregunta.jpg" />
