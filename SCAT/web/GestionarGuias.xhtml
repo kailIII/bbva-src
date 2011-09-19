@@ -21,16 +21,7 @@
                          <p:tooltip for="imganoo" value="Tanosss" />
                 
                        
-                       <h:outputLabel value="Tipo de Producto*: "></h:outputLabel>
-                        <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Seleccione--" />
-                            <f:selectItem itemLabel="Campaña"/>
-                            <f:selectItem itemLabel="Premio"/>
-                           
-                         </h:selectOneMenu>
-                         <h:graphicImage id="imgtip" library="img" name="pregunta.jpg" />                       
-                         <p:tooltip for="imgtip" value="Tanosss" />                    
-                                                                  
+                   
                  
                                  <p:spacer width="10" />  
                                
@@ -39,43 +30,20 @@
                     <h:graphicImage id="imgfechfE" library="img" name="pregunta.jpg" />
                     <p:tooltip for="imgfechfE" value="Fecha de Carga Final" />
                         
-                         <h:outputLabel value="Campaña"></h:outputLabel>
-                         <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Todos--"  itemValue="--Seleccione--"/>
-                            <f:selectItem itemLabel="Cuenta ganadora"  />
-                            <f:selectItem itemLabel="Cuenta CTS"  />
-                                                      
-                        </h:selectOneMenu>
-                           <h:graphicImage id="imgarc45" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgarc45" value="estadooo" />
+                    
+                           
+                     <h:outputLabel value="Fecha de Inicio "></h:outputLabel>
+                       <h:inputText value="26/08/2011" size="30" disabled="false" />                      
+                       <h:graphicImage id="imganoo522" library="img" name="pregunta.jpg" />                       
+                   <p:tooltip for="imganoo522" value="Tanosss" />
+                   
+                             <p:spacer width="10" />
+                             
+                     <h:outputLabel value="Fecha de Fin "></h:outputLabel>
+                       <h:inputText value="15/08/2011" size="30" disabled="false" />                      
+                       <h:graphicImage id="imganoo533" library="img" name="pregunta.jpg" />                       
+                   <p:tooltip for="imganoo533" value="Tanosss" />
                          
-                      <p:spacer width="10" />  
-                      
-                    <h:outputLabel value="Propietario"></h:outputLabel>
-                         <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Todos--"  itemValue="--Seleccione--"/>
-                            <f:selectItem itemLabel="Luis Robles"  />
-                            <f:selectItem itemLabel="Raul Torres"  />
-                            <f:selectItem itemLabel="Marìa Robles" />    
-                            <f:selectItem itemLabel="Martin Dìaz" />                           
-                        </h:selectOneMenu>
-                           <h:graphicImage id="imgarc4c5" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgarc4c5" value="estadooo" />
-                        
-                        
-                        <h:outputLabel value="Equipo:"></h:outputLabel>
-                         <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Todos--"  itemValue="--Seleccione--"/>
-                            <f:selectItem itemLabel="Juan Carlos Gutierrez"  />
-                            <f:selectItem itemLabel="Marìa Teresa Vargas Dìaz"  />
-                                                   
-                        </h:selectOneMenu>
-                           <h:graphicImage id="imgarc15" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgarc15" value="estadooo" />
-                            
-                          <p:spacer width="10" />  
-                      
-                        
                     
                         <p:commandButton value="Buscar"></p:commandButton>
                     </h:panelGrid>
@@ -85,20 +53,22 @@
                        <h:panelGrid columns="9"> 
                             <p:dataTable value="#{registro.stock_b}" var="stock" paginator="true" rows="5" paginatorAlwaysVisible="true" emptyMessage="No existen resultados con los criterios ingresados">
                         
-                        <p:column style="width: 50px">
+                        <p:column style="width: 100px">
                             <f:facet name="header"><h:outputText value="Item" /></f:facet>
-                             <h:outputLabel value="#{stock.item}"></h:outputLabel>
+                       
+                                <p:commandButton value="#{stock.item}" type="button"></p:commandButton>
+                 
                         </p:column>
                          
                                  
                         
-                     <p:column style="width: 50px">
+                     <p:column style="width: 100px">
                             <f:facet name="header"><h:outputText value="Rango Inicio" /></f:facet>
                              <h:outputLabel value="00001"></h:outputLabel>
                      </p:column>
                                             
                                 
-                                 <p:column style="width: 50px">
+                                 <p:column style="width: 100px">
                             <f:facet name="header"><h:outputText value="Rango Fin" /></f:facet>
                                <h:outputLabel value="00099"></h:outputLabel>
                                  </p:column>
@@ -115,7 +85,17 @@
                             <h:outputLabel value="Transporte01"></h:outputLabel>
                         </p:column>
                                                         
-                      
+                                  
+                         <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Fecha de registro" /></f:facet>
+                          <h:outputLabel value="15/08/2011"></h:outputLabel>
+                        </p:column>
+                        
+                        
+                         <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Usuario de registro" /></f:facet>
+                          <h:outputLabel value="15/08/2011"></h:outputLabel>
+                        </p:column>
                                                                 
                                 <p:column style="width: 50px">
                             <f:facet name="header"><h:outputText value="Acciones" /></f:facet>
@@ -133,6 +113,11 @@
                       <h:panelGrid columns="9"> 
                             <p:dataTable value="#{registro.stock_b}" var="stock" paginator="true" rows="1" paginatorAlwaysVisible="true" emptyMessage="No existen resultados con los criterios ingresados">
                         
+                                  <p:column style="width: 50px">
+                            <f:facet name="header"> <h:selectBooleanCheckbox></h:selectBooleanCheckbox></f:facet>
+                            <h:selectBooleanCheckbox></h:selectBooleanCheckbox>
+                                  </p:column>
+                                
                         <p:column style="width: 50px">
                             <f:facet name="header"><h:outputText value="Item" /></f:facet>
                              <h:outputLabel value="#{stock.item}"></h:outputLabel>
@@ -143,13 +128,21 @@
                            <h:outputLabel value="78"></h:outputLabel>
                                 </p:column>
                                 
+                                              <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Nro de pedido" /></f:facet>
+                           <h:outputLabel value="PED078"></h:outputLabel>
+                                </p:column>
                                 
+                                 <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Solicitante" /></f:facet>
+                           <h:outputLabel value="78"></h:outputLabel>
+                                </p:column>
                                                                        
                         
                                         
                         <p:column style="width: 50px">
                             <f:facet name="header"><h:outputText value="Estado de la entrega" /></f:facet>
-                            <h:outputLabel value="Faltante "></h:outputLabel>
+                            <h:outputLabel value="No recibido "></h:outputLabel>
                         </p:column>
                     
                                                                 
@@ -162,8 +155,8 @@
                          </p:column>
                                 
                                  <p:column style="width: 50px">
-                            <f:facet name="header"><h:outputText value="Subsanar" /></f:facet>
-                                <p:commandButton value="Editar" type="button" onclick="popupSubsanar.show();"></p:commandButton>
+                            <f:facet name="header"><h:outputText value="Segumiento" /></f:facet>
+                                <p:commandButton value="Seguimiento" type="button" onclick="popupSeguimiento.show();"></p:commandButton>
                  
                          </p:column>
                            
@@ -179,7 +172,8 @@
               
                
                 <p:commandButton value="Exportar"></p:commandButton>
-               
+                 <p:commandButton value="Subsanar" type="button" onclick="popupSubsanar.show();"></p:commandButton>
+                 
             </p:panel>
         </h:form>
        
@@ -194,17 +188,37 @@
         
         
         
-         <p:dialog widgetVar="Registrarguias" header="Seguimiento de guías" width="800">
+         <p:dialog widgetVar="Registrarguias" header="Registrar Guías No conformes" width="800">
             <h:form>
                 
                 <h:panelGrid columns="9">
                     
                
-                
+                  <h:outputLabel value="Tipo de registro"></h:outputLabel>
+                         <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Todos--"  itemValue="--Seleccione--"/>
+                            <f:selectItem itemLabel="Puntual"  />
+                            <f:selectItem itemLabel="Rangos"  />
+                              </h:selectOneMenu>
+                   <h:graphicImage id="imgarc4c52" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgarc4c52" value="estadooo" />
+                        
+                                <p:spacer width="10" />
+                                
                    <h:outputLabel value="Código de Guía "></h:outputLabel>
-                       <h:inputText value="0000078" size="30" disabled="false" />                      
+                       <h:inputText value="CODGUIA001" size="30" disabled="false" />                      
                        <h:graphicImage id="imganoo5" library="img" name="pregunta.jpg" />                       
                    <p:tooltip for="imganoo5" value="Tanosss" />
+                         
+                     <h:outputLabel value="Rango Inicio "></h:outputLabel>
+                       <h:inputText value="" size="30" disabled="false" />                      
+                       <h:graphicImage id="imganoo52" library="img" name="pregunta.jpg" />                       
+                   <p:tooltip for="imganoo52" value="Tanosss" />
+                             <p:spacer width="10" />
+                     <h:outputLabel value="Rango Fin "></h:outputLabel>
+                       <h:inputText value="" size="30" disabled="false" />                      
+                       <h:graphicImage id="imganoo53" library="img" name="pregunta.jpg" />                       
+                   <p:tooltip for="imganoo53" value="Tanosss" />
                          
                                            
                              <h:outputLabel value="Estado"></h:outputLabel>
@@ -219,10 +233,12 @@
                         <p:tooltip for="imgarc4c5" value="estadooo" />
                          <p:spacer width="10" />
                         
-                            <p:column style="width: 200px">
-                         <f:facet name="header"><h:outputText value="Observaciones:" /></f:facet>
-                         <h:inputTextarea/>                                           
-                         </p:column>
+                           
+                         
+                         <h:outputLabel value="Observaciones "></h:outputLabel>
+                   <h:inputTextarea/>                      
+                       <h:graphicImage id="imganooE53" library="img" name="pregunta.jpg" />                       
+                   <p:tooltip for="imganooE53" value="Tanosss" />
                          
                            
                        
@@ -256,8 +272,7 @@
                          <h:selectOneMenu>
                             <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
                             <f:selectItem itemLabel="Regularizado"  />
-                            <f:selectItem itemLabel="Subsanado"  />
-                            <f:selectItem itemLabel="Pendiente"  />
+                       
                            
                                                   
                         </h:selectOneMenu>
@@ -265,10 +280,10 @@
                         <p:tooltip for="imgarc4c5" value="estadooo" />
                          <p:spacer width="10" />
                         
-                            <p:column style="width: 200px">
-                         <f:facet name="header"><h:outputText value="Observaciones:" /></f:facet>
+                            <h:outputLabel value="Observaciones:"></h:outputLabel>
                          <h:inputTextarea/>                                           
-                         </p:column>
+                         <h:graphicImage id="imgarc4c50" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgarc4c50" value="estadooo" />
                          
                            
                        
@@ -276,38 +291,41 @@
                         
                        <p:commandButton value="Guardar" />
                
+
+            </h:form>
+        </p:dialog>
+        
+        
+             <p:dialog widgetVar="popupSeguimiento" header="Seguimiento" width="800">
+           <h:form>
+                 
+               
                 <p:panel header="Detalle de la inspección">
-                    <p:dataTable value="#{registro.seg_editar}" var="seg_" page="10">
+                   
+                    <p:dataTable value="#{registro.stock_b}" var="stock" paginator="true" rows="3" paginatorAlwaysVisible="true" emptyMessage="No existen solicitudes pendientes de asignación">
+                  
                         
                         <p:column style="width: 50px">
                             <f:facet name="header"><h:outputText value="Item" /></f:facet>
-                             <h:outputLabel value="#{seg_.segitem} "></h:outputLabel>
+                             <h:outputLabel value="#{stock.item}"></h:outputLabel>
                         </p:column>
                       
                         
                                                    
                           <p:column style="width: 50px">
                             <f:facet name="header"><h:outputText value="Estado" /></f:facet>
-                          <h:outputLabel value="#{seg_.seg}"></h:outputLabel>
+                          <h:outputLabel value="#{stock.estguia}"></h:outputLabel>
+                          
                         </p:column>
                        
-                           <p:column style="width: 50px">
-                            <f:facet name="header"><h:outputText value="Tipo de No conformidad" /></f:facet>
-                           <h:outputLabel value="Faltante"></h:outputLabel>
-                        </p:column> 
+                          
                 
                               <p:column style="width: 50px">
                          <f:facet name="header"><h:outputText value="Observaciones:" /></f:facet>
                          <h:inputTextarea/>                                           
                          </p:column>
                   
-                                                              
-                                 
-                        <p:column style="width: 50px">
-                            <f:facet name="header"><h:outputText value="Regularización" /></f:facet>
-                                 <h:outputLabel value="#{seg_.segreg}"></h:outputLabel>
-                        
-                        </p:column>
+                      
                                  
                         
                          <p:column style="width: 50px">
@@ -329,8 +347,6 @@
                     </p:panel>
             </h:form>
         </p:dialog>
-        
-        
         
         
       
