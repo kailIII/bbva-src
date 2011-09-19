@@ -143,6 +143,7 @@ public class Registro {
              c27.setCantidad("50");
              c27.setCod("PQ256");
              c27.setCom("0");
+              c27.setEstguia("Entregado");
             this.stock_b.add(c27);
                        
                    
@@ -154,6 +155,7 @@ public class Registro {
              c28.setCantidad("50");
              c28.setCod("PQ257");
               c28.setCom("2");
+              c28.setEstguia("No recibido");
             this.stock_b.add(c28);
             
                           
@@ -165,6 +167,7 @@ public class Registro {
              c29.setCantidad("50");
              c29.setCod("PQ258");
               c29.setCom("0");
+              c29.setEstguia("Regularizado");
             this.stock_b.add(c29);
             
             
@@ -178,6 +181,7 @@ public class Registro {
              c30.setCantidad("50");
              c30.setCod("PQ258");
               c30.setCom("0");
+             
             this.stock_b.add(c30);
             
                Stock_b c31= new Stock_b();  

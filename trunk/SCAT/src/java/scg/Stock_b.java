@@ -92,5 +92,15 @@ public class Stock_b {
         {
         this.name1 = name1;
         }
+        
+                private String estguia;
+        public String getEstguia()
+        {
+        return estguia;
+        }
+        public void setEstguia (String estguia) 
+        {
+        this.estguia = estguia;
+        }
 }
 
