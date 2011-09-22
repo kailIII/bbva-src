@@ -19,71 +19,81 @@
                          <h:graphicImage id="imganoo" library="img" name="pregunta.jpg" />                       
                          <p:tooltip for="imganoo" value="Tanosss" />
                 
-                                          <h:outputLabel value="Tipo de origen*: "></h:outputLabel>
+                                     
+                                 <h:outputLabel value="Departamento: "></h:outputLabel>
                         <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Seleccione--" />
-                            <f:selectItem itemLabel="Campaña"/>
-                            <f:selectItem itemLabel="Premio"/>
+                            <f:selectItem itemLabel="--Todos--" />
+                            <f:selectItem itemLabel="Publicidad"/>
+                            <f:selectItem itemLabel="Gestión comercial"/>
                            
                          </h:selectOneMenu>
-                         <h:graphicImage id="imgtip" library="img" name="pregunta.jpg" />                       
-                         <p:tooltip for="imgtip" value="Tanosss" />                    
-                                                                        
-                        
-                               <p:spacer width="10" />   
-                       
-                        
-                        <h:outputLabel value="Campaña/Premio"></h:outputLabel>
+                         <h:graphicImage id="imgdep" library="img" name="pregunta.jpg" />                       
+                         <p:tooltip for="imgdep" value="Tanosss" />                    
+                                       <p:spacer width="10" />   
+                                                        
+                       <h:outputLabel value="Campaña"></h:outputLabel>
                          <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Todos--"  itemValue="--Seleccione--"/>
+                            <f:selectItem itemLabel="--Seleccione--"  />
+                            <f:selectItem itemLabel="Todos"  />
                             <f:selectItem itemLabel="Cuenta ganadora"  />
                             <f:selectItem itemLabel="Cuenta CTS"  />
                                                       
                         </h:selectOneMenu>
-                           <h:graphicImage id="imgarc4P5" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgarc4P5" value="estadooo" />
+                           <h:graphicImage id="imgarc4P5cam" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgarc4P5cam" value="estadooo" />
+                            
                         
-                     
+                       <h:outputLabel value="Premio"></h:outputLabel>
+                         <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Seleccione--"/>
+                             <f:selectItem itemLabel="Todos"/>
+                            <f:selectItem itemLabel="Ollas+vasos"  />
+                             <f:selectItem itemLabel="TV 11°"  />
+                                                 
+                        </h:selectOneMenu>
+                           <h:graphicImage id="imgarc451" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgarc451" value="estadooo" />
+                               
                         
-                        <h:outputLabel value="Gestor"></h:outputLabel>
+                        <p:spacer width="10" />   
+                       <h:outputLabel value="Gestor"></h:outputLabel>
                          <h:selectOneMenu>
                             <f:selectItem itemLabel="--Todos--"  itemValue="--Seleccione--"/>
                             <f:selectItem itemLabel="Daniel Carranza"  />
                                                  
                         </h:selectOneMenu>
-                           <h:graphicImage id="imgarc451" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgarc451" value="estadooo" />
+                           <h:graphicImage id="imgarc4512" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgarc4512" value="estadooo" />
+                    
+                         <h:outputLabel value="Estado"></h:outputLabel>
+                         <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Todos--"  itemValue="--Seleccione--"/>
+                            <f:selectItem itemLabel="Asignado"  />
+                             <f:selectItem itemLabel="Pendiente"  />
+                                                 
+                        </h:selectOneMenu>
+                           <h:graphicImage id="imgarc451e" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgarc451e" value="estadooo" />
+                          <p:spacer width="10" />
                         
                         
-                                <p:spacer width="10" /> 
+                             <h:outputLabel value="Código de Producto: "></h:outputLabel>
+                    <h:inputText value="OK123456" size="30" disabled="false" />
+                        <h:graphicImage id="imgfechfEcw" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgfechfEcw" value="Fecha de Carga Final" />     
+                                
                         
                         <h:outputLabel value="Producto: "></h:outputLabel>
                     <h:inputText value="TV" size="30" disabled="false" />
                         <h:graphicImage id="imgfechfE" library="img" name="pregunta.jpg" />
                         <p:tooltip for="imgfechfE" value="Fecha de Carga Final" />
                                  
-                               
-                               <h:outputLabel value="Código de Producto: "></h:outputLabel>
-                    <h:inputText value="OK123456" size="30" disabled="false" />
-                        <h:graphicImage id="imgfechfEc" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgfechfEc" value="Fecha de Carga Final" />      
-                               
-                                   <p:spacer width="10" />   
-                       
-                    <h:outputLabel value="Propietario"></h:outputLabel>
-                         <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Todos--"  itemValue="--Seleccione--"/>
-                            <f:selectItem itemLabel="Luis Robles"  />
-                            <f:selectItem itemLabel="Raul Torres"  />
-                            <f:selectItem itemLabel="Marìa Robles" />    
-                            <f:selectItem itemLabel="Martin Dìaz" />                           
-                        </h:selectOneMenu>
-                           <h:graphicImage id="imgarc45" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgarc45" value="estadooo" />
-                        
+                                                           
+                          
                                                    
                         
-                           
+                            <p:spacer width="10" />   
+                       
                         <p:commandButton value="Buscar"></p:commandButton>
                     </h:panelGrid>
                 </p:panel>
@@ -118,14 +128,25 @@
                             <f:facet name="header"><h:outputText value="Comprometidos" /></f:facet>
                             <h:outputLabel value="#{stock.com}"></h:outputLabel>
                         </p:column>
-                                      <p:column style="width: 100px">
-                            <f:facet name="header"><h:outputText value="Tipo" /></f:facet>
-                             <h:outputLabel value="Campaña"></h:outputLabel>
+                                 <p:column style="width: 150px">
+                            <f:facet name="header"><h:outputText value="Departamento" /></f:facet>
+                             <h:outputLabel value="Publicidad"></h:outputLabel>
                         </p:column>
-                         <p:column style="width: 150px">
-                            <f:facet name="header"><h:outputText value="Propietario" /></f:facet>
-                             <h:outputLabel value="Alfredo Ríos"></h:outputLabel>
+                                      <p:column style="width: 200px">
+                            <f:facet name="header"><h:outputText value="Campaña" /></f:facet>
+                             <h:outputLabel value="Campaña cuenta ganadora"></h:outputLabel>
                         </p:column>
+                                
+                                 <p:column style="width: 200px">
+                            <f:facet name="header"><h:outputText value="Premio" /></f:facet>
+                             <h:outputLabel value="OLLA+VASOS"></h:outputLabel>
+                        </p:column>
+                                
+                                 <p:column style="width: 150px">
+                            <f:facet name="header"><h:outputText value="Estado" /></f:facet>
+                             <h:outputLabel value="Asignado"></h:outputLabel>
+                        </p:column>
+                        
                         <p:column style="width: 150px">
                             <f:facet name="header"><h:outputText value="Gestor" /></f:facet>
                              <h:outputLabel value="Daniel Carranza "></h:outputLabel>
@@ -148,12 +169,15 @@
             <h:form>
                 
                                                                     
-                       <h:outputLabel value="Producto: "></h:outputLabel>
+                       <h:outputLabel value="Código de Producto: "></h:outputLabel>
+                        <h:inputText value="PROD001" size="30" disabled="true" />
+                        <h:graphicImage id="imgPRO" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgPRO" value="Nro de Fcatura" />
+                        
+                   <h:outputLabel value="Producto: "></h:outputLabel>
                         <h:inputText value="TV" size="30" disabled="true" />
                         <h:graphicImage id="imgNumFactura1" library="img" name="pregunta.jpg" />
                         <p:tooltip for="imgNumFactura1" value="Nro de Fcatura" />
-                        
-                 
                
                     <h:panelGrid columns="2">
                                                  
@@ -177,7 +201,7 @@
                             <h:outputLabel value="Entrada "></h:outputLabel>
                         </p:column>
                       
-                        <p:column style="width:60px">
+                        <p:column style="width:100px">
                             <f:facet name="header"><h:outputText value="Motivo" /></f:facet>
                                                     
                             <h:outputLabel value="Solicitud de usuario"></h:outputLabel>
@@ -195,6 +219,11 @@
                         </p:column>
                       
                       
+                                 <p:column style="width: 150px">
+                            <f:facet name="header"><h:outputText value="Estado" /></f:facet>
+                             <h:outputLabel value="Asignado"></h:outputLabel>
+                        </p:column>
+                        
                       
                  
                              
