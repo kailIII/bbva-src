@@ -63,7 +63,21 @@
                     <h:graphicImage id="imgfechfEcry" library="img" name="pregunta.jpg" />
                     <p:tooltip for="imgfechfEcry" value="Fecha de Carga Final" /> 
                  
-                        
+                        <p:spacer width="10" />  
+                        <h:outputLabel value="Feria: "></h:outputLabel>
+                        <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Todos--" />
+                            <f:selectItem itemLabel="Feria1"/>                        
+                              <f:selectItem itemLabel="Feria2"/>
+                            <f:selectItem itemLabel="Feria3"/>
+                              <f:selectItem itemLabel="Feria4"/>
+                           
+                         </h:selectOneMenu>
+                         <h:graphicImage id="imgtip2" library="img" name="pregunta.jpg" />                       
+                         <p:tooltip for="imgtip2" value="Tanosss" />                    
+                                                                  
+                         
+                         
                         <p:commandButton value="Buscar"></p:commandButton>
                     </h:panelGrid>
                 </p:panel>
