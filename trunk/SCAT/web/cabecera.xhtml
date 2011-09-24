@@ -6,44 +6,52 @@
     <h:form>
         <h:graphicImage library="img" name="logo.jpg" /><br />
         
-        <p:menuButton value="Gestor de SG">
-        <p:menuitem value="Consultar Inspecciones" url="/ConsultarInspecciones.jsf" />
+        <p:menuButton value="Consultas">
+        
         <p:menuitem value="Consultar Stock" url="/ConsultarStock.jsf" />
         <p:menuitem value="Consultar Movimientos" url="/ConsultarMovimientos.jsf" />        
-        <p:menuitem value="Gestionar Movimientos" url="/GestionarMovimientos.jsf" />    
-       <p:menuitem value="Gestionar Guìas" url="/GestionarGuias.jsf" />    
-      <p:menuitem value="Reporte de seguimiento de diferencias" url="/GenerarReporte.jsf" />    
-       <p:menuitem value="Reporte: Proveedor * Nro Orden interna" url="/GenerarReporte1.jsf" />    
-      
-                     
+       
+       <p:menuitem value="Consultar Solicitudes" url="/ConsultarSolicitudes.jsf" />
+                 
         </p:menuButton>   
                
-        <p:menuButton value="Usuario">
-        <p:menuitem value="Consultar Solicitudes" url="/ConsultarSolicitudes.jsf" />
-        <p:menuitem value="Registrar Solicitud" url="/RegistrarSolicitud.jsf" /> 
-           <p:menuitem value="Administrar Campañas y Premios" url="/Administrarcamxprem.jsf" />
+        <p:menuButton value="Gestión">
+              <p:menuitem value="Gestionar Diferencias" url="/ConsultarDiferencias.jsf" /> 
+            <p:menuitem value="Gestionar Inspección" url="/ConsultarInspecciones.jsf" />
+         <p:menuitem value="Gestionar Movimientos" url="/GestionarMovimientos.jsf" />    
+       <p:menuitem value="Gestionar Guìas" url="/GestionarGuias.jsf" />    
+               
         </p:menuButton> 
         
-        <p:menuButton value="Transportista">
-        <p:menuitem value="Consultar Entrega" url="/ConsultarEntrega.jsf" /> 
+        <p:menuButton value="Registro">
+                 <p:menuitem value="Registrar Entrega" url="/ConsultarEntrega.jsf" /> 
+
+            <p:menuitem value="Registrar Solicitud" url="/RegistrarSolicitud.jsf" /> 
+      
        </p:menuButton>   
         
-         <p:menuButton value="Gestor de Compras">
-          <p:menuitem value="Consultar Diferencias" url="/ConsultarDiferencias.jsf" />  
+         <p:menuButton value="Reportes">
+             <p:menuitem value="Reporte de seguimiento de diferencias" url="/GenerarReporte.jsf" />    
+       <p:menuitem value="Reporte: Proveedor * Nro Orden interna" url="/GenerarReporte1.jsf" />    
+         
        </p:menuButton> 
         
         
-       <p:menuButton value="Administrador">
+       <p:menuButton value="Administrar">
           <p:menuitem value="Administrar Usuarios" url="/AdministrarUsuarios.jsf" />
        <p:menuitem value="Administrar Proveedores" url="/Administrarproveedores.jsf" />
        <p:menuitem value="Administrar Productos" url="/AdministrarProductos.jsf" />
    <p:menuitem value="Administrar Campañas y Premios" url="/Administrarcamxprem.jsf" />
+   
    <p:menuitem value="Administrar Destinos" url="/AdministrarDestinos.jsf" />    
        </p:menuButton>   
         
-        
+        <p:spacer width="50" /> 
+      <p:menuButton value="Salir">
       
-        
+       </p:menuButton> 
+          <p:spacer width="50" /> 
+              <h:outputLabel value="P0015740-Karen aldazabal Apellido2"></h:outputLabel>
         
         
         
