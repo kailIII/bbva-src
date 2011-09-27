@@ -144,6 +144,7 @@ public class Registro {
              c27.setCod("PQ256");
              c27.setCom("0");
               c27.setEstguia("Entregado");
+                  c27.setTipoNoConf("Observado");
             this.stock_b.add(c27);
                        
                    
@@ -156,6 +157,7 @@ public class Registro {
              c28.setCod("PQ257");
               c28.setCom("2");
               c28.setEstguia("No recibido");
+              c28.setTipoNoConf("Faltante");
             this.stock_b.add(c28);
             
                           
