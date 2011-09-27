@@ -102,5 +102,14 @@ public class Stock_b {
         {
         this.estguia = estguia;
         }
+              private String tipoNoConf;
+        public String getTipoNoConf()
+        {
+        return tipoNoConf;
+        }
+        public void setTipoNoConf (String tipoNoConf) 
+        {
+        this.tipoNoConf = tipoNoConf;
+        }
 }
 
