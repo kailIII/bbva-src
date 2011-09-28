@@ -108,7 +108,7 @@ public class Registro {
        
               
         Seg_editar c23 = new Seg_editar();  
-          c23.setSeg("Resuelto");
+          c23.setSeg("Regularizado");
           c23.setSegitem("004");
           c23.setSegreg("Pagar pieza");
         this.seg_editar.add(c23);
@@ -116,18 +116,18 @@ public class Registro {
                 
         
           Seg_editar c24 = new Seg_editar();  
-         c24.setSeg("Verificado virtual");
+         c24.setSeg("Subsanado");
           c24.setSegitem("005");
         this.seg_editar.add(c24);
        
               
         Seg_editar c25 = new Seg_editar();  
-          c25.setSeg("Verificado físico");
+         
           c25.setSegitem("006");
         this.seg_editar.add(c25);
         
          Seg_editar c26 = new Seg_editar();  
-          c26.setSeg("Cerrado");
+       
           c26.setSegitem("007");
         this.seg_editar.add(c26);
         
