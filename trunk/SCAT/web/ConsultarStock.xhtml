@@ -56,6 +56,17 @@
                                
                         
                         <p:spacer width="10" />   
+                         <h:outputLabel value="Feria"></h:outputLabel>
+                         <h:selectOneMenu>
+                              <f:selectItem itemLabel="--No aplica--"  itemValue="--Seleccione--"/>
+                            <f:selectItem itemLabel="--Todos--"/>
+                            <f:selectItem itemLabel="Feria 01"  />
+                             <f:selectItem itemLabel="Feria 02"  />
+                                                 
+                        </h:selectOneMenu>
+                           <h:graphicImage id="feri" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="feri" value="feria" />
+                        
                        <h:outputLabel value="Gestor"></h:outputLabel>
                          <h:selectOneMenu>
                             <f:selectItem itemLabel="--Todos--"  itemValue="--Seleccione--"/>
@@ -65,17 +76,11 @@
                            <h:graphicImage id="imgarc4512" library="img" name="pregunta.jpg" />
                         <p:tooltip for="imgarc4512" value="estadooo" />
                     
-                         <h:outputLabel value="Estado"></h:outputLabel>
-                         <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Todos--"  itemValue="--Seleccione--"/>
-                            <f:selectItem itemLabel="Asignado"  />
-                             <f:selectItem itemLabel="Pendiente"  />
-                                                 
-                        </h:selectOneMenu>
-                           <h:graphicImage id="imgarc451e" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgarc451e" value="estadooo" />
-                          <p:spacer width="10" />
+                           <p:spacer width="10" />
                         
+                           
+                      
+                       
                         
                              <h:outputLabel value="Código de Producto: "></h:outputLabel>
                     <h:inputText value="OK123456" size="30" disabled="false" />
@@ -93,12 +98,21 @@
                                                    
                         
                             <p:spacer width="10" />   
-                       
+                          <h:outputLabel value="Estado"></h:outputLabel>
+                         <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Todos--"  itemValue="--Seleccione--"/>
+                            <f:selectItem itemLabel="Asignado"  />
+                             <f:selectItem itemLabel="Pendiente"  />
+                                                 
+                        </h:selectOneMenu>
+                           <h:graphicImage id="imgarc451e" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgarc451e" value="estadooo" />
                         <p:commandButton value="Buscar"></p:commandButton>
                     </h:panelGrid>
                 </p:panel>
                    
                 <p:panel header="Detalle del Stock">
+                     <h:outputLabel value="Cantidad de registros: 35"></h:outputLabel>
                        <h:panelGrid columns="9"> 
                             <p:dataTable value="#{registro.stock_b}" var="stock" paginator="true" rows="5" paginatorAlwaysVisible="true" emptyMessage="No existen resultados con los criterios ingresados">
                         

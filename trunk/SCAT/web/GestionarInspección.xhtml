@@ -60,17 +60,7 @@
                         <p:tooltip for="imgarc5" value="estadooo" />
                                           
                      
-                        <h:outputLabel value="Tipo de no conformidad"></h:outputLabel>
-          <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Todos--"  itemValue="--Seleccione--"/>
-                            <f:selectItem itemLabel="MObservado"  />
-                            <f:selectItem itemLabel="Faltante"  />
-                           
-                                                  
-                        </h:selectOneMenu>
-                           <h:graphicImage id="imgarc4q5" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgarc4q5" value="estadooo" />
-                        <p:spacer width="10" />
+                       
                         
                       
                           <h:outputLabel value="Gestor"></h:outputLabel>
@@ -94,63 +84,55 @@
                    
                    
                 <p:panel header="Inspecciones">
+                   <h:outputLabel value="Cantidad de registros: 35"></h:outputLabel>
                     
-                       <h:panelGrid columns="9"> 
+                        <h:panelGrid columns="9"> 
                             
                        <p:dataTable value="#{registro.stock_b}" var="stock" paginator="true" rows="5" paginatorAlwaysVisible="true" emptyMessage="No existen solicitudes pendientes de asignación">
                      
                            
-                           <p:column style="width: 50px">
-                            <f:facet name="header"> <h:selectBooleanCheckbox></h:selectBooleanCheckbox></f:facet>
-                            <h:selectBooleanCheckbox></h:selectBooleanCheckbox>
-                                  </p:column>
-                           
-                            <p:column style="width: 50px">
+                         <p:column style="width: 70px">
                             <f:facet name="header"><h:outputText value="Código de insp." /></f:facet>
                             
-                                  <p:commandButton value="INS#{stock.item}" type="button"></p:commandButton>
+                                  <p:commandButton value="INS00#{stock.item}" type="button"></p:commandButton>
                         
                             </p:column>
                            
                           
-                           
-                           <p:column style="width: 50px">
-                            <f:facet name="header"><h:outputText value="Resultado de Insp." /></f:facet>
+                            
+                           <p:column style="width: 70px">
+                            <f:facet name="header"><h:outputText value="Editar Insp." /></f:facet>
                              <p:commandButton value="Editar" type="button" onclick="popupEditarInspeccion.show();"></p:commandButton>
                             </p:column>
                          
-                           <p:column style="width: 50px">
-                            <f:facet name="header"><h:outputText value="No conformes" /></f:facet>
-                            <h:outputLabel value="#{stock.com}"></h:outputLabel>
-                        </p:column>   
-                          
+                           
                                   
-                                 <p:column style="width: 70px">
+                                 <p:column style="width: 100px">
                             <f:facet name="header"><h:outputText value="Estado" /></f:facet>
                            <h:outputLabel value="En proceso"></h:outputLabel>
                         </p:column> 
                                  
-                           <p:column style="width: 50px">
+                           <p:column style="width: 70px">
                             <f:facet name="header"><h:outputText value="Almacén" /></f:facet>
                            <h:outputLabel value="PITS"></h:outputLabel>
                         </p:column> 
                            
-                           <p:column style="width: 50px">
+                           <p:column style="width: 70px">
                             <f:facet name="header"><h:outputText value="Tipo de inspección" /></f:facet>
                            <h:outputLabel value="Programada"></h:outputLabel>
                         </p:column> 
                            
-                            <p:column style="width: 100px">
+                            <p:column style="width: 120px">
                             <f:facet name="header"><h:outputText value="Gestor" /></f:facet>
-                           <h:outputLabel value="Damiel Carranza"></h:outputLabel>
+                           <h:outputLabel value="Damiel Carranza apellido02"></h:outputLabel>
                         </p:column> 
                                 
-                                <p:column style="width: 50px">
+                                <p:column style="width: 100px">
                             <f:facet name="header"><h:outputText value="Usuario de registro" /></f:facet>
                              <h:outputLabel value="HSAIRA"></h:outputLabel>
                         </p:column>    
                                 
-                                 <p:column style="width: 50px">
+                                 <p:column style="width: 70px">
                             <f:facet name="header"><h:outputText value="Fecha de registro" /></f:facet>
                             <h:outputLabel value="18/08/2011 "></h:outputLabel> 
                                  
@@ -164,9 +146,12 @@
                
                
                              
-                               <p:commandButton value="Informar a Compras" type="button"></p:commandButton>
-                             <p:commandButton value="Exportar" type="button"></p:commandButton>
+                               
                               <p:panel header="Detalle de Inspección">
+                                  <h:panelGrid columns="4"> 
+                    
+                     <p:spacer width="10" />
+                     
                      <h:outputLabel value="Buscar:"></h:outputLabel>
                          <h:selectOneMenu>
                             <f:selectItem itemLabel="--Todos--"  />
@@ -176,9 +161,11 @@
                         </h:selectOneMenu>
                            <h:graphicImage id="im" library="img" name="pregunta.jpg" />
                         <p:tooltip for="im" value="estadooo" />
+                       <h:outputLabel value="Cantidad de registros: 35"></h:outputLabel>
+                            </h:panelGrid>
                        <h:panelGrid columns="9"> 
                             
-                       <p:dataTable value="#{registro.stock_b}" var="stock" paginator="true" rows="3" paginatorAlwaysVisible="true" emptyMessage="No existen solicitudes pendientes de asignación">
+                       <p:dataTable value="#{registro.stock_b}" var="stock" paginator="true" rows="5" paginatorAlwaysVisible="true" emptyMessage="No existen solicitudes pendientes de asignación">
                    
                           
                             <p:column style="width: 50px">
@@ -191,8 +178,15 @@
                              <h:outputLabel value="#{stock.bandeja}"></h:outputLabel>
                             </p:column>
                            
-                                
-                                    
+                                <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Flag x Prod."/></f:facet>
+                           <h:outputLabel value="No conforme"></h:outputLabel>
+                        </p:column> 
+                           
+                               <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Cant. Producto" /></f:facet>
+                           <h:outputLabel value="100"></h:outputLabel>
+                        </p:column>      
                                                    
                                   
                                  <p:column style="width: 50px">
@@ -201,29 +195,28 @@
                         </p:column> 
                                  
                            <p:column style="width: 50px">
-                            <f:facet name="header"><h:outputText value="Tipo de No Conformidad" /></f:facet>
+                            <f:facet name="header"><h:outputText value="Tipo de No Conf." /></f:facet>
                            <h:outputLabel value="Observado"></h:outputLabel>
                         </p:column> 
                            
-                           <p:column style="width: 50px">
-                            <f:facet name="header"><h:outputText value="Estado" /></f:facet>
-                           <h:outputLabel value="Regularizado"></h:outputLabel>
+                            <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Estado  No Conf." /></f:facet>
+                          
+                             <p:commandButton value="Regularizado" type="button" onclick="popupSeguimientoInspeccion.show();"></p:commandButton>
+                          
                         </p:column> 
                            
-                        
+                               
                            
-                           <p:column style="width: 350px">
+                           <p:column style="width: 250px">
                             <f:facet name="header"><h:outputText value="Comentario" /></f:facet>
                            <h:outputLabel value="Los productos no estaban en la ubicación correcta, además se encuentran en mal estado"></h:outputLabel>
                         </p:column> 
-                           
-                              <p:column style="width: 100px">
-                            <f:facet name="header"><h:outputText value="Seguimiento" /></f:facet>
-                             <p:commandButton value="Ver" type="button" onclick="popupSeguimientoInspeccion.show();"></p:commandButton>
-                            </p:column>    
+                            
                                
                       </p:dataTable>
                             </h:panelGrid>
+                                  <p:commandButton value="Exportar"></p:commandButton>
                 </p:panel>
                              
                              
@@ -243,7 +236,7 @@
                 <p:panel header="Datos generales">
                     <h:panelGrid columns="9">
                                              
-                          <h:outputLabel value="Proveedor:"></h:outputLabel>
+                          <h:outputLabel value="Almacén:"></h:outputLabel>
                          <h:selectOneMenu>
                             <f:selectItem itemLabel="--Todos--"  itemValue="--Seleccione--"/>
                             <f:selectItem itemLabel="Sharff"  />
@@ -255,14 +248,66 @@
                         
                         
                         
-                       <h:outputLabel value="Gestor: "></h:outputLabel>
-                        <h:inputText value="Dante Carranza" size="30" disabled="true" />
-                        <h:graphicImage id="imgNumFactura1" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgNumFactura1" value="Nro de Fcatura" />
+                      <h:outputLabel value="Departamento: "></h:outputLabel>
+                        <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Todos--" />
+                            <f:selectItem itemLabel="Publicidad"/>
+                            <f:selectItem itemLabel="Gestión comercial"/>
+                           
+                         </h:selectOneMenu>
+                         <h:graphicImage id="imgdep" library="img" name="pregunta.jpg" />                       
+                         <p:tooltip for="imgdep" value="Tanosss" />                    
+                                       <p:spacer width="10" />   
+                                                        
+                       <h:outputLabel value="Campaña"></h:outputLabel>
+                         <h:selectOneMenu>
+                            <f:selectItem itemLabel="--No aplica--"  />
+                            <f:selectItem itemLabel="Todos"  />
+                            <f:selectItem itemLabel="Cuenta ganadora"  />
+                            <f:selectItem itemLabel="Cuenta CTS"  />
+                                                      
+                        </h:selectOneMenu>
+                           <h:graphicImage id="imgarc4P5cam" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgarc4P5cam" value="estadooo" />
+                            
                         
-                   
+                       <h:outputLabel value="Premio"></h:outputLabel>
+                         <h:selectOneMenu>
+                            <f:selectItem itemLabel="--No aplica--"/>
+                             <f:selectItem itemLabel="Todos"/>
+                            <f:selectItem itemLabel="Ollas+vasos"  />
+                             <f:selectItem itemLabel="TV 11°"  />
+                                                 
+                        </h:selectOneMenu>
+                           <h:graphicImage id="imgarc451" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgarc451" value="estadooo" />
+                               
                         
-                         <p:spacer width="10" />
+                        <p:spacer width="10" />   
+                       <h:outputLabel value="Gestor"></h:outputLabel>
+                         <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Todos--"  itemValue="--Seleccione--"/>
+                            <f:selectItem itemLabel="Daniel Carranza"  />
+                                                 
+                        </h:selectOneMenu>
+                           <h:graphicImage id="imgarc4512" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgarc4512" value="estadooo" />
+                        
+                        
+                    
+                         <h:outputLabel value="Feria"></h:outputLabel>
+                         <h:selectOneMenu>
+                              <f:selectItem itemLabel="--No aplica--"  itemValue="--Seleccione--"/>
+                            <f:selectItem itemLabel="--Todos--"/>
+                            <f:selectItem itemLabel="Feria 01"  />
+                             <f:selectItem itemLabel="Feria 02"  />
+                                                 
+                        </h:selectOneMenu>
+                           <h:graphicImage id="feri" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="feri" value="feria" />
+                          <p:spacer width="10" />
+                        
+                        
                                    
                          <h:outputLabel value="Tipo de inspección:"></h:outputLabel>
                          <h:selectOneMenu>
@@ -272,6 +317,94 @@
                                             
                         </h:selectOneMenu>
                            <h:graphicImage id="imgti" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgti" value="estadooo" />
+                        
+                        
+                    
+                        
+                      
+                    </h:panelGrid>
+                        <p:commandButton value="Generar" type="button" onclick="popupVistaHTML.show();"></p:commandButton>
+                             <p:commandButton value="Exportar" type="button" ></p:commandButton>
+                         
+                </p:panel>
+                
+                
+             
+            </h:form>
+        </p:dialog>
+        
+        
+                
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <p:dialog widgetVar="popupVistaHTML" header="ImprimirInspección" width="800">
+            <h:form>
+               
+                <p:panel header="Datos generales">
+                    <h:panelGrid columns="9">
+                                             
+                          <h:outputLabel value="Almacén:"></h:outputLabel>
+                       
+                           <h:inputText value="SHARFF" size="30" disabled="true" />
+                           <h:graphicImage id="imgPROV6" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgPROV6" value="estadooo" />
+                        
+                        
+                        
+                      <h:outputLabel value="Departamento: "></h:outputLabel>
+                      
+                       <h:inputText value="Publicidad" size="30" disabled="true" />
+                         <h:graphicImage id="imgdep" library="img" name="pregunta.jpg" />                       
+                         <p:tooltip for="imgdep" value="Tanosss" />                    
+                                       <p:spacer width="10" />   
+                                                        
+                       <h:outputLabel value="Campaña"></h:outputLabel>
+                 
+                            <h:inputText value="Cuenta ganadora" size="30" disabled="true" />
+                           <h:graphicImage id="imgarc4P5cam" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgarc4P5cam" value="estadooo" />
+                            
+                        
+                       <h:outputLabel value="Premio"></h:outputLabel>
+                      
+                         <h:inputText value="Ollas+vasos" size="30" disabled="true" />
+                     
+                           <h:graphicImage id="imgarc451" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgarc451" value="estadooo" />
+                               
+                        
+                        <p:spacer width="10" />   
+                       <h:outputLabel value="Gestor"></h:outputLabel>
+                        
+                                                 
+                           <h:inputText value="Daniel Carranza" size="30" disabled="true" />
+                     
+                           <h:graphicImage id="imgarc4512" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgarc4512" value="estadooo" />
+                        
+                        
+                    
+                         <h:outputLabel value="Feria"></h:outputLabel>
+                           <h:inputText value="Feria 01" size="30" disabled="true" />
+                     
+                           <h:graphicImage id="feri" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="feri" value="feria" />
+                          <p:spacer width="10" />
+                        
+                        
+                                   
+                         <h:outputLabel value="Tipo de inspección:"></h:outputLabel>
+                           <h:inputText value="Programada" size="30" disabled="true" />
+                        <h:graphicImage id="imgti" library="img" name="pregunta.jpg" />
                         <p:tooltip for="imgti" value="estadooo" />
                         
                         
@@ -311,174 +444,22 @@
                        
                                               
                         <p:column style="width: 50px">
-                             <f:facet name="header"><h:outputText value="Observaciones:" /></f:facet>
+                             <f:facet name="header"><h:outputText value="Comentario" /></f:facet>
                        
                          <h:inputTextarea/>
                          </p:column>
                   
                                
                       </p:dataTable>
-                    <p:commandButton value="Generar"></p:commandButton>
-                    <p:commandButton value="Imprimir"></p:commandButton>
-               
-                    </p:panel>
-            </h:form>
-        </p:dialog>
-        
-        
-                
-              
-                <p:dialog widgetVar="popupVerInspeccion" header="Ver Inspección" width="800">
-            <h:form>
-               
-                <p:panel header="Datos generales">
-                    <h:panelGrid columns="9">
-                                             
-                        <h:outputLabel value="Proveedor*: "></h:outputLabel>
-                        <h:inputText value="PITS" size="30" disabled="true" />
-                        <h:graphicImage id="imgRuc" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgRuc" value="Nro de RUC" />
-                        
-                       <h:outputLabel value="Gestor: "></h:outputLabel>
-                        <h:inputText value="Dante Carranza" size="30" disabled="true" />
-                        <h:graphicImage id="imgNumFactura1" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgNumFactura1" value="Nro de Fcatura" />
-                        
-                      
-                        
-                         <p:spacer width="10" />
-                                   
-                         <h:outputLabel value="Tipo de inspección "></h:outputLabel>
-                        <h:inputText value="No Programada" size="30" disabled="true" />
-                        <h:graphicImage id="imgNumFactura" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgNumFactura" value="Nro de Fcatura" />
-                        
-                           <h:outputLabel value="Fecha de inspección: "></h:outputLabel>
-                        <h:inputText value="16/08/2011" size="30" disabled="true" />
-                        <h:graphicImage id="imgNomPro" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgNomPro" value=""/>
-                        
-                      
-                       
-                           <p:spacer width="10" />
-                                                  
-                     
-                        <h:outputLabel value="Observaciones: "></h:outputLabel>
-                         <h:inputTextarea/>
-                          <h:graphicImage id="imgobs" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgobs" value="Observaciones" />
-           
-                        
-                    </h:panelGrid>
-                </p:panel>
-                
-                
-                <p:panel header="Detalle de la inspección">
-                    <p:dataTable value="#{registro.stock_b}" var="stock" page="10">
-                        
-                        <p:column style="width: 50px">
-                            <f:facet name="header"><h:outputText value="Item" /></f:facet>
-                             <h:outputLabel value="#{stock.item}"></h:outputLabel>
-                        </p:column>
-                        
-                        <p:column style="width: 50px">
-                            <f:facet name="header"><h:outputText value="Producto" /></f:facet>
-                             <h:outputLabel value="#{stock.bandeja}"></h:outputLabel>
-                        </p:column>
-                        
-                            <p:column style="width: 50px">
-                            <f:facet name="header"><h:outputText value="Cantidad en stock" /></f:facet>
-                             <h:outputLabel value="100 "></h:outputLabel>
-                        </p:column>
-                        
-                        <p:column style="width: 50px">
-                            <f:facet name="header"><h:outputText value="Cantidad en Físico" /></f:facet>                             
-                           
-                              <h:outputLabel value="100 "></h:outputLabel>
-                        </p:column>
-                        <p:column style="width: 50px">
-                            <f:facet name="header"><h:outputText value="Estado" /></f:facet>
-                              
-                        <h:outputLabel value="Conforme"></h:outputLabel>
-                        </p:column>
-                       
-                        <p:column style="width: 50px">
-                         <f:facet name="header"><h:outputText value="Observaciones:" /></f:facet>
-                         <h:inputTextarea/>                                           
-                         </p:column>
-                  
-                                                              
-                                 
-                        <p:column style="width: 50px">
-                            <f:facet name="header"><h:outputText value="Regularización" /></f:facet>                              
-                          <h:inputText value="Pago por pieza" size="10" disabled="false" />
-                        </p:column>
-                                 
-                                 
-                
-                   
-                      </p:dataTable>
-                   
-                    </p:panel>
-                
-                
-                           <p:panel header="Detalle de los No conformes">
                     
-                          <p:dataTable value="#{registro.stock_b}" var="stock" paginator="true" rows="3" paginatorAlwaysVisible="true" emptyMessage="No existen resultados con los criterios ingresados">
-                        
-                        <p:column style="width: 50px">
-                            <f:facet name="header"><h:outputText value="Item" /></f:facet>
-                             <h:outputLabel value="#{stock.item}"></h:outputLabel>
-                                
-                        </p:column>
-                        
-                        <p:column style="width: 50px">
-                            <f:facet name="header"><h:outputText value="Producto" /></f:facet>
-                             <h:outputLabel value="TV"></h:outputLabel>
-                        </p:column>
-                        
-                            
-                        
-                        <p:column style="width: 50px">
-                            <f:facet name="header"><h:outputText value="Cantidad en Físico" /></f:facet>  
-                             <h:outputLabel value="25 "></h:outputLabel>
-                           
-                        </p:column>
-                        
-                          <p:column style="width: 50px">
-                            <f:facet name="header"><h:outputText value="Tipo de No conformidad" /></f:facet>
-                               <h:outputLabel value="Faltante "></h:outputLabel>
-                      
-                        </p:column>
-                              
-                              
-                              <p:column style="width: 50px">
-                            <f:facet name="header"><h:outputText value="Estado de No conformidad" /></f:facet>
-                               <h:outputLabel value="Faltante "></h:outputLabel>
-                      
-                        </p:column>
-                              
-                                 <p:column style="width: 50px">
-                            <f:facet name="header"><h:outputText value="Regularizado" /></f:facet>
-                               <h:outputLabel value="Error de conteo "></h:outputLabel>
-                             </p:column>
-                       
-                
-                              <p:column style="width: 50px">
-                         <f:facet name="header"><h:outputText value="Observaciones:" /></f:facet>
-                         <h:inputTextarea/>                                           
-                         </p:column>
-                  
-                                
-                              
-                      </p:dataTable>
-                    <p:commandButton value="Cerrar"></p:commandButton>
                
                     </p:panel>
             </h:form>
         </p:dialog>
         
         
+              
+               
         
          <p:dialog widgetVar="popupEditarInspeccion" header="Editar Inspección" width="800">
            <h:form>
@@ -486,29 +467,68 @@
                 <p:panel header="Datos generales">
                     <h:panelGrid columns="9">
                                              
-                        <h:outputLabel value="Proveedor: "></h:outputLabel>
-                        <h:inputText value="PITS" size="30" disabled="true" />
-                        <h:graphicImage id="imgRuc" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgRuc" value="Nro de RUC" />
+                         <h:outputLabel value="Almacén:"></h:outputLabel>
+                       
+                           <h:inputText value="SHARFF" size="30" disabled="true" />
+                           <h:graphicImage id="imgPROV6" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgPROV6" value="estadooo" />
                         
-                       <h:outputLabel value="Gestor Generador: "></h:outputLabel>
-                        <h:inputText value="Dante Carranza" size="30" disabled="true" />
-                        <h:graphicImage id="imgNumFactura1" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgNumFactura1" value="Nro de Fcatura" />
                         
+                        
+                      <h:outputLabel value="Departamento: "></h:outputLabel>
                       
+                       <h:inputText value="Publicidad" size="30" disabled="true" />
+                         <h:graphicImage id="imgdep" library="img" name="pregunta.jpg" />                       
+                         <p:tooltip for="imgdep" value="Tanosss" />                    
+                                       <p:spacer width="10" />   
+                                                        
+                       <h:outputLabel value="Campaña"></h:outputLabel>
+                 
+                            <h:inputText value="Cuenta ganadora" size="30" disabled="true" />
+                           <h:graphicImage id="imgarc4P5cam" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgarc4P5cam" value="estadooo" />
+                            
                         
-                         <p:spacer width="10" />
+                       <h:outputLabel value="Premio"></h:outputLabel>
+                      
+                         <h:inputText value="Ollas+vasos" size="30" disabled="true" />
+                     
+                           <h:graphicImage id="imgarc451" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgarc451" value="estadooo" />
+                               
+                        
+                        <p:spacer width="10" />   
+                       <h:outputLabel value="Gestor"></h:outputLabel>
+                        
+                                                 
+                           <h:inputText value="Daniel Carranza" size="30" disabled="true" />
+                     
+                           <h:graphicImage id="imgarc4512" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgarc4512" value="estadooo" />
+                        
+                        
+                    
+                         <h:outputLabel value="Feria"></h:outputLabel>
+                           <h:inputText value="Feria 01" size="30" disabled="true" />
+                     
+                           <h:graphicImage id="feri" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="feri" value="feria" />
+                          <p:spacer width="10" />
+                        
+                        
                                    
-                         <h:outputLabel value="Tipo de inspección "></h:outputLabel>
-                        <h:inputText value="No programada" size="30" disabled="true" />
-                        <h:graphicImage id="imgNumFactura" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgNumFactura" value="Nro de Fcatura" />
+                         <h:outputLabel value="Tipo de inspección:"></h:outputLabel>
+                           <h:inputText value="Programada" size="30" disabled="true" />
+                        <h:graphicImage id="imgti" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgti" value="estadooo" />
+                        
+                        
                         
                            <h:outputLabel value="Fecha de inspección: "></h:outputLabel>
                         <h:inputText value="16/08/2011" size="30" disabled="true" />
                         <h:graphicImage id="imgNomPro" library="img" name="pregunta.jpg" />
                         <p:tooltip for="imgNomPro" value=""/>
+                        
                   
                         
                          <p:spacer width="10" />
@@ -528,10 +548,7 @@
                 <p:panel header="Resultado de la inspección">
                 
                             <p:dataTable value="#{registro.stock_b}" var="stock" paginator="true" rows="5" paginatorAlwaysVisible="true" emptyMessage="No existen resultados con los criterios ingresados">
-                         <p:column style="width: 50px">
-                            <f:facet name="header"> <h:selectBooleanCheckbox></h:selectBooleanCheckbox></f:facet>
-                            <h:selectBooleanCheckbox></h:selectBooleanCheckbox>
-                                  </p:column>
+                         
                            
                         <p:column style="width: 50px">
                             <f:facet name="header"><h:outputText value="Item" /></f:facet>
@@ -553,7 +570,7 @@
                         
                         
                           <p:column style="width: 50px">
-                            <f:facet name="header"><h:outputText value="Estado" /></f:facet>
+                            <f:facet name="header"><h:outputText value="Estado de INS." /></f:facet>
                               
                          <h:selectOneMenu>
                             <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"  />
@@ -570,7 +587,7 @@
                
                     </p:panel>
          
-                  <p:commandButton value="Añadir" type="button" onclick=""></p:commandButton>
+                
            <p:panel header="Detalle de la No conformidad">
                     
                           <p:dataTable value="#{registro.stock_b}" var="stock" paginator="true" rows="2" paginatorAlwaysVisible="true" emptyMessage="No existen resultados con los criterios ingresados">
@@ -616,32 +633,17 @@
                 <p:spacer width="30" />
                     
                     
-                <h:outputLabel value="Estado:"></h:outputLabel>
-                         <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
-                           <f:selectItem itemLabel="Regularizado"  />
-                            <f:selectItem itemLabel="Verificado virtual"  />
-                            <f:selectItem itemLabel="Verificado físico"  />
-                            <f:selectItem itemLabel="Subsanado"  />
-                                                                       
-                        </h:selectOneMenu>
-                           <h:graphicImage id="imgCAM" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgCAM" value="estadooo" />
-                        
-                                   <p:spacer width="10" />
-                                     <p:column style="width: 50px">
-                            <f:facet name="header"><h:outputText value="Regularización" /></f:facet>
-                              
+          
+                                <h:outputLabel value="Tipo Regularización:"></h:outputLabel>
+                     
                          <h:selectOneMenu>
                             <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"  />
                             <f:selectItem itemLabel="Error de conteo"  />
                             <f:selectItem itemLabel="Repocisión de pieza" /> 
                             <f:selectItem itemLabel="Pago de pieza" /> 
                        </h:selectOneMenu>
-                        </p:column>
-                                         
-                        
-                                 <p:commandButton value="Cambiar estado" type="button" ></p:commandButton>
+                    
+                                 <p:commandButton value="Guardar" type="button" ></p:commandButton>
                             
                    
                     </p:panel>
@@ -657,10 +659,52 @@
          <p:dialog widgetVar="popupSeguimientoInspeccion" header="Seguimiento" width="800">
            <h:form>
                
-               
-                <p:panel header="Detalle de la inspección">
-                    <p:dataTable value="#{registro.seg_editar}" var="seg_" page="10">
+             
+                <p:panel header="Datos generales">
+                    <h:panelGrid columns="9">
+                                             
+                 
                         
+                      <h:outputLabel value="Producto: "></h:outputLabel>
+                      
+                       <h:inputText value="TV" size="30" disabled="true" />
+                         <h:graphicImage id="imgdep" library="img" name="pregunta.jpg" />                       
+                         <p:tooltip for="imgdep" value="Tanosss" />   
+                               <h:outputLabel value="Tipo de No conformidad"></h:outputLabel>
+                       
+                           <h:inputText value="Faltante" size="30" disabled="true" />
+                           <h:graphicImage id="imgPROV6" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgPROV6" value="estadooo" />
+                        
+                     
+                                       <p:spacer width="10" />   
+                                                        
+                       <h:outputLabel value="Cantidad"></h:outputLabel>
+                 
+                            <h:inputText value="50" size="30" disabled="true" />
+                           <h:graphicImage id="imgarc4P5cam" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgarc4P5cam" value="estadooo" />
+                            
+                        
+                       <h:outputLabel value="Comentario"></h:outputLabel>
+                      
+                         <h:inputTextarea/>   
+                     
+                           <h:graphicImage id="imgarc451" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgarc451" value="estadooo" />
+                               
+                        
+                        <p:spacer width="10" />   
+                       
+                        
+                    </h:panelGrid>
+                </p:panel>
+               
+               
+               
+                    <p:dataTable value="#{registro.seg_editar}" var="seg_" paginator="true" rows="4" paginatorAlwaysVisible="true" emptyMessage="No existen resultados con los criterios ingresados">
+                      
+                         
                         <p:column style="width: 50px">
                             <f:facet name="header"><h:outputText value="Item" /></f:facet>
                              <h:outputLabel value="#{seg_.segitem} "></h:outputLabel>
@@ -673,16 +717,8 @@
                           <h:outputLabel value="#{seg_.seg}"></h:outputLabel>
                         </p:column>
                        
-                           <p:column style="width: 50px">
-                            <f:facet name="header"><h:outputText value="Tipo de No conformidad" /></f:facet>
-                           <h:outputLabel value="Faltante"></h:outputLabel>
-                        </p:column> 
+                          
                 
-                              <p:column style="width: 50px">
-                         <f:facet name="header"><h:outputText value="Observaciones:" /></f:facet>
-                         <h:inputTextarea/>                                           
-                         </p:column>
-                  
                                                               
                                  
                         <p:column style="width: 50px">
@@ -708,7 +744,7 @@
                       </p:dataTable>
                   
                
-                    </p:panel>
+                    
             </h:form>
         </p:dialog>
         
