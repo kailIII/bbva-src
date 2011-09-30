@@ -91,6 +91,7 @@
                        <p:dataTable value="#{registro.stock_b}" var="stock" paginator="true" rows="5" paginatorAlwaysVisible="true" emptyMessage="No existen solicitudes pendientes de asignación">
                      
                            
+                           
                          <p:column style="width: 70px">
                             <f:facet name="header"><h:outputText value="Código de insp." /></f:facet>
                             
@@ -138,7 +139,12 @@
                                  
                                                                                    
                                  </p:column>                        
-                               
+                                <p:column style="width: 70px">
+                            <f:facet name="header"><h:outputText value="Código de insp." /></f:facet>
+                            
+                                  <p:commandButton value="Eliminar" type="button"></p:commandButton>
+                        
+                            </p:column>
                                 
                       </p:dataTable>
                             </h:panelGrid>
@@ -157,7 +163,7 @@
                             <f:selectItem itemLabel="--Todos--"  />
                             <f:selectItem itemLabel="Conformes"  />
                             <f:selectItem itemLabel="No conformes" itemValue="--Todos--" />
-                                                                              
+                             <f:selectItem itemLabel="Subsanado" itemValue="--Todos--" />                                                  
                         </h:selectOneMenu>
                            <h:graphicImage id="im" library="img" name="pregunta.jpg" />
                         <p:tooltip for="im" value="estadooo" />
@@ -184,13 +190,13 @@
                         </p:column> 
                            
                                <p:column style="width: 50px">
-                            <f:facet name="header"><h:outputText value="Cant. Producto" /></f:facet>
+                            <f:facet name="header"><h:outputText value="Cant. Stock" /></f:facet>
                            <h:outputLabel value="100"></h:outputLabel>
                         </p:column>      
                                                    
                                   
                                  <p:column style="width: 50px">
-                            <f:facet name="header"><h:outputText value="Cantidad" /></f:facet>
+                            <f:facet name="header"><h:outputText value="Cant. Física" /></f:facet>
                            <h:outputLabel value="30"></h:outputLabel>
                         </p:column> 
                                  
@@ -236,9 +242,9 @@
                 <p:panel header="Datos generales">
                     <h:panelGrid columns="9">
                                              
-                          <h:outputLabel value="Almacén:"></h:outputLabel>
+                          <h:outputLabel value="Almacén*:"></h:outputLabel>
                          <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Todos--"  itemValue="--Seleccione--"/>
+                            <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
                             <f:selectItem itemLabel="Sharff"  />
                             <f:selectItem itemLabel="Pits"  />
                             <f:selectItem itemLabel="OLVA" />    
@@ -309,7 +315,7 @@
                         
                         
                                    
-                         <h:outputLabel value="Tipo de inspección:"></h:outputLabel>
+                         <h:outputLabel value="Tipo de inspección*:"></h:outputLabel>
                          <h:selectOneMenu>
                             <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
                             <f:selectItem itemLabel="No Programada"  />
@@ -524,8 +530,8 @@
                         
                         
                         
-                           <h:outputLabel value="Fecha de inspección: "></h:outputLabel>
-                        <h:inputText value="16/08/2011" size="30" disabled="true" />
+                           <h:outputLabel value="Fecha de resultado de inspección*: "></h:outputLabel>
+                        <h:inputText value="16/08/2011" size="30" disabled="false" />
                         <h:graphicImage id="imgNomPro" library="img" name="pregunta.jpg" />
                         <p:tooltip for="imgNomPro" value=""/>
                         
@@ -564,27 +570,20 @@
                         </p:column>
                         
                             <p:column style="width: 50px">
-                            <f:facet name="header"><h:outputText value="Cantidad en stock" /></f:facet>
+                            <f:facet name="header"><h:outputText value="Cant. Stock" /></f:facet>
                              <h:outputLabel value="100 "></h:outputLabel>
                         </p:column>
                         
-                        
-                          <p:column style="width: 50px">
-                            <f:facet name="header"><h:outputText value="Estado de INS." /></f:facet>
                               
-                         <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"  />
-                            <f:selectItem itemLabel="No conforme" />
-                            <f:selectItem itemLabel="Conforme"  />
-                             
-                       </h:selectOneMenu>
-                        </p:column>
-                       
+                        
+                           <p:column style="width: 50px">
+                            <f:facet name="header"> <h:outputText value="No Conformes" /><h:selectBooleanCheckbox></h:selectBooleanCheckbox></f:facet>
+                            <h:selectBooleanCheckbox></h:selectBooleanCheckbox>
+                                  </p:column>
                    
                                                     
                       </p:dataTable>
-                   
-               
+                 
                     </p:panel>
          
                 
@@ -629,7 +628,8 @@
                       </p:dataTable>
                
                
-                    <p:commandButton value="Grabar y enviar"></p:commandButton>
+                    <p:commandButton value="Gruardar"></p:commandButton>
+                    
                 <p:spacer width="30" />
                     
                     
@@ -644,7 +644,8 @@
                        </h:selectOneMenu>
                     
                                  <p:commandButton value="Guardar" type="button" ></p:commandButton>
-                            
+                               <p:spacer width="30" />
+                     <p:commandButton value="Enviar a Compras"></p:commandButton>
                    
                     </p:panel>
         
@@ -722,7 +723,7 @@
                                                               
                                  
                         <p:column style="width: 50px">
-                            <f:facet name="header"><h:outputText value="Regularización" /></f:facet>
+                            <f:facet name="header"><h:outputText value="Tipo de Regularización" /></f:facet>
                                  <h:outputLabel value="#{seg_.segreg}"></h:outputLabel>
                         
                         </p:column>
@@ -736,7 +737,7 @@
                         
                          <p:column style="width: 50px">
                             <f:facet name="header"><h:outputText value="Usuario de registro" /></f:facet>
-                          <h:outputLabel value="15/08/2011"></h:outputLabel>
+                          <h:outputLabel value="EFAUSTORV"></h:outputLabel>
                         </p:column>
                                  
                 
