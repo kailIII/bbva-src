@@ -10,7 +10,18 @@
                 
                                  
                 <h:panelGrid columns="9">
-                       <h:outputLabel value="Tipo de Movimiento "></h:outputLabel>
+                    
+                       <h:outputLabel value="Tipo de Ejecución* "></h:outputLabel>
+                        <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Seleccione--" />
+                            <f:selectItem itemLabel="Generación"/>
+                            <f:selectItem itemLabel="Carga"/>
+                         </h:selectOneMenu>
+                         <h:graphicImage id="imgano3o" library="img" name="pregunta.jpg" />                       
+                         <p:tooltip for="imgano3o" value="Tanosss" />
+                         
+                         
+                       <h:outputLabel value="Tipo de Movimiento* "></h:outputLabel>
                         <h:selectOneMenu>
                             <f:selectItem itemLabel="--Seleccione--" />
                             <f:selectItem itemLabel="Entrada"/>
@@ -23,16 +34,7 @@
                          <p:tooltip for="imganoo" value="Tanosss" />
                  
                          
-                          <h:outputLabel value="Tipo de Ejecución* "></h:outputLabel>
-                        <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Seleccione--" />
-                            <f:selectItem itemLabel="Generación"/>
-                            <f:selectItem itemLabel="Carga"/>
-                         </h:selectOneMenu>
-                         <h:graphicImage id="imgano3o" library="img" name="pregunta.jpg" />                       
-                         <p:tooltip for="imgano3o" value="Tanosss" />
-                         
-                         
+                       
                           <p:spacer width="10" />  
                          
                           
@@ -72,10 +74,14 @@
                              <h:outputLabel value="124"></h:outputLabel>
                            </p:column>
                               
-                        <p:column style="width: 80px">
+                       
+                                
+                                 <p:column style="width: 50px">
                             <f:facet name="header"><h:outputText value="Estado" /></f:facet>
-                             <h:outputLabel value="Correcto "></h:outputLabel>
-                        </p:column>
+                          
+                             <p:commandButton value="Incorrecto" type="button" onclick="popupSeguimientoInspeccion.show();"></p:commandButton>
+                          
+                        </p:column> 
                                 
                         <p:column style="width: 100px">
                             <f:facet name="header"><h:outputText value="Fecha de ejecución" /></f:facet>
@@ -102,6 +108,49 @@
             </p:panel>
         </h:form>
        
+        
+        
+         <p:dialog widgetVar="popupSeguimientoInspeccion" header="Errores detectados" width="800">
+           <h:form>
+               
+             
+                             
+               
+               
+                    <p:dataTable value="#{registro.seg_editar}" var="seg_" paginator="true" rows="4" paginatorAlwaysVisible="true" emptyMessage="No existen resultados con los criterios ingresados">
+                      
+                         
+                        <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Item" /></f:facet>
+                             <h:outputLabel value="#{seg_.segitem} "></h:outputLabel>
+                        </p:column>
+                      
+                        
+                                                   
+                          <p:column style="width: 350px">
+                            <f:facet name="header"><h:outputText value="Error" /></f:facet>
+                            <h:outputLabel value="Error en el campo (Nombre de campo), línea (Nro de línea) Mensaje: (sólo permite letras)"></h:outputLabel>
+                        </p:column>
+                       
+                          
+                
+                                                              
+                                 
+                       
+                                 
+                        
+                         
+                
+                   
+                      </p:dataTable>
+                  
+               
+                    
+            </h:form>
+        </p:dialog>
+        
+        
+        
     </ui:define>
 </ui:composition>
 
