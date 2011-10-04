@@ -9,52 +9,8 @@
                 <p:panel header="Criterios de Búsqueda">
                     <h:panelGrid columns="9">
                       
-                         <h:outputLabel value="Nro documento: "></h:outputLabel>
-                    <h:inputText value="SH0001" size="30" disabled="false" />
-                    <h:graphicImage id="imgfechfE" library="img" name="pregunta.jpg" />
-                    <p:tooltip for="imgfechfE" value="Fecha de Carga Final" />
-                   
                         
-                   <h:outputLabel value="Documentos: "></h:outputLabel>
-                        <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Todos--" />
-                            <f:selectItem itemLabel="Guía"/>
-                              <f:selectItem itemLabel="Solicitud Pedido"/>
-                           
-                         </h:selectOneMenu>
-                         <h:graphicImage id="imganoo" library="img" name="pregunta.jpg" />                       
-                         <p:tooltip for="imganoo" value="Tanosss" />
-                
-                                                     
-                 
-                                 <p:spacer width="10" />  
-                               
-                        
-                         <h:outputLabel value="Propietario"></h:outputLabel>
-                         <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Todos--"  itemValue="--Seleccione--"/>
-                            <f:selectItem itemLabel="Luis Robles"  />
-                            <f:selectItem itemLabel="Raul Torres"  />
-                            <f:selectItem itemLabel="Marìa Robles" />    
-                            <f:selectItem itemLabel="Martin Dìaz" />                           
-                        </h:selectOneMenu>
-                           <h:graphicImage id="imgarc45" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgarc45" value="estadooo" />
                      
-                        
-                         <h:outputLabel value="Equipo:"></h:outputLabel>
-                         <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Todos--"  itemValue="--Seleccione--"/>
-                            <f:selectItem itemLabel="Juan Carlos Gutierrez"  />
-                            <f:selectItem itemLabel="Marìa Teresa Vargas Dìaz"  />
-                                                   
-                        </h:selectOneMenu>
-                           <h:graphicImage id="imgarc155" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgarc155" value="estadooo" />
-                            
-                        
-                        
-                          <p:spacer width="10" />  
                       
                          <h:outputLabel value="Fecha de inicio: "></h:outputLabel>
                     <h:inputText value="14/08/2011" size="30" disabled="false" />
@@ -65,20 +21,48 @@
                     <h:inputText value="20/08/2011" size="30" disabled="false" />
                     <h:graphicImage id="imgfechfEcry" library="img" name="pregunta.jpg" />
                     <p:tooltip for="imgfechfEcry" value="Fecha de Carga Final" /> 
-                       <p:spacer width="10" />  
+                       
+                    
+                    <p:spacer width="10" />  
                           
                        <h:outputLabel value="Tipo de movimiento*: "></h:outputLabel>
                         <h:selectOneMenu>
                             <f:selectItem itemLabel="--Todos--" />
-                            <f:selectItem itemLabel="Ingreso"/>
-                            <f:selectItem itemLabel="Salida"/>
-                             <f:selectItem itemLabel="Regularizar-Pagar pieza"/>
-                            <f:selectItem itemLabel="Enviar al ministerio"/>
-                           <f:selectItem itemLabel="Reponer pieza"/>
+                            <f:selectItem itemLabel="Ingreso-nuevo"/>
+                             <f:selectItem itemLabel="Ingreso-Reponer pieza"/>
+                            <f:selectItem itemLabel="Salida-solicitud"/>
+                             <f:selectItem itemLabel="Salida-Pagar pieza"/>
+                            <f:selectItem itemLabel="Salida-Enviar al ministerio"/>
+                            
                          </h:selectOneMenu>
                          <h:graphicImage id="imgtip" library="img" name="pregunta.jpg" />                       
                          <p:tooltip for="imgtip" value="Tanosss" />                    
+                             
+                              <h:outputLabel value="Almacén: "></h:outputLabel>
+                        <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Todos--" />
+                            <f:selectItem itemLabel="SHARFF"/>
+                            <f:selectItem itemLabel="OLVA"/>
+                             <f:selectItem itemLabel="PITS"/>
+                           
+                         </h:selectOneMenu>
+                         <h:graphicImage id="imgtip7" library="img" name="pregunta.jpg" />                       
+                         <p:tooltip for="imgtip7" value="Tanosss" />                    
                                   
+                          <p:spacer width="10" />  
+                          
+                                                     
+                         <h:outputLabel value="Nro de Guía: "></h:outputLabel>
+                         <h:inputText value="" size="5" disabled="false" />
+                         <h:outputLabel value="-"></h:outputLabel>
+                    <h:inputText value="" size="10" disabled="false" />
+                    <h:graphicImage id="imgfechfE" library="img" name="pregunta.jpg" />
+                    <p:tooltip for="imgfechfE" value="Fecha de Carga Final" />
+                   
+                                            
+                      
+                        
+                        
                          
                          
                         <p:commandButton value="Buscar"></p:commandButton>
@@ -95,6 +79,11 @@
                              <h:outputLabel value="#{stock.item}"></h:outputLabel>
                         </p:column>
                                 
+                                 <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Nro Guía" /></f:facet>
+                           <h:outputLabel value="GUIA0001"></h:outputLabel>
+                         </p:column>
+                                          
                          <p:column style="width: 50px">
                             <f:facet name="header"><h:outputText value="Código" /></f:facet>
                            <h:outputLabel value="#{stock.cod}"></h:outputLabel>
@@ -116,32 +105,25 @@
                             <f:facet name="header"><h:outputText value="Tipo de movimiento" /></f:facet>
                             <h:outputLabel value="Entrada"></h:outputLabel>
                         </p:column>
-                                                        
-                         <p:column style="width: 100px">
-                             <f:facet name="header"><h:outputText value="Fecha de movimiento" /></f:facet>
-                             <h:outputLabel value="15/08/2011"></h:outputLabel>
-                        </p:column>
+                                             
                                 
-                                   <p:column style="width: 250px">
-                             <f:facet name="header"><h:outputText value="Detalle " /></f:facet>
-                             <h:outputLabel value="(indica entrada por devolucion etc)"></h:outputLabel>
-                        </p:column>
-                                
-                                                            
                                 <p:column style="width: 50px">
-                            <f:facet name="header"><h:outputText value="Estado de la entrega" /></f:facet>
-                            <h:outputLabel value="Correcto"></h:outputLabel>
-                        </p:column>
-                         
-                                <p:column style="width: 100px">
-                            <f:facet name="header"><h:outputText value="Origen" /></f:facet>
-                            <h:outputLabel value="Saga Falabella"></h:outputLabel>
-                        </p:column>
-                                
-                                 <p:column style="width: 50px">
-                            <f:facet name="header"><h:outputText value="Destino" /></f:facet>
+                            <f:facet name="header"><h:outputText value="Almacén" /></f:facet>
                             <h:outputLabel value="SHARFF"></h:outputLabel>
                         </p:column>
+                                
+                         <p:column style="width: 100px">
+                             <f:facet name="header"><h:outputText value="Fecha de Guía" /></f:facet>
+                             <h:outputLabel value="15/08/2011 15:10:55"></h:outputLabel>
+                        </p:column>
+                        
+                                
+                                                            
+                                
+                         
+                              
+                                
+                                 
                       </p:dataTable>
                             </h:panelGrid>
                     
