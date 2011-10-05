@@ -205,12 +205,7 @@
                            <h:outputLabel value="Observado"></h:outputLabel>
                         </p:column> 
                            
-                            <p:column style="width: 50px">
-                            <f:facet name="header"><h:outputText value="Estado  No Conf." /></f:facet>
-                          
-                             <p:commandButton value="Regularizado" type="button" onclick="popupSeguimientoInspeccion.show();"></p:commandButton>
-                          
-                        </p:column> 
+                           
                            
                                
                            
@@ -657,97 +652,7 @@
         
     
 
-         <p:dialog widgetVar="popupSeguimientoInspeccion" header="Seguimiento" width="800">
-           <h:form>
-               
-             
-                <p:panel header="Datos generales">
-                    <h:panelGrid columns="9">
-                                             
-                 
-                        
-                      <h:outputLabel value="Producto: "></h:outputLabel>
-                      
-                       <h:inputText value="TV" size="30" disabled="true" />
-                         <h:graphicImage id="imgdep" library="img" name="pregunta.jpg" />                       
-                         <p:tooltip for="imgdep" value="Tanosss" />   
-                               <h:outputLabel value="Tipo de No conformidad"></h:outputLabel>
-                       
-                           <h:inputText value="Faltante" size="30" disabled="true" />
-                           <h:graphicImage id="imgPROV6" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgPROV6" value="estadooo" />
-                        
-                     
-                                       <p:spacer width="10" />   
-                                                        
-                       <h:outputLabel value="Cantidad"></h:outputLabel>
-                 
-                            <h:inputText value="50" size="30" disabled="true" />
-                           <h:graphicImage id="imgarc4P5cam" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgarc4P5cam" value="estadooo" />
-                            
-                        
-                       <h:outputLabel value="Comentario"></h:outputLabel>
-                      
-                         <h:inputTextarea/>   
-                     
-                           <h:graphicImage id="imgarc451" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgarc451" value="estadooo" />
-                               
-                        
-                        <p:spacer width="10" />   
-                       
-                        
-                    </h:panelGrid>
-                </p:panel>
-               
-               
-               
-                    <p:dataTable value="#{registro.seg_editar}" var="seg_" paginator="true" rows="4" paginatorAlwaysVisible="true" emptyMessage="No existen resultados con los criterios ingresados">
-                      
-                         
-                        <p:column style="width: 50px">
-                            <f:facet name="header"><h:outputText value="Item" /></f:facet>
-                             <h:outputLabel value="#{seg_.segitem} "></h:outputLabel>
-                        </p:column>
-                      
-                        
-                                                   
-                          <p:column style="width: 50px">
-                            <f:facet name="header"><h:outputText value="Estado" /></f:facet>
-                          <h:outputLabel value="#{seg_.seg}"></h:outputLabel>
-                        </p:column>
-                       
-                          
-                
-                                                              
-                                 
-                        <p:column style="width: 50px">
-                            <f:facet name="header"><h:outputText value="Tipo de Regularización" /></f:facet>
-                                 <h:outputLabel value="#{seg_.segreg}"></h:outputLabel>
-                        
-                        </p:column>
-                                 
-                        
-                         <p:column style="width: 50px">
-                            <f:facet name="header"><h:outputText value="Fecha de registro" /></f:facet>
-                          <h:outputLabel value="15/08/2011"></h:outputLabel>
-                        </p:column>
-                        
-                        
-                         <p:column style="width: 50px">
-                            <f:facet name="header"><h:outputText value="Usuario de registro" /></f:facet>
-                          <h:outputLabel value="EFAUSTORV"></h:outputLabel>
-                        </p:column>
-                                 
-                
-                   
-                      </p:dataTable>
-                  
-               
-                    
-            </h:form>
-        </p:dialog>
+       
         
          <p:dialog widgetVar="popupSubsanarInspeccion" header="Subsanar" width="800">
            <h:form>
