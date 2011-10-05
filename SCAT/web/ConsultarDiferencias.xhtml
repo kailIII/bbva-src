@@ -25,8 +25,8 @@
                         <h:selectOneMenu>
                             <f:selectItem itemLabel="--Todos--" />
                             <f:selectItem itemLabel="Registrado"/>
-                        
-                              <f:selectItem itemLabel="Enviado"/>
+                            <f:selectItem itemLabel="Enviado"/>
+                              <f:selectItem itemLabel="Generado"/>
                             <f:selectItem itemLabel="Recibido"/>
                               <f:selectItem itemLabel="Regularizado"/>
                            
@@ -37,14 +37,16 @@
                  
                                  <p:spacer width="10" />  
                                
-                 <h:outputLabel value="Origen de Regularización "></h:outputLabel>
+                <h:outputLabel value="Almacén "></h:outputLabel>
                         <h:selectOneMenu>
                             <f:selectItem itemLabel="--Todos--" />
-                            <f:selectItem itemLabel="Inspección"/>
-                            <f:selectItem itemLabel="Rechazo en pedido"/>
+                            <f:selectItem itemLabel="OLVA"/>
+                            <f:selectItem itemLabel="SHARFF"/>
+                             <f:selectItem itemLabel="PITS"/>
                          </h:selectOneMenu>
-                         <h:graphicImage id="imgano1" library="img" name="pregunta.jpg" />                       
-                         <p:tooltip for="imgano1" value="Tanosss" />
+                         <h:graphicImage id="imgano19" library="img" name="pregunta.jpg" />                       
+                         <p:tooltip for="imgano19" value="Tanosss" />
+                        
                         
                     <h:outputLabel value="Nro Carta "></h:outputLabel>
                     <h:inputText value="" size="30" disabled="false" />
@@ -64,16 +66,7 @@
                     <p:tooltip for="imgfechfEcry" value="Fecha de Carga Final" /> 
                  
                         <p:spacer width="10" />  
-                 <h:outputLabel value="Almacén "></h:outputLabel>
-                        <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Todos--" />
-                            <f:selectItem itemLabel="OLVA"/>
-                            <f:selectItem itemLabel="SHARFF"/>
-                             <f:selectItem itemLabel="PITS"/>
-                         </h:selectOneMenu>
-                         <h:graphicImage id="imgano19" library="img" name="pregunta.jpg" />                       
-                         <p:tooltip for="imgano19" value="Tanosss" />
-                        
+                 
                          
                         <p:commandButton value="Buscar"></p:commandButton>
                     </h:panelGrid>
@@ -106,13 +99,10 @@
                     
                                                      
                                                                          
-                        <p:column style="width: 50px">
-                            <f:facet name="header"><h:outputText value="Origen de diferencia" /></f:facet>
-                            <h:outputLabel value="Inspección"></h:outputLabel>
-                        </p:column>
+                       
                                 
                                 <p:column style="width: 50px">
-                            <f:facet name="header"><h:outputText value="Nro de Pedido/inspección)" /></f:facet>
+                            <f:facet name="header"><h:outputText value="Nro de Pedido" /></f:facet>
                             <h:outputLabel value="#{stock.cod}"></h:outputLabel>
                         </p:column>
                                                         
@@ -123,6 +113,13 @@
                              <h:outputLabel value="SHARFF"></h:outputLabel>
                         </p:column>
                                 
+                                
+                                 <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Estado" /></f:facet>
+                          
+                             <p:commandButton value="Regularizado" type="button" onclick="popupSeguimientoInspeccion.show();"></p:commandButton>
+                          
+                        </p:column> 
                                
                                                               
                               
@@ -260,7 +257,56 @@
         
         
         
-        
+          <p:dialog widgetVar="popupSeguimientoInspeccion" header="Seguimiento" width="800">
+           <h:form>
+               
+             
+                
+                    <p:dataTable value="#{registro.seg_editar}" var="seg_" paginator="true" rows="4" paginatorAlwaysVisible="true" emptyMessage="No existen resultados con los criterios ingresados">
+                      
+                         
+                        <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Item" /></f:facet>
+                             <h:outputLabel value="#{seg_.segitem} "></h:outputLabel>
+                        </p:column>
+                      
+                        
+                                                   
+                          <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Estado" /></f:facet>
+                          <h:outputLabel value="#{seg_.seg}"></h:outputLabel>
+                        </p:column>
+                       
+                          
+                
+                                                              
+                                 
+                        <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Tipo de Regularización" /></f:facet>
+                                 <h:outputLabel value="#{seg_.segreg}"></h:outputLabel>
+                        
+                        </p:column>
+                                 
+                        
+                         <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Fecha de registro" /></f:facet>
+                          <h:outputLabel value="15/08/2011"></h:outputLabel>
+                        </p:column>
+                        
+                        
+                         <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Usuario de registro" /></f:facet>
+                          <h:outputLabel value="EFAUSTORV"></h:outputLabel>
+                        </p:column>
+                                 
+                
+                   
+                      </p:dataTable>
+                  
+               
+                    
+            </h:form>
+        </p:dialog>
         
         
          <p:dialog widgetVar="GenerarSeguimientoCarta" header="CAR0001" width="600">
@@ -358,12 +404,7 @@
                      
                               
                                
-                                 <p:column style="width: 50px">
-                                 <f:facet name="header"><h:outputText value="Tipo de origen" /></f:facet>
-                             <h:outputLabel value="Inspección"></h:outputLabel>
-                     
-                         </p:column>                  
-
+                                 
                                             
                            <p:column style="width: 50px">
                          
