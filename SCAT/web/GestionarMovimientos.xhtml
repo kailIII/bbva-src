@@ -21,27 +21,28 @@
                          <p:tooltip for="imgano3o" value="Tanosss" />
                          
                          
-                       <h:outputLabel value="Tipo de Movimiento* "></h:outputLabel>
-                        <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Seleccione--" />
-                            <f:selectItem itemLabel="Entrada"/>
-                            <f:selectItem itemLabel="Salida"/>
-                             <f:selectItem itemLabel="Estado de entrega"/>
-                              
-                                <f:selectItem itemLabel="Pagados por pérdida"/>
-                         </h:selectOneMenu>
-                         <h:graphicImage id="imganoo" library="img" name="pregunta.jpg" />                       
-                         <p:tooltip for="imganoo" value="Tanosss" />
+                       
                  
                          
-                       
+                       <h:outputLabel value="Tipo de movimiento*: "></h:outputLabel>
+                        <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Todos--" />
+                            <f:selectItem itemLabel="Ingreso-nuevo"/>
+                             <f:selectItem itemLabel="Ingreso-Reponer pieza"/>
+                             <f:selectItem itemLabel="Ingreso-Devueltos"/>
+                            <f:selectItem itemLabel="Salida-solicitud"/>
+                             <f:selectItem itemLabel="Salida-Pagar pieza"/>
+                            <f:selectItem itemLabel="Salida-Enviar al ministerio"/>
+                            <f:selectItem itemLabel="Estado de entrega"/>
+                         </h:selectOneMenu>
+                         <h:graphicImage id="imgtip" library="img" name="pregunta.jpg" />                       
+                         <p:tooltip for="imgtip" value="Tanosss" />    
+                         
+                         
                           <p:spacer width="10" />  
                          
                           
-                         
-                                
-                
-                
+                                     
                 
                 <h:outputLabel value="Archivo:"></h:outputLabel>
                         <h:inputText value="\\\Servidor\BBVA\Gastos\Pres09890890_2011.xls" size="50" disabled="false" />                   
