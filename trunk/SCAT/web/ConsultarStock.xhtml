@@ -11,10 +11,11 @@
                                              
                    <h:outputLabel value="Almacén: "></h:outputLabel>
                         <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Todos--" />
+                           
                             <f:selectItem itemLabel="Olva"/>
                             <f:selectItem itemLabel="PITS"/>
                             <f:selectItem itemLabel="Sharff"/>
+                             <f:selectItem itemLabel="--Todos--" />
                          </h:selectOneMenu>
                          <h:graphicImage id="imganoo" library="img" name="pregunta.jpg" />                       
                          <p:tooltip for="imganoo" value="Tanosss" />
@@ -22,10 +23,9 @@
                                      
                                  <h:outputLabel value="Departamento: "></h:outputLabel>
                         <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Todos--" />
                             <f:selectItem itemLabel="Publicidad"/>
                             <f:selectItem itemLabel="Gestión comercial"/>
-                           
+                           <f:selectItem itemLabel="--Todos--"/>
                          </h:selectOneMenu>
                          <h:graphicImage id="imgdep" library="img" name="pregunta.jpg" />                       
                          <p:tooltip for="imgdep" value="Tanosss" />                    
@@ -33,11 +33,9 @@
                                                         
                        <h:outputLabel value="Campaña"></h:outputLabel>
                          <h:selectOneMenu>
-                            <f:selectItem itemLabel="--No aplica--"  />
-                            <f:selectItem itemLabel="Todos"  />
                             <f:selectItem itemLabel="Cuenta ganadora"  />
                             <f:selectItem itemLabel="Cuenta CTS"  />
-                                                      
+                                    <f:selectItem itemLabel="--Todos--" />                   
                         </h:selectOneMenu>
                            <h:graphicImage id="imgarc4P5cam" library="img" name="pregunta.jpg" />
                         <p:tooltip for="imgarc4P5cam" value="estadooo" />
@@ -45,11 +43,11 @@
                         
                        <h:outputLabel value="Premio"></h:outputLabel>
                          <h:selectOneMenu>
-                            <f:selectItem itemLabel="--No aplica--"/>
-                             <f:selectItem itemLabel="Todos"/>
+                            
+                             
                             <f:selectItem itemLabel="Ollas+vasos"  />
                              <f:selectItem itemLabel="TV 11°"  />
-                                                 
+                                <f:selectItem itemLabel="--Todos--" />                  
                         </h:selectOneMenu>
                            <h:graphicImage id="imgarc451" library="img" name="pregunta.jpg" />
                         <p:tooltip for="imgarc451" value="estadooo" />
@@ -58,20 +56,18 @@
                         <p:spacer width="10" />   
                          <h:outputLabel value="Feria"></h:outputLabel>
                          <h:selectOneMenu>
-                              <f:selectItem itemLabel="--No aplica--"  itemValue="--Seleccione--"/>
-                            <f:selectItem itemLabel="--Todos--"/>
+                           
                             <f:selectItem itemLabel="Feria 01"  />
                              <f:selectItem itemLabel="Feria 02"  />
-                                                 
+                             <f:selectItem itemLabel="--Todos--" />             
                         </h:selectOneMenu>
                            <h:graphicImage id="feri" library="img" name="pregunta.jpg" />
                         <p:tooltip for="feri" value="feria" />
                         
                        <h:outputLabel value="Gestor"></h:outputLabel>
                          <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Todos--"  itemValue="--Seleccione--"/>
                             <f:selectItem itemLabel="Daniel Carranza"  />
-                                                 
+                                <f:selectItem itemLabel="--Todos--" />                  
                         </h:selectOneMenu>
                            <h:graphicImage id="imgarc4512" library="img" name="pregunta.jpg" />
                         <p:tooltip for="imgarc4512" value="estadooo" />
@@ -83,13 +79,13 @@
                        
                         
                              <h:outputLabel value="Código de Producto: "></h:outputLabel>
-                    <h:inputText value="OK123456" size="30" disabled="false" />
+                    <h:inputText value="" size="30" disabled="false" />
                         <h:graphicImage id="imgfechfEcw" library="img" name="pregunta.jpg" />
                         <p:tooltip for="imgfechfEcw" value="Fecha de Carga Final" />     
                                 
                         
                         <h:outputLabel value="Producto: "></h:outputLabel>
-                    <h:inputText value="TV" size="30" disabled="false" />
+                    <h:inputText value="" size="30" disabled="false" />
                         <h:graphicImage id="imgfechfE" library="img" name="pregunta.jpg" />
                         <p:tooltip for="imgfechfE" value="Fecha de Carga Final" />
                                  
@@ -100,10 +96,10 @@
                             <p:spacer width="10" />   
                           <h:outputLabel value="Estado"></h:outputLabel>
                          <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Todos--"  itemValue="--Seleccione--"/>
                             <f:selectItem itemLabel="Asignado"  />
                              <f:selectItem itemLabel="Pendiente"  />
-                                                 
+                             <f:selectItem itemLabel="Devueltos"  />
+                                   <f:selectItem itemLabel="--Todos--" />               
                         </h:selectOneMenu>
                            <h:graphicImage id="imgarc451e" library="img" name="pregunta.jpg" />
                         <p:tooltip for="imgarc451e" value="estadooo" />
@@ -154,6 +150,11 @@
                                  <p:column style="width: 200px">
                             <f:facet name="header"><h:outputText value="Premio" /></f:facet>
                              <h:outputLabel value="OLLA+VASOS"></h:outputLabel>
+                        </p:column>
+                                
+                                <p:column style="width: 200px">
+                            <f:facet name="header"><h:outputText value="Feria" /></f:facet>
+                             <h:outputLabel value="Feria 01"></h:outputLabel>
                         </p:column>
                                 
                                  <p:column style="width: 150px">

@@ -32,4 +32,20 @@ public class Seg_editar {
         this.segreg = segreg;
         }
     
+     private String segestsol;
+    public String getEstsol() {
+        return segestsol;
+    }
+    public void setEstsol(String segestsol) {
+        this.segestsol = segestsol;
+        }
+    
+     private String segguia;
+    public String getGuia() {
+        return segguia;
+    }
+    public void setGuia(String segguia) {
+        this.segguia = segguia;
+        }
+    
 }

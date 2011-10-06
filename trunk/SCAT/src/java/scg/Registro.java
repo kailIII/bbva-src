@@ -91,12 +91,16 @@ public class Registro {
         Seg_editar c20 = new Seg_editar();  
           c20.setSeg("Registrado");
           c20.setSegitem("001");
+            c20.setEstsol("Emitido");
+            c20.setGuia("GUIA0001");
         this.seg_editar.add(c20);
         
                      
         Seg_editar c21 = new Seg_editar();  
           c21.setSeg("Enviado");
           c21.setSegitem("002");
+          c21.setEstsol("Habilitado");
+            c21.setGuia("GUIA0001");
         this.seg_editar.add(c21);
         
         
@@ -104,6 +108,8 @@ public class Registro {
          Seg_editar c22 = new Seg_editar();  
          c22.setSeg("Generado");
          c22.setSegitem("003");
+         c22.setEstsol("Despachado");
+           c22.setGuia("GUIA0001");
         this.seg_editar.add(c22);
        
               
@@ -111,6 +117,8 @@ public class Registro {
           c23.setSeg("Regularizado");
           c23.setSegitem("004");
           c23.setSegreg("Pagar pieza");
+          c23.setEstsol("En Proceso");
+            c23.setGuia("GUIA0001");
         this.seg_editar.add(c23);
         
                 
@@ -118,20 +126,31 @@ public class Registro {
           Seg_editar c24 = new Seg_editar();  
          c24.setSeg("Subsanado");
           c24.setSegitem("005");
+          c24.setEstsol("Habilitado");
+            c24.setGuia("GUIA0002");
         this.seg_editar.add(c24);
        
               
         Seg_editar c25 = new Seg_editar();  
          
           c25.setSegitem("006");
+            c25.setEstsol("Despachado");
+              c25.setGuia("GUIA0002");
         this.seg_editar.add(c25);
         
          Seg_editar c26 = new Seg_editar();  
        
           c26.setSegitem("007");
+            c26.setEstsol("En proceso");
+              c26.setGuia("GUIA0002");
         this.seg_editar.add(c26);
         
-        
+        Seg_editar c99 = new Seg_editar();  
+       
+          c99.setSegitem("008");
+            c99.setEstsol("Finalizado");
+              c99.setGuia("GUIA0002");
+        this.seg_editar.add(c99);
         
         this.stock_b = new ArrayList<Stock_b>();
         
