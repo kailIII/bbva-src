@@ -10,20 +10,9 @@
                     <h:panelGrid columns="9">
                                              
                    
-                          <h:outputLabel value="Tipo*: "></h:outputLabel>
-                      <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
-                            <f:selectItem itemLabel="Campaña"  />
-                            <f:selectItem itemLabel="premio" />
-                          
-                        </h:selectOneMenu>
-                          <h:graphicImage id="imgregI3422" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgregI3422" value="Registro" />
                         
                         
-                             <p:spacer width="10" />  
-                        
-                         <h:outputLabel value="Proveedor*: "></h:outputLabel>
+                         <h:outputLabel value="Almacén*: "></h:outputLabel>
                       <h:selectOneMenu>
                             <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
                             <f:selectItem itemLabel="SHARFF"  />
@@ -34,14 +23,27 @@
                         <p:tooltip for="imgregprov" value="Registro" />
                              
                         
+                             <p:spacer width="10" />  
+                        
+                          <h:outputLabel value="Tipo*: "></h:outputLabel>
+                      <h:selectOneMenu>
+                           
+                            <f:selectItem itemLabel="Campaña"  />
+                            <f:selectItem itemLabel="premio" />
+                          <f:selectItem itemLabel="Feria" />
+                           <f:selectItem itemLabel="--Seleccione--" />
+                        </h:selectOneMenu>
+                          <h:graphicImage id="imgregI3422" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgregI3422" value="Registro" />
                         
                        
-                           <h:outputLabel value="Propietario*: "></h:outputLabel>
+                           <h:outputLabel value="Departamento*: "></h:outputLabel>
                       <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
-                            <f:selectItem itemLabel="Jorge Carranza"  />
-                            <f:selectItem itemLabel="David Torres" />
-                          
+                            
+                            <f:selectItem itemLabel="Gestión comercial"  />
+                            <f:selectItem itemLabel="Publicidad" />
+                          <f:selectItem itemLabel="Marketing" />
+                          <f:selectItem itemLabel="--Seleccione--"  />
                         </h:selectOneMenu>
                           <h:graphicImage id="imgregI32" library="img" name="pregunta.jpg" />
                         <p:tooltip for="imgregI32" value="Registro" />
