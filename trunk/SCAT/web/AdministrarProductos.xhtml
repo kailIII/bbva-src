@@ -26,8 +26,8 @@
                         <h:outputLabel value="Estado: "></h:outputLabel>
                       <h:selectOneMenu>
                             <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
-                            <f:selectItem itemLabel="Activo"  />
-                            <f:selectItem itemLabel="Inactivo" />
+                            <f:selectItem itemLabel="Vigente"  />
+                            <f:selectItem itemLabel="No vigente" />
                           
                         </h:selectOneMenu>
                       <h:graphicImage id="imgUnidad8" library="img" name="pregunta.jpg" />
@@ -41,7 +41,7 @@
                 <p:panel header="Resultados">
                        <h:panelGrid columns="1"> 
                             
-                                       <p:dataTable value="#{registro.stock_b}" var="stock" paginator="true" rows="3" paginatorAlwaysVisible="true" emptyMessage="No existen solicitudes pendientes de asignación">
+                                       <p:dataTable value="#{registro.stock_b}" var="stock" paginator="true" rows="5" paginatorAlwaysVisible="true" emptyMessage="No existen solicitudes pendientes de asignación">
                 
                         <p:column style="width: 50px">
                             <f:facet name="header"><h:outputText value="Item" /></f:facet>
@@ -54,6 +54,7 @@
                               <p:commandButton value="Editar" type="button" onclick="popupEditarItem2.show();"></p:commandButton>
                       
                                  </p:column>
+                                         
                                  <p:column style="width: 100px">
                              
                                  <f:facet name="header"><h:outputText value="codigo" /></f:facet>
@@ -63,11 +64,12 @@
                             <f:facet name="header"><h:outputText value="Producto" /></f:facet>
                                <h:outputLabel value="Televisor"></h:outputLabel>
                              </p:column>
+                                            <p:column style="width: 100px">
+                            <f:facet name="header"><h:outputText value="Estado" /></f:facet>
+                               <h:outputLabel value="Vigente"></h:outputLabel>
+                             </p:column>
                              
-                          <p:column style="width: 100px">
-                            <f:facet name="header"><h:outputText value="Descripción" /></f:facet>
-                            <h:outputLabel value="Pantalla plana de 17!"></h:outputLabel>
-                        </p:column>
+                         
                                            
                                                              
                          <p:column style="width: 100px">
@@ -94,15 +96,16 @@
                             </h:panelGrid>
                 </p:panel>
                
-               
+                 <p:commandButton value="Exportar" type="button" ></p:commandButton>
+             
                
             </p:panel>
         </h:form>
-        <p:dialog widgetVar="popupAgregarItem1" header="Agregar usuario" width="800">
+        <p:dialog widgetVar="popupAgregarItem1" header="Agregar Producto" width="800">
             <h:form>
                  
                      
-                 <p:panel header="Datos del Proveedor">
+                 <p:panel header="Datos del Producto">
                     
                     <h:panelGrid columns="9">
                        
@@ -113,25 +116,12 @@
                        
                         
                              
-                         <h:outputLabel value="Nombre del producto"></h:outputLabel>
+                         <h:outputLabel value="Producto"></h:outputLabel>
                         <h:inputText value="Lince" size="40" disabled="false" />
                         <h:graphicImage id="imgnom" library="img" name="pregunta.jpg" />
                         <p:tooltip for="imgnom" value="Nombre" />
-                              <p:spacer width="10" />  
-                               <h:outputLabel value="Código*"></h:outputLabel>
-                        <h:inputText value="20295833743" size="30" disabled="false" />
-                        <h:graphicImage id="imgrus" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgrus" value="RUC" />
-                        
-                        
-                         
-                        
-                                  <p:spacer width="10" />  
-                         <h:outputLabel value="Descripción "></h:outputLabel>
-                        <h:inputText value="5366663" size="40" disabled="false" />
-                        <h:graphicImage id="imgtlf1" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgtlf1" value="Nombre" />
-                        
+                               
+                                                
                             <h:outputLabel value="Imagen "></h:outputLabel>
                         <h:inputText value="tv.jpg" size="40" disabled="false" />
                         <h:graphicImage id="imgtlf" library="img" name="pregunta.jpg" />
@@ -155,41 +145,34 @@
                     
                     <h:panelGrid columns="9">
                        
-                        <h:outputLabel value="Nombre del producto"></h:outputLabel>
-                        <h:inputText value="Lince" size="40" disabled="false" />
+                        <h:outputLabel value="Producto"></h:outputLabel>
+                        <h:inputText value="" size="40" disabled="false" />
                         <h:graphicImage id="imgnom" library="img" name="pregunta.jpg" />
                         <p:tooltip for="imgnom" value="Nombre" />
-                              <p:spacer width="10" />  
-                               <h:outputLabel value="Código*"></h:outputLabel>
-                        <h:inputText value="20295833743" size="30" disabled="false" />
-                        <h:graphicImage id="imgrus4" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgrus4" value="RUC" />
+                                
+                               <h:outputLabel value="Estado*: "></h:outputLabel>
+                      <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
+                            <f:selectItem itemLabel="Vigente"  />
+                            <f:selectItem itemLabel="No vigente" />
+                        </h:selectOneMenu>
+                            <h:graphicImage id="imgestaD" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgestaD" value="Estado" />
                         
                         
-                          <h:outputLabel value="Descripción"></h:outputLabel>
-                        <h:inputText value="Urb. El alamo MZ N1 LT 14" size="30" disabled="false" />
-                        <h:graphicImage id="imgdir" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgdir" value="RUC" />
+                          
                         
                                   <p:spacer width="10" />  
                         
                         
                              <h:outputLabel value="Imagen"></h:outputLabel>
-                        <h:inputText value="Perso Robles" size="40" disabled="false" />
+                        <h:inputText value="" size="40" disabled="false" />
                         <h:graphicImage id="imgtlf99" library="img" name="pregunta.jpg" />
                         <p:tooltip for="imgtlf99" value="Nombre" />
                        
                         <p:commandButton value="Examinar" />
 
-                        <p:spacer width="10" /> 
-                           <h:outputLabel value="Estado*: "></h:outputLabel>
-                      <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
-                            <f:selectItem itemLabel="Activo"  />
-                            <f:selectItem itemLabel="Inactivo" />
-                        </h:selectOneMenu>
-                            <h:graphicImage id="imgestaD" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgestaD" value="Estado" />
+                   
                             
                            <p:commandButton value="Guardar" />
                     
