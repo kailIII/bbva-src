@@ -177,9 +177,87 @@
                 </p:panel>
                
                 <p:commandButton value="Exportar"></p:commandButton>
-               
+                  <p:commandButton value="Enviar al ministerio" type="button" onclick="REAsignarProductos.show();"></p:commandButton>
+      <p:commandButton value="Re-Asignar" type="button" onclick="popupREAsignarProductos.show();"></p:commandButton>
+            
             </p:panel>
         </h:form>
+        
+        
+        
+        
+          <p:dialog widgetVar="popupREAsignarProductos" header="Ver Inspección" width="800">
+               
+         <h:form>
+                <p:panel header="Datos">
+                    
+                    <h:panelGrid columns="9">
+                                                 
+                                              
+                         <h:outputLabel value="departamento*: "></h:outputLabel>
+                      <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
+                            <f:selectItem itemLabel="Gestión comercial"  />
+                            <f:selectItem itemLabel="Publicidad" />
+                          
+                        </h:selectOneMenu>
+                          <h:graphicImage id="imgregI36" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgregI36" value="Registro" />
+                         
+                            <p:spacer width="10" />  
+                             
+                    <h:outputLabel value="Cambiar a*: "></h:outputLabel>
+                      <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
+                            <f:selectItem itemLabel="Campaña"  />
+                            <f:selectItem itemLabel="premio" />
+                          
+                        </h:selectOneMenu>
+                          <h:graphicImage id="imgregI34" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgregI34" value="Registro" />
+                          
+                          
+                                        
+                    <h:outputLabel value="Campaña*: "></h:outputLabel>
+                      <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
+                            <f:selectItem itemLabel="Campaña 01"  />
+                            <f:selectItem itemLabel="Campaña 02" />
+                          
+                        </h:selectOneMenu>
+                          <h:graphicImage id="imgregI34yv" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgregI34yv" value="Registro" />
+                        
+                           <h:outputLabel value="Premio*: "></h:outputLabel>
+                      <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
+                            <f:selectItem itemLabel="pREMIO 01"  />
+                            <f:selectItem itemLabel="Premio 02" />
+                          
+                        </h:selectOneMenu>
+                          <h:graphicImage id="imgregI34y" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgregI34y" value="Registro" />
+                        
+                        
+                        
+                       
+                            
+                           
+                           <p:commandButton value="Guardar" />
+                    
+                    </h:panelGrid>
+                </p:panel>
+         
+</h:form>
+              </p:dialog>
+        
+        
+        
+        
+        
+        
+        
+        
         <p:dialog widgetVar="popupAgregarItem1" header="Kardex" width="800">
             <h:form>
                 

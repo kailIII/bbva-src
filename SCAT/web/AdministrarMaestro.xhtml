@@ -1,0 +1,198 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.prime.com.tr/ui" template="plantilla.xhtml">
+    <ui:define name="contenido">
+        <h:form prependId="false">
+            <p:panel header="Administrar Maestro">
+                            <p:panel header="Criterios de Búsqueda">
+                    <h:panelGrid columns="9">
+                                             
+                   
+                     
+                         <h:outputLabel value="Código"></h:outputLabel>
+                        <h:inputText value="" size="30" disabled="false" />
+                        <h:graphicImage id="imgUnidad" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgUnidad" value="Unidad" />
+                        
+                    
+                             <h:outputLabel value="Descripción maestro"></h:outputLabel>
+                        <h:inputText value="" size="30" disabled="false" />
+                        <h:graphicImage id="imgarc3" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgarc3" value="Añoa" />
+                         
+                      
+                              <p:commandButton value="Buscar"></p:commandButton>
+                    </h:panelGrid>
+                       
+                </p:panel>
+                
+                <p:panel header="Resultados">
+                       <h:panelGrid columns="1"> 
+                            
+                                       <p:dataTable value="#{registro.stock_b}" var="stock" paginator="true" rows="3" paginatorAlwaysVisible="true" emptyMessage="No existen solicitudes pendientes de asignación">
+                
+                        <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Item" /></f:facet>
+                             <h:outputLabel value="#{stock.item}"></h:outputLabel>
+                        </p:column>
+                                
+                                
+                                 <p:column style="width: 100px">
+                             
+                                 <f:facet name="header"><h:outputText value="Código" /></f:facet>
+                              <p:commandButton value="TAB001" type="button" ></p:commandButton>
+             
+                           </p:column>
+                             <p:column style="width: 100px">
+                            <f:facet name="header"><h:outputText value="Descripción" /></f:facet>
+                               <h:outputLabel value="Tipos de no conformidad"></h:outputLabel>
+                             </p:column>
+                             
+                      
+                                   
+                         <p:column style="width: 100px">
+                            <f:facet name="header"><h:outputText value="Fecha de Registro" /></f:facet>
+                             <h:outputLabel value="13/06/2011"></h:outputLabel>
+                        </p:column>
+                        <p:column style="width: 100px">
+                            <f:facet name="header"><h:outputText value="Usuario" /></f:facet>
+                             <h:outputLabel value="GPEREZD"></h:outputLabel>
+                        </p:column>
+                                             <p:column style="width: 100px">
+                            <f:facet name="header"><h:outputText value="Fecha de Act." /></f:facet>
+                             <h:outputLabel value="13/06/2011"></h:outputLabel>
+                        </p:column>
+                        <p:column style="width: 100px">
+                            <f:facet name="header"><h:outputText value="Usuario de Act." /></f:facet>
+                             <h:outputLabel value="GPEREZD"></h:outputLabel>
+                        </p:column>
+                             
+                             
+                      </p:dataTable>
+                            </h:panelGrid>
+                </p:panel>
+                  
+               <p:panel header="Resultados">
+                       <h:panelGrid columns="1"> 
+                            
+                                       <p:dataTable value="#{registro.stock_b}" var="stock" paginator="true" rows="3" paginatorAlwaysVisible="true" emptyMessage="No existen solicitudes pendientes de asignación">
+                
+                       
+                                 <p:column style="width: 50px">
+                           
+                        <f:facet name="header"><h:outputText value="Editar" /></f:facet>
+                              <p:commandButton value="Editar" type="button" onclick="popupEditarItem2.show();"></p:commandButton>
+                      
+                                 </p:column>
+                                 <p:column style="width: 100px">
+                                     
+                                      
+                           
+                        <f:facet name="header"><h:outputText value="Eliminar" /></f:facet>
+                              <p:commandButton value="Eliminar" type="button" ></p:commandButton>
+                      
+                                 </p:column>
+                              <p:column style="width: 100px">
+                                     
+                                 <f:facet name="header"><h:outputText value="Código" /></f:facet>
+                             <h:outputLabel value="01"></h:outputLabel>
+                           </p:column>
+                             <p:column style="width: 100px">
+                            <f:facet name="header"><h:outputText value="Descripción" /></f:facet>
+                               <h:outputLabel value="Generado"></h:outputLabel>
+                             </p:column>
+                             
+                                                      
+                        <p:column style="width: 100px">
+                            <f:facet name="header"><h:outputText value="Estado" /></f:facet>
+                            <h:outputLabel value="Vigente"></h:outputLabel>
+                        </p:column>
+                                   
+                         <p:column style="width: 100px">
+                            <f:facet name="header"><h:outputText value="Fecha de Registro" /></f:facet>
+                             <h:outputLabel value="13/06/2011"></h:outputLabel>
+                        </p:column>
+                        <p:column style="width: 100px">
+                            <f:facet name="header"><h:outputText value="Usuario" /></f:facet>
+                             <h:outputLabel value="GPEREZD"></h:outputLabel>
+                        </p:column>
+                              <p:column style="width: 100px">
+                            <f:facet name="header"><h:outputText value="Fecha de Act." /></f:facet>
+                             <h:outputLabel value="13/06/2011"></h:outputLabel>
+                        </p:column>
+                        <p:column style="width: 100px">
+                            <f:facet name="header"><h:outputText value="Usuario de Act." /></f:facet>
+                             <h:outputLabel value="GPEREZD"></h:outputLabel>
+                        </p:column>
+                             
+                      </p:dataTable>
+                            </h:panelGrid>
+                </p:panel>
+                <p:commandButton value="Agregar" type="button" onclick="popupAgregarItem1.show();"></p:commandButton>
+             
+               
+            </p:panel>
+        </h:form>
+        <p:dialog widgetVar="popupAgregarItem1" header="Agregar" width="800">
+            <h:form>
+                 
+                     
+                 <p:panel header="Datos ">
+                    
+                    <h:panelGrid columns="9">
+                       
+                               
+                       
+                             
+                         <h:outputLabel value="Descripción"></h:outputLabel>
+                        <h:inputText value="201133" size="40" disabled="false" />
+                        <h:graphicImage id="imgnom" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgnom" value="Nombre" />
+                              <p:spacer width="10" />  
+                            
+                       
+                       
+                           <p:commandButton value="Agregar" />
+                    
+                    </h:panelGrid>
+                </p:panel>
+         
+</h:form>
+              </p:dialog>
+        
+        
+        
+         <p:dialog widgetVar="popupEditarItem2" header="Editar usuario" width="800">
+            <h:form>
+                
+                    <h:panelGrid columns="9">
+                       
+                         
+                                                
+                            
+                           <h:outputLabel value="Estado*: "></h:outputLabel>
+                      <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"/>
+                            <f:selectItem itemLabel="Vigente"  />
+                            <f:selectItem itemLabel="No vigente" />
+                        </h:selectOneMenu>
+                            <h:graphicImage id="imgestaD" library="img" name="pregunta.jpg" />
+                        <p:tooltip for="imgestaD" value="Estado" />
+                            
+                           <p:commandButton value="Guardar" />
+                    
+                    </h:panelGrid>
+                
+         
+</h:form>
+              </p:dialog>
+      </ui:define>
+     
+        
+        
+        
+</ui:composition>
+
+
