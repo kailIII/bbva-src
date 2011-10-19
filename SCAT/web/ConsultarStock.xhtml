@@ -96,8 +96,8 @@
                             <p:spacer width="10" />   
                           <h:outputLabel value="Estado"></h:outputLabel>
                          <h:selectOneMenu>
-                            <f:selectItem itemLabel="Asignado"  />
-                             <f:selectItem itemLabel="Pendiente"  />
+                            <f:selectItem itemLabel="Definido"  />
+                             <f:selectItem itemLabel="Faltante"  />
                              
                                    <f:selectItem itemLabel="--Todos--" />               
                         </h:selectOneMenu>
@@ -112,6 +112,11 @@
                        <h:panelGrid columns="9"> 
                             <p:dataTable value="#{registro.stock_b}" var="stock" paginator="true" rows="5" paginatorAlwaysVisible="true" emptyMessage="No existen resultados con los criterios ingresados">
                         
+                                
+                                    <p:column style="width: 50px">
+                           <f:facet name="header"> <h:selectBooleanCheckbox></h:selectBooleanCheckbox></f:facet>
+                           <h:selectBooleanCheckbox></h:selectBooleanCheckbox>
+                           </p:column>
                         <p:column style="width: 50px">
                             <f:facet name="header"><h:outputText value="Item" /></f:facet>
                              <h:outputLabel value="#{stock.item}"></h:outputLabel>
@@ -159,7 +164,7 @@
                                 
                                  <p:column style="width: 150px">
                             <f:facet name="header"><h:outputText value="Estado" /></f:facet>
-                             <h:outputLabel value="Asignado"></h:outputLabel>
+                             <h:outputLabel value="Definido"></h:outputLabel>
                         </p:column>
                         
                         <p:column style="width: 150px">
@@ -312,12 +317,7 @@
                         </p:column>
                       
                       
-                                 <p:column style="width: 150px">
-                            <f:facet name="header"><h:outputText value="Estado" /></f:facet>
-                             <h:outputLabel value="Asignado"></h:outputLabel>
-                        </p:column>
-                        
-                      
+                             
                  
                              
                         
