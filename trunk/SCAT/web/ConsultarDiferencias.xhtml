@@ -12,10 +12,11 @@
                         
                    <h:outputLabel value="Tipo de regularización "></h:outputLabel>
                         <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Todos--" />
+                            
                             <f:selectItem itemLabel="Reposición"/>
                             <f:selectItem itemLabel="Pago de pieza"/>
                             <f:selectItem itemLabel="error de conteo"/>
+                            <f:selectItem itemLabel="--Todos--" />
                          </h:selectOneMenu>
                          <h:graphicImage id="imganoo3" library="img" name="pregunta.jpg" />                       
                          <p:tooltip for="imganoo3" value="Tanosss" />
@@ -23,12 +24,14 @@
                        
                        <h:outputLabel value="Estado: "></h:outputLabel>
                         <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Todos--" />
-                            <f:selectItem itemLabel="Registrado"/>
-                            <f:selectItem itemLabel="Enviado"/>
-                              <f:selectItem itemLabel="Generado"/>
-                            <f:selectItem itemLabel="Recibido"/>
-                              <f:selectItem itemLabel="Regularizado"/>
+                           
+                         
+                            <f:selectItem itemLabel="Delegado"/>
+                              <f:selectItem itemLabel="Atendido"/>
+                            <f:selectItem itemLabel="En proceso"/>
+                            <f:selectItem itemLabel="Asignado"/>
+                              <f:selectItem itemLabel="Cerrado"/>
+                              <f:selectItem itemLabel="--Todos--" />
                            
                          </h:selectOneMenu>
                          <h:graphicImage id="imgtip" library="img" name="pregunta.jpg" />                       
@@ -39,10 +42,11 @@
                                
                 <h:outputLabel value="Almacén "></h:outputLabel>
                         <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Todos--" />
+                        
                             <f:selectItem itemLabel="OLVA"/>
                             <f:selectItem itemLabel="SHARFF"/>
                              <f:selectItem itemLabel="PITS"/>
+                             <f:selectItem itemLabel="--Todos--" />
                          </h:selectOneMenu>
                          <h:graphicImage id="imgano19" library="img" name="pregunta.jpg" />                       
                          <p:tooltip for="imgano19" value="Tanosss" />
@@ -90,16 +94,12 @@
                          
                                                            
                                  <p:column style="width: 50px">
-                            <f:facet name="header"><h:outputText value="Detalle" /></f:facet>
-                             <p:commandButton value="Ver" type="button" onclick="GenerarSeguimientoDiferencias.show();"></p:commandButton>
+                            <f:facet name="header"><h:outputText value="Regularizar" /></f:facet>
+                             <p:commandButton value="Editar" type="button" onclick="GenerarSeguimientoDiferencias.show();"></p:commandButton>
                  
                         </p:column>
                                                                  
-                        
-                    
-                                                     
-                                                                         
-                       
+                                          
                                 
                                 <p:column style="width: 50px">
                             <f:facet name="header"><h:outputText value="Nro de Pedido" /></f:facet>
@@ -117,8 +117,7 @@
                                  <p:column style="width: 50px">
                             <f:facet name="header"><h:outputText value="Estado" /></f:facet>
                           
-                             <p:commandButton value="Regularizado" type="button" onclick="popupSeguimientoInspeccion.show();"></p:commandButton>
-                          
+                          <h:outputLabel value="Cerrado"></h:outputLabel>
                         </p:column> 
                                
                                                               
@@ -145,10 +144,7 @@
                    <p:panel header="Cartas">
                        <h:panelGrid columns="9"> 
                             <p:dataTable value="#{registro.stock_b}" var="stock" paginator="true" rows="2" paginatorAlwaysVisible="true" emptyMessage="No existen resultados con los criterios ingresados">
-                         <p:column style="width: 50px">
-                           <f:facet name="header"> <h:selectBooleanCheckbox></h:selectBooleanCheckbox></f:facet>
-                           <h:selectBooleanCheckbox></h:selectBooleanCheckbox>
-                           </p:column>
+                       
                         <p:column style="width: 50px">
                             <f:facet name="header"><h:outputText value="Item" /></f:facet>
                              <h:outputLabel value="#{stock.item}"></h:outputLabel>
@@ -198,12 +194,8 @@
                       </p:dataTable>
                             </h:panelGrid>
                      
-                       <h:outputLabel value="Fecha de Respuesta "></h:outputLabel>
-                       <h:inputText value="" size="30" disabled="false" />                      
-                       <h:graphicImage id="imganoo6" library="img" name="pregunta.jpg" />                       
-                   <p:tooltip for="imganoo6" value="Tanosss" />
+                       
                    
-                     <p:commandButton value="Cambiar a Recibido" type="button"></p:commandButton>
                  
               </p:panel>
             </p:panel>
@@ -370,7 +362,10 @@
                    
                         
                           <p:dataTable value="#{registro.stock_b}" var="stock" paginator="true" rows="5" paginatorAlwaysVisible="true" emptyMessage="No existen resultados con los criterios ingresados">
-                        
+                          <p:column style="width: 50px">
+                           <f:facet name="header"> <h:selectBooleanCheckbox></h:selectBooleanCheckbox></f:facet>
+                           <h:selectBooleanCheckbox></h:selectBooleanCheckbox>
+                           </p:column>
                         
                         <p:column style="width: 50px">                
                         <f:facet name="header"><h:outputText value="Item" /></f:facet>
@@ -417,9 +412,15 @@
                      
                                
                         <p:column style="width: 200px">
-                                 <f:facet name="header"><h:outputText value="Regularizado por" /></f:facet>
+                                 <f:facet name="header"><h:outputText value="Tipo de Regularización" /></f:facet>
                                  <h:outputLabel value="Pagar pieza"></h:outputLabel>
                         </p:column>
+                                   <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Estado" /></f:facet>
+                          
+                             <p:commandButton value="Regularizado" type="button" onclick="popupSeguimientoInspeccion.show();"></p:commandButton>
+                          
+                        </p:column> 
                                 <p:column style="width: 50px">
                          <f:facet name="header"><h:outputText value="Observaciones:" /></f:facet>
                          <h:inputTextarea/>                                           
@@ -429,7 +430,25 @@
                       </p:dataTable>
                     
                 </p:panel>
-                  
+                      
+                                <h:outputLabel value="Tipo Regularización:"></h:outputLabel>
+                     
+                         <h:selectOneMenu>
+                            <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"  />
+                            <f:selectItem itemLabel="Error de conteo"  />
+                            <f:selectItem itemLabel="Repocisión de pieza" /> 
+                            <f:selectItem itemLabel="Pago de pieza" /> 
+                       </h:selectOneMenu>
+                    
+                                 
+                               <p:spacer width="30" />
+                               
+                       <h:outputLabel value="Fecha de Respuesta "></h:outputLabel>
+                       <h:inputText value="" size="30" disabled="false" />                      
+                       <h:graphicImage id="imganoo6" library="img" name="pregunta.jpg" />                       
+                   <p:tooltip for="imganoo6" value="Tanosss" />
+                   
+                   <p:commandButton value="Guardar" type="button" ></p:commandButton>
                          
                 
             </h:form>
