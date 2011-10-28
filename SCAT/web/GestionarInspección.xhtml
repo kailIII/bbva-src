@@ -525,10 +525,7 @@
                         
                         
                         
-                           <h:outputLabel value="Fecha de resultado de inspección*: "></h:outputLabel>
-                        <h:inputText value="16/08/2011" size="30" disabled="false" />
-                        <h:graphicImage id="imgNomPro" library="img" name="pregunta.jpg" />
-                        <p:tooltip for="imgNomPro" value=""/>
+                           
                         
                   
                         
@@ -572,7 +569,7 @@
                               
                         
                            <p:column style="width: 50px">
-                            <f:facet name="header"> <h:outputText value="No Conformes" /><h:selectBooleanCheckbox></h:selectBooleanCheckbox></f:facet>
+                            <f:facet name="header"> <h:outputText value="No Conformes" /></f:facet>
                             <h:selectBooleanCheckbox></h:selectBooleanCheckbox>
                                   </p:column>
                    
@@ -586,11 +583,12 @@
                     
                           <p:dataTable value="#{registro.stock_b}" var="stock" paginator="true" rows="2" paginatorAlwaysVisible="true" emptyMessage="No existen resultados con los criterios ingresados">
                         
-                               <p:column style="width: 50px">
+                           
+                           <p:column style="width: 50px">
                             <f:facet name="header"> <h:selectBooleanCheckbox></h:selectBooleanCheckbox></f:facet>
                             <h:selectBooleanCheckbox></h:selectBooleanCheckbox>
                                   </p:column>
-                           
+                   
                     
                         
                         <p:column style="width: 50px">
@@ -616,32 +614,14 @@
                          <f:facet name="header"><h:outputText value="Comentario" /></f:facet>
                          <h:inputTextarea/>                                           
                          </p:column>
-                  
-                             
-                            
-                              
                       </p:dataTable>
                
                
-                    <p:commandButton value="Gruardar"></p:commandButton>
+                    <p:commandButton value="Finalizar inspección"></p:commandButton>
                     
                 <p:spacer width="30" />
                     
-                    
-          
-                                <h:outputLabel value="Tipo Regularización:"></h:outputLabel>
-                     
-                         <h:selectOneMenu>
-                            <f:selectItem itemLabel="--Seleccione--"  itemValue="--Seleccione--"  />
-                            <f:selectItem itemLabel="Error de conteo"  />
-                            <f:selectItem itemLabel="Repocisión de pieza" /> 
-                            <f:selectItem itemLabel="Pago de pieza" /> 
-                       </h:selectOneMenu>
-                    
-                                 <p:commandButton value="Guardar" type="button" ></p:commandButton>
-                               <p:spacer width="30" />
-                     <p:commandButton value="Enviar a Compras"></p:commandButton>
-                   
+                     <p:commandButton value="Regularizado"></p:commandButton>
                     </p:panel>
         
         
