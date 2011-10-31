@@ -237,7 +237,67 @@
                                                          
                                      
                   </h:panelGrid> 
-                  
+                      <p:panel header="Detalle de productos">
+                   
+                        
+                          <p:dataTable value="#{registro.stock_b}" var="stock" paginator="true" rows="5" paginatorAlwaysVisible="true" emptyMessage="No existen resultados con los criterios ingresados">
+                         
+                        
+                        <p:column style="width: 50px">                
+                        <f:facet name="header"><h:outputText value="Item" /></f:facet>
+                        <h:outputLabel value="#{stock.item}"></h:outputLabel>
+                        </p:column>
+                        
+                        
+                       
+                             <p:column style="width: 50px">
+                      
+                             <f:facet name="header"><h:outputText value="Código" /></f:facet>
+                        
+                         
+                           <h:outputLabel value="#{stock.cod} "></h:outputLabel>
+                         </p:column>
+                 
+                               <p:spacer width="5" /> 
+                               
+                         <p:column style="width: 50px">
+                            <f:facet name="header"><h:outputText value="Producto" /></f:facet>
+                              <h:outputLabel value="#{stock.bandeja} "></h:outputLabel>
+                         </p:column>
+                           
+                         
+                               
+                                 <p:column style="width: 50px">
+                                 <f:facet name="header"><h:outputText value="Tipo de No conformidad" /></f:facet>
+                             <h:outputLabel value="Mal estado"></h:outputLabel>
+                     
+                         </p:column>
+                     
+                              
+                               
+                                 
+                                            
+                           <p:column style="width: 50px">
+                         
+                            <f:facet name="header"><h:outputText value="Cantidad" /></f:facet>
+                                 <h:outputLabel value="5"></h:outputLabel>
+                           </p:column>
+                         
+                    
+                        
+                     
+                               
+                      
+                                <p:column style="width: 50px">
+                         <f:facet name="header"><h:outputText value="Observaciones:" /></f:facet>
+                         <h:inputTextarea/>                                           
+                         </p:column>
+                             
+                   
+                      </p:dataTable>
+                    
+                </p:panel>
+                 
                         <p:commandButton value="Generar"></p:commandButton>
                         
                            
@@ -318,8 +378,7 @@
                                      
                   </h:panelGrid> 
                                                  
-                  
-                    
+                
                 
             </h:form>
         </p:dialog>
@@ -357,8 +416,7 @@
                                                          
                                      
                   </h:panelGrid> 
-                                                 
-                  <p:panel header="Detalle de productos">
+                                     <p:panel header="Detalle de productos">
                    
                         
                           <p:dataTable value="#{registro.stock_b}" var="stock" paginator="true" rows="5" paginatorAlwaysVisible="true" emptyMessage="No existen resultados con los criterios ingresados">
@@ -430,7 +488,8 @@
                       </p:dataTable>
                     
                 </p:panel>
-                      
+                              
+                   
                                 <h:outputLabel value="Tipo Regularización:"></h:outputLabel>
                      
                          <h:selectOneMenu>
@@ -443,10 +502,7 @@
                                  
                                <p:spacer width="30" />
                                
-                       <h:outputLabel value="Fecha de Respuesta "></h:outputLabel>
-                       <h:inputText value="" size="30" disabled="false" />                      
-                       <h:graphicImage id="imganoo6" library="img" name="pregunta.jpg" />                       
-                   <p:tooltip for="imganoo6" value="Tanosss" />
+                      
                    
                    <p:commandButton value="Guardar" type="button" ></p:commandButton>
                          
