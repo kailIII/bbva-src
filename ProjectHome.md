@@ -1,0 +1,1 @@
+Proyecto a nivel prototipo para el nuevo sistema de gestión de los requerimientos de compra de los usuarios del banco para los gestores de compras.
